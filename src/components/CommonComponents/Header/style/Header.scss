@@ -1,0 +1,274 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Tahoma;
+    font-weight: 400;
+    color: #4a4a4a;
+    font-size: 1em;
+    letter-spacing: normal;
+    overflow-x: hidden;
+}
+.header{
+    height: 80px;
+}
+header#site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    left: 0;
+    background: #fff;
+    div#site-logo {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    nav#main-nav {
+        height: 100%;
+        width: 100%;
+    }
+    .wrap_nav{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+    .menu{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        font-size: 0.9em;
+        justify-content: space-between;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    li.menu-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 100%;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        color: #242424;
+    }
+}
+@mixin fontSize($FontSize) {
+    font-size: $FontSize!important;
+}
+@mixin width($width) {
+    width: $width!important;
+}
+@mixin height($height) {
+    height: $height!important;
+}
+ @media (max-width: 767px) {
+    .text-wrap-box p{
+        @include fontSize(.7em)
+    }
+    .overlayBottom .text{
+        @include fontSize(.8em)
+    }
+    .menu li{
+        @include fontSize(.7em)
+    }
+    .text-wrap-box h4.titleWow {
+        @include fontSize(.8em)
+    }
+    .text-wrap-context {
+        @include width(60%)
+    }
+    .content-text h6 {
+        @include fontSize(.8em)
+    }
+    .content-text span {
+        @include fontSize(.8em)
+    }
+    .btn {
+        @include fontSize(.5em);
+        @include width(inherit)
+    }
+    .text-wrap-box h4.titleWow {
+        @include fontSize(0.8em)
+    }
+    .thumb-img-wrap {
+        @include height(initial)
+    }
+ }
+ @media (max-width: 767px) and (min-width : 576px) { 
+    .thumb-img-wrap img {
+        max-height: 4rem!important;
+    }
+    span.desc_Name, .meta-inner-wrap {
+        @include fontSize(0.55em)
+    }
+}
+ @media (max-width: 730px) { 
+    .text-wrap-box h4.titleWow {
+        @include fontSize(0.9)
+    }
+ }
+ @media (min-width: 576px) {
+    .header-top_{
+        display: none;
+    }
+}
+ @media (max-width: 575px) {
+        .header-top{
+            display: none;
+        }
+        .img-content{
+            width: 70%!important;
+        }
+        .header {
+            height: 80px;
+            margin: auto;
+        }
+        header.header-top_ {
+            height: 80px;
+            position: fixed;
+            width: 100%;
+            background: white;
+            z-index: 9999;
+        }
+        header.header-top_ .container, header.header-top_ .container.row{
+            height: 100%;
+        }
+        header.header-top_ .container .row .logoR{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header.header-top_ .container .row .iconR {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .header-top_ .container .row {
+            height: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .DragHandle_Icon {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 9999999;
+            top: 80px;
+            right: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .mySidenav{
+            width: 100%;
+        }
+        .closeSidenav{
+            width: 0;
+        }
+        .navR{
+            width: 100%;
+        }
+        nav.navigation {
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .navR li.navItem {
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            font-size: 18px;
+            border-bottom: 1px solid #e5e5e5;
+            width: 100%;
+        }
+        .heading{
+            width: 100%;
+            position: fixed;
+        }
+        .navR .navItem a {
+            text-decoration: none;
+        }
+        .heading span{
+            cursor: pointer;
+            text-transform: uppercase;
+            color: #555;
+            font-family: none;
+            font-weight: 900;
+        }
+        .swiper-button-prev:after, .swiper-button-next:after {
+            @include fontSize(1)
+        }
+        .text-box {
+            width: 60%!important
+        }
+        .text-wrap-box{
+            width: 45%!important
+        }
+        .text-wrap-context {
+            width: 60%;
+        }
+        .dest_0 {
+            @include height(28em)
+        }
+        ul#footer-menu-primary-menu {
+            justify-content: center;
+        }
+        .footerMess img {
+            @include height(initial);
+            width: auto;
+        }
+        .footerMess {
+            justify-content: center!important;
+            align-items: center;        
+        }
+        .footerDres {
+            height: 8em!important;
+        }
+        li.footer-menu-item {
+            padding: 0 5px 0 5px!important;
+            display: flex;
+        }
+        li.footer-menu-item {
+            border-right: 0!important;
+        }
+        .overlayBottom .text {
+            font-size: .6em!important;
+        }
+        .date {
+            @include fontSize(0.5)
+        }
+}
+@media (max-width: 390px){
+    .content-text h6, .content-text span {
+        @include fontSize(0.7)
+    }
+}
+@media (max-width: 991px) { 
+    .menu {
+        @include fontSize(.7em)
+    }
+    .btn {
+        @include fontSize(.6em)
+    }
+    .overlayBottom .text {
+        font-size: .7em;
+    }
+}
+
+
+
+
+
+

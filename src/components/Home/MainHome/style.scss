@@ -1,0 +1,116 @@
+.back-front-page .swiper-container{
+    /* height: calc(100vh - 80px); */
+     height: calc(80vh);
+}
+.swiper-button-prev,.swiper-button-next {
+    font-weight: bolder;
+    color: #fff;
+    outline: none;
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 2em;
+}
+.text-wrap-context {
+    width: 70%;
+}
+.gallery-item{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.text-box {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-10deg,0) translateX(-30%);
+    background: #91af77;
+}
+.text-wrap-box h4.titleWow{
+    color: #fff;
+    font-weight: 700;
+}
+.text-wrap-box p{
+    color: #fff;
+    font-size: .9em;
+    text-align: justify;
+}
+.btn {
+    background: none;
+    border: 2px solid #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    width: 50%;
+    z-index: 9;
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.btn:hover {
+    color: white;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    background: #7fa035;
+    height: 0;
+    z-index: -1;
+    transition: 0.5s;
+    width: 100%;
+    left: 0;
+    border: none; 
+}
+.btn_::before {
+    bottom: 0; 
+}
+.btn_:hover::before {
+    height: 100%;
+}
+.btn:focus{
+    outline: none;
+    box-shadow: inherit;
+}
+@media (max-width: 1120px) { 
+    .back-front-page .swiper-container {
+        height: calc(50vh);
+    }
+    .footerMess img{
+        height: 70%;
+        width: 30%;
+    }
+ }
+@media (min-width: 1440px) { 
+    .text-box {
+        width: 50%;
+    }
+    .text-wrap-box {
+        width: 40%!important;
+    }
+    .text-wrap-box h4.titleWow {
+        color: #fff;
+        font-weight: 700;
+        font-size: 2.3em;
+    }
+    .text-wrap-box p {
+        color: #fff;
+        font-size: 1.2em;
+    }
+ }
+ @media (max-width: 880px) { 
+ .swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 1.1em!important;
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 0px!important;
+    right: auto;
+}
+}

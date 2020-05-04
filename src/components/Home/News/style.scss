@@ -1,0 +1,92 @@
+.content-text.news {
+    background: #91af77;
+}
+.news h6 {
+    text-transform: uppercase;
+    color: #fff;
+}
+.news span {
+    color: #fff;
+}
+.distant_ {
+    padding-top: 3%;
+}
+.dest_0{
+    height: 60em;
+}
+.dest_1{
+    overflow: hidden;
+    position: relative;
+    height: 65%;
+    width: 100%;
+}
+.dest_1 img, .dest_2 img , .dest_3 img, .dest_4 img{
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+    cursor: pointer;
+}
+.dest_1:hover img,.dest_2:hover img,.dest_3:hover img,.dest_4:hover img{
+    transform: scale(1.1);
+    transition: .5s;
+}
+.dest_2{
+    height: 35%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+.dest_3{
+    overflow: hidden;
+    position: relative;
+    height: 50%;
+    width: 100%;
+}
+.dest_4{
+    overflow: hidden;
+    position: relative;
+    padding: 30px 0 0 0;
+    height: 50%;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #00000040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.overlayBottom{
+    width: 80%;
+    margin: auto;
+}
+.text{
+    font-size: 1.2em;
+    color: #fff;
+}
+.date {
+    font-size: 0.8em;
+    color: #fff;
+}
+.showdes {
+    text-align: center;
+    padding: 5% 0 0 0;
+}
+.showdes button{
+    width: 15%;
+    background: #91af77;
+}
+@media (max-width: 991px) { 
+    .dest_0 {
+        height: 40em;
+    }
+    .btn {
+        width: initial!important;
+    }
+}
