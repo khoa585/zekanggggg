@@ -3,43 +3,13 @@ import { useRouter } from 'next/router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsSearch, BsX } from "react-icons/bs"
-import './style/Header.scss';
+import './Header.scss';
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from 'next/link'
 function Header(props) {
     const router = useRouter()
     const pathname = router.pathname;
-    const menu = [
-        {
-            val: 'Trang Chủ',
-            URl: '/'
-        },
-        {
-            val: 'Giới Thiệu',
-            URl: '/introduces',
-            rewrite: "/gioi-thieu"
-        },
-        {
-            val: 'Sản Phẩm',
-            URl: '/DescProducts'
-        },
-        {
-            val: 'Ý Kiến Chuyên Gia',
-            URl: ''
-        },
-        {
-            val: 'Tin Tức',
-            URl: '/News'
-        },
-        {
-            val: 'Liên Hệ',
-            URl: '/Lien-He'
-        }
-    ]
     const [state, setstate] = useState(pathname)
-    // const activeMenu = (item) => {
-    //     setstate(item)
-    // }
     const [stateIcon, setstateIcon] = useState(false)
     const showMenu = (open) => {
         setstateIcon(!open)
@@ -70,13 +40,7 @@ function Header(props) {
                             <div className="wrap_nav">
                                 <nav id="main-nav" className="main-nav">
                                     <ul id="menu-primary-menu" className="menu">
-                                        {/* {
-                                            menu.map((item, index) => {
-                                                return <li key={index} onClick={() => activeMenu(item.val)} className={`menu-item ${state === item.URl ? 'active' : ''} `}>
-                                                    <Link href={item.URl} as={item.rewrite}><span>{item.val}</span></Link>
-                                                </li>
-                                            })
-                                        } */}
+
                                         <Link href="/" as="/"><li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}>Trang Chủ</li></Link>
                                         <Link href="/introduces" as="/gioi-thieu"><li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>Giới Thiệu</li></Link>
                                         <Link href="/DescProducts" as="/chi-tiet"><li className={`menu-item ${state === '/DescProducts' ? 'active' : ''}`}>Sản Phẩm</li></Link>

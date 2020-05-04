@@ -37,7 +37,7 @@
 }
 .text-wrap-box p{
     color: #fff;
-    font-size: .9em;
+    font-size: 1em;
     text-align: justify;
 }
 .btn {
@@ -88,29 +88,13 @@
         width: 30%;
     }
  }
-@media (min-width: 1440px) { 
-    .text-box {
-        width: 50%;
+
+@media (max-width: 880px) { 
+    .swiper-button-prev:after, .swiper-button-next:after {
+        font-size: 1.1em!important;
     }
-    .text-wrap-box {
-        width: 40%!important;
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        left: 0px!important;
+        right: auto;
     }
-    .text-wrap-box h4.titleWow {
-        color: #fff;
-        font-weight: 700;
-        font-size: 2.3em;
-    }
-    .text-wrap-box p {
-        color: #fff;
-        font-size: 1.2em;
-    }
- }
- @media (max-width: 880px) { 
- .swiper-button-prev:after, .swiper-button-next:after {
-    font-size: 1.1em!important;
-}
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-    left: 0px!important;
-    right: auto;
-}
 }

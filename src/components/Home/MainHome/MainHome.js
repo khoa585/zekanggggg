@@ -1,7 +1,7 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import './style.scss'
+import './MainHone.scss'
 function MainHome() {
     const params = {
         navigation: {

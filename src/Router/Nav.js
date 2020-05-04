@@ -6,11 +6,8 @@ import Home from '../components/Home/Home';
 function Nav(props) {
     return (
         <div>
-            <Link href="/Introduces">
-                <div>
+
                     <Header></Header>
-                </div>
-            </Link>
         </div>
     );
 }

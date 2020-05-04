@@ -128,63 +128,6 @@ span.desc_Name {
         font-size: 0.7em;
     }
 }
-@media (min-width: 1400px) { 
-    .active::after {
-        top: 10px!important;
-    }
-    .menu {
-        font-size: 1.1em;
-    }
-    .content-text h6 {
-        font-size: 1.8em;
-    }
-    .content-text span {
-        font-size: 2em;
-    }
-    .meta-inner-wrap {
-        font-size: 1.2em!important;
-    }
-    .nameProduct h6 {
-        font-weight: 600;
-        color: #444444;
-        font-size: 1.2em;
-    }
-    .thumb {
-        height : 18rem;
-        max-height: 18rem;
-    }
-    span.price {
-        font-size: 1.3em;
-    }
-    span.desc_Name {
-        font-size: 1.3em;
-    }
-    .text span {
-        font-size: 1.5em!important;
-    }
-    .date {
-        font-size: 1.2em;
-        color: #fff;
-    }
-    .btn {
-        font-size: 1em;
-    }
-    .showdes button {
-        width: 20%!important;
-    }
-    .footerDres span {
-        font-size: 1.2em!important;
-    }
-    li.footer-menu-item {
-        font-size: 1.2em!important;
-    }
-    .footerContent h4 {
-        font-size: 1.8rem!important;
-    }
-    .footerContent span {
-        font-size: 1.7em!important;
-    }
- }
 
  @media (min-width: 1680px){
     .text-wrap-box p {
