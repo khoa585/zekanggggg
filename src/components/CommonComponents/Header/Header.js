@@ -82,7 +82,7 @@ function Header(props) {
                                         <Link href="/DescProducts" as="/chi-tiet"><li className={`menu-item ${state === '/DescProducts' ? 'active' : ''}`}>Sản Phẩm</li></Link>
                                         <Link href="/" as="/"><li className={`menu-item ${state === '/' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
                                         <Link href="/News" as="/tin-tuc"><li className={`menu-item ${state === '/News' ? 'active' : ''}`}>Tin Tức</li></Link>
-                                        <Link href="/" as="/Lien-He"><li className={`menu-item ${state === '/' ? 'active' : ''}`}>Liên Hệ</li></Link>
+                                        <Link href="/Contact" as="/Lien-He"><li className={`menu-item ${state === '/Contact' ? 'active' : ''}`}>Liên Hệ</li></Link>
                                     </ul>
                                 </nav>
                             </div>
