@@ -34,19 +34,19 @@ app.prepare().then(()=>{
             },
             {
                 route:"/chi-tiet",
-                rewrite:"/DescProducts"
+                rewrite:"/descproducts"
             },
             {
-                route:"/Y-kien-chuyen-gia",
+                route:"/y-kien-chuyen-gia",
                 rewrite:"/experopinion"
             },
             {
                 route:"/tin-tuc",
-                rewrite:"/News"
+                rewrite:"/news"
             },
             {
-                route:"/Lien-He",
-                rewrite:"/Contact"
+                route:"/lien-He",
+                rewrite:"/contact"
             }
         ]
         for(let i =0 ;i< routers.length ;i++){
