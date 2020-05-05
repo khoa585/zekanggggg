@@ -116,7 +116,6 @@ function Contact(props) {
                     </InfoWindow>
                 </Map>
             </div>
-            <div className="distant___"></div>
         </React.Fragment>
     );
 }

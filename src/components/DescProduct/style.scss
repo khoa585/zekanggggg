@@ -79,7 +79,6 @@
     transition: 0.4s;
     justify-content: space-between;
     background: none;
-    border-bottom: 2px solid #d4d4d4;
     text-transform: uppercase;
 }
 span.title-opg {
@@ -99,6 +98,7 @@ span.title-opg {
     max-height : 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    border-bottom: 1px solid #d4d4d4;
 }
 .panel_0{
     max-height : 500px;

@@ -3,7 +3,7 @@ import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsFillStarFill } from "react-icons/bs";
-const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false , evenKey4: false  };
+const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
 function reducer(state, action) {
     switch (action.type) {
         case '1':
@@ -16,6 +16,8 @@ function reducer(state, action) {
             return { evenKey3: !state.evenKey3 };
         case '5':
             return { evenKey4: !state.evenKey4 };
+        case '6':
+            return { evenKey5: !state.evenKey5 };
         default:
             throw new Error();
     }
@@ -56,14 +58,14 @@ function DescProduct(props) {
                                         <img src="../img/products_4.jpg" alt="products_4" className="img-fluid" />
                                     </div>
                                 </Col>
-                                <Col lg={6}  md={6} sm={6} xs={6} className="desc_Prod_4">
+                                <Col lg={6} md={6} sm={6} xs={6} className="desc_Prod_4">
                                     <div className="desc-img-5">
                                         <img src="../img/products_5.jpg" alt="products_5" className="img-fluid" />
                                     </div>
                                 </Col>
                             </Row>
                         </Col>
-                        <Col lg={4}  md={4} sm={4} xs={4} className="desc-pro-col">
+                        <Col lg={4} md={4} sm={4} xs={4} className="desc-pro-col">
                             <div className="desc-product">
                                 <div className="title-desc-prod">
                                     <h6>VITAMIN E  Alantoin VE Ointment</h6>
@@ -104,6 +106,15 @@ function DescProduct(props) {
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button onClick={() => dispatch({ type: '6' })} className={`accordion ${state.evenKey5 ? 'actives' : ''}`}>HƯỚNG DẪN MUA HÀNG</button>
+                                        <div className={`panel ${state.evenKey5 ? 'panel_0' : ''}`}>
+                                            <p>Quý khách có thể mua sản phẩm ZeKang theo 3 phương thức sau:</p>
+                                            <p>1. Truy cập vào website http://zekang.com.vn để tham khảo, lựa chọn sản phẩm cần mua và đặt hàng</p>
+                                            <p>2. Gọi điện trực tiếp đến chúng tôi thông qua số Hotline: 0914 479 866 hay số cố định 024 2284 9090 để được tư vấn mua hàng</p>
+                                            <p>3. Liên hệ các đại lý phân phối gần nhất của chúng tôi để được tư vấn và đặt hàng. Tìm địa chỉ mua hàng gần nhất tại đây</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </Col>
@@ -117,7 +128,12 @@ function DescProduct(props) {
                         <Col lg={3} md={3} sm={3} className="resp">
                             <div className="image-box is-trending has-discount">
                                 <div className="thumb">
-                                    <img src="../img/product_1.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                    <div className="thumbPai">
+                                        <div className="thumb-img-first">
+                                            <img src="../img/pro_1.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                        </div>
+                                        <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                    </div>
                                 </div>
                                 <div className="meta-inner">
                                     <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
@@ -135,7 +151,12 @@ function DescProduct(props) {
                         <Col lg={3} md={3} sm={3} className="resp">
                             <div className="image-box is-trending has-discount">
                                 <div className="thumb">
-                                    <img src="../img/product_2.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                    <div className="thumbPai">
+                                        <div className="thumb-img-first">
+                                            <img src="../img/pro_2.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                        </div>
+                                        <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                    </div>
                                 </div>
                                 <div className="meta-inner">
                                     <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
@@ -153,7 +174,12 @@ function DescProduct(props) {
                         <Col lg={3} md={3} sm={3} className="resp">
                             <div className="image-box is-trending has-discount">
                                 <div className="thumb">
-                                    <img src="../img/product_3.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                    <div className="thumbPai">
+                                        <div className="thumb-img-first">
+                                            <img src="../img/pro_3.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                        </div>
+                                        <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                    </div>
                                 </div>
                                 <div className="meta-inner">
                                     <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
@@ -171,8 +197,11 @@ function DescProduct(props) {
                         <Col lg={3} md={3} sm={3} className="resp">
                             <div className="image-box is-trending has-discount">
                                 <div className="thumb">
-                                    <div className="thumb-img">
-                                        <img src="../img/product_4.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                    <div className="thumbPai">
+                                        <div className="thumb-img-first">
+                                            <img src="../img/pro_4.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                        </div>
+                                        <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
                                     </div>
                                 </div>
                                 <div className="meta-inner">
