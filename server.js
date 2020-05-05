@@ -12,17 +12,12 @@ const { parse } = require('url');
 const cors = require('cors');
 const handle = app.getRequestHandler();
 const route = pathMatch();
-const certsOptionsDev = {
-    key:fs.readFileSync(path.resolve("./cert/privkey.pem"),"utf-8").toString(),
-    cert:fs.readFileSync(path.resolve("./cert/cert.pem"),"utf-8").toString(),
-    ca:fs.readFileSync(path.resolve("./cert/chain.pem"),"utf-8").toString(),
-}
 app.prepare().then(()=>{
     const server  = express();
     server.use(bodyParser.urlencoded({ extended: true }));
     server.use(bodyParser.json());
-    createServer(certsOptionsDev,server).listen(process.env.PORT || 3000,()=>{
-        console.log("App running On  https://localhost:"+ process.env.PORT )
+    server.listen(process.env.PORT || 3000,()=>{
+        console.log("App running On  http://localhost:"+ process.env.PORT )
     })
     server.use("/static", express.static(__dirname + "/static"));
     server.use("/_/static", express.static(__dirname + "/static/bridge/static"));
