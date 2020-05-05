@@ -89,10 +89,6 @@ header#site-header {
     .content-text span {
         @include fontSize(.8em)
     }
-    .btn {
-        @include fontSize(.5em);
-        @include width(inherit)
-    }
     .text-wrap-box h4.titleWow {
         @include fontSize(0.8em)
     }
@@ -283,7 +279,7 @@ header#site-header {
     }
     .btn {
         @include fontSize(.5em);
-        width: 60%!important;
+        width: 50%!important;
     }
     .overlayBottom .text {
         font-size: .7em;

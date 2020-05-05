@@ -25,16 +25,7 @@
     display: flex;
     flex-direction: column;
 }
-.thumb {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 15rem;
-    background: #f7f7f7;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
+
 .meta-inner {
     padding: 5%;
 }
@@ -44,18 +35,8 @@
 .image-box.is-trending.has-discount:hover {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
-.image-box.is-trending.has-discount:hover .hover-img-block{
-    display: none!important;
-}
-.image-box.is-trending.has-discount:hover .hover-img{
-    display: block !important;
-    width: 100%;
-    height: 100%;
-}
-img.img-fluid.d-block.mx-auto.hover-img {
-    position: absolute;
-    display: none!important;
-}
+
+
 .nameProduct {
     padding: 5% 0 0 0;
 }
@@ -71,20 +52,17 @@ img.img-fluid.d-block.mx-auto.hover-img {
 .star{
     color: #97c84e;
 }
-.thumbPai {
+.thumb .thumb-img-first{
+    display: none;
+}
+.thumb {
+    height: 15rem;
     position: relative;
-    z-index: 9;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    overflow: hidden;
 }
-.thumb-img-first {
-    width: 100%;
-    height: 100%;
+.thumb:hover .thumb-img-first{
+    display: block;
 }
-
 .thumb-wrap {
     display: flex;
     width: 100%;
@@ -127,16 +105,71 @@ span.desc_Name {
     .nameProduct h6 ,span.price, .star{
         font-size: 0.9em;
     }
-    .thumb {
-        height: 13rem;
+}
+@media (max-width: 925px) { 
+    .text-wrap-context h4 {
+        font-size: 1.1rem!important;
+    }
+    .text-wrap-box p {
+        font-size: 0.8em!important;
+    }
+    button.btn {
+        font-size: 0.5em !important;
+        width: 60% !important;
+    }
+}
+@media (max-width: 800px) { 
+    .text-wrap-context h4 {
+        font-size: 1rem !important;
+    }
+    .text-wrap-box p {
+        font-size: 0.7em !important;
+    }
+    .text-box {
+        width: 50%!important;
+    }
+    .text-wrap-box {
+        width: 40%!important;
+    }
+    .distant {
+        height: 0px;
+    }
+}
+@media (max-width: 600px) { 
+    button.btn {
+        font-size: 0.5em !important;
+        width: 70% !important;
+    }
+    .back-front-page .swiper-container {
+        height: calc(40vh);
+    }
+    .text-wrap-box {
+        width: 50% !important;
+    }
+    .text-box {
+        width: 60% !important;
+    }
+    
+}
+@media (max-width: 500px) { 
+    button.btn {
+        font-size: 0.5em !important;
+        width: 80% !important;
+    }
+}
+@media (max-width: 450px) { 
+    button.btn {
+        font-size: 0.5em !important;
+        width: 90% !important;
     }
 }
 @media (max-width: 991px) { 
     .thumb {
-        height : 9rem;
-        max-height: 9rem;
+        height: 9rem;
     }
-
+    .text-wrap-box p {
+        font-size: 0.9em;
+    }
     .content-text h6 {
         font-size: 1em;
     }
@@ -179,15 +212,15 @@ span.desc_Name {
  }
  @media (max-width: 1200px) and (min-width: 992px) { 
     .text-wrap-box h4.titleWow {
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+    .thumb {
+        height: 12rem;
     }
     .text-wrap-box p {
-        color: #fff;
-        font-size: .8em;
+        font-size: 1em;
     }
-    .btn {
+    button.btn {
         width: inherit!important;
         font-size: .6em;
     }
@@ -215,27 +248,31 @@ span.desc_Name {
     .content-text {
         height: 100px;
     }
-    .nameProduct h6, span.price, .star {
-        font-size: 0.6em;
-    }
     .thumb {
         height: 7rem;
-        max-height: 7rem;
+    }
+    .nameProduct h6, span.price, .star {
+        font-size: 0.44444em;
+    }
+}
+@media (max-width: 575px) { 
+
+    .nameProduct h6, span.price, .star {
+        font-size: 0.8em!important;
     }
 }
 
 @media (max-width: 700px) { 
-    .resp{
-        max-width: inherit;
-        flex: 0 0 50%;
-        margin-bottom: 10%;
-    }
     .thumb {
-        height: 15rem!important;
-        max-height: 15rem!important;
+        height: 15rem;
     }
     .nameProduct h6, span.price, .star {
-        font-size: 0.8em!important;
+        font-size: 1em;
+    }
+    .container .row .resp{
+        max-width: inherit!important;
+        flex: 0 0 50%!important;
+        margin-bottom: 10%!important;
     }
     .content-text {
         height: 100px;
@@ -258,6 +295,11 @@ span.desc_Name {
         left: auto;
     }
 }
+@media (max-width: 450px) { 
+    .thumb {
+        height: 10rem;
+    }
+}
 @media (max-width: 400px) { 
 
     .meta-inner {
@@ -265,10 +307,6 @@ span.desc_Name {
     }
     .formatProduct {
         display: inherit;
-    }
-    .thumb {
-        height: 12rem!important;
-        max-height: 12rem!important;
     }
     .thumb-img-wrap img {
         max-height: 5rem!important;
@@ -285,7 +323,7 @@ span.desc_Name {
 }
 @media (max-width: 991px){
     .text-wrap-context h4{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     .distant {
         height: 50!important;
