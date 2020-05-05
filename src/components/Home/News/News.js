@@ -74,7 +74,7 @@ function News(props) {
 
                 </Row>
                 <div className="showdes">
-                    <button className="btn-news btn_news">xem Thêm</button>
+                    <button className="btn_new_1 btn_new_2">xem Thêm</button>
                 </div>
             </Container>
             <div className="distant"></div>

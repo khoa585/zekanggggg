@@ -82,7 +82,8 @@
     width: 15%;
     background: #91af77;
 }
- button.btn-news {
+button.btn_new_1 {
+    background: #91af77;
     border: 2px solid #fff;
     overflow: hidden;
     box-sizing: border-box;
@@ -93,14 +94,13 @@
     z-index: 9;
     font-size: .8em;
     text-transform: uppercase;
-    background: #91af77;
     font-weight: 700;
     padding: 10px;
 }
-button.btn-news:hover {
+button.btn_new_1:hover {
     color: white;
 }
-button.btn-news::before {
+button.btn_new_1::before {
     content: "";
     position: absolute;
     background: #7fa035;
@@ -111,13 +111,13 @@ button.btn-news::before {
     left: 0;
     border: none; 
 }
-button.btn_news::before {
+button.btn_new_2::before {
     bottom: 0; 
 }
-button.btn_news:hover::before {
+button.btn_new_2:hover::before {
     height: 100%;
 }
-button.btn-news:focus{
+button.btn_new_1:focus{
     outline: none;
     box-shadow: inherit;
 }
@@ -128,13 +128,13 @@ button.btn-news:focus{
     .btn {
         width: initial!important;
     }
-    button.btn-news {
+    button.btn_new_1  {
         font-size: .6em;
         width: 20%;
     }
 }
 @media (max-width: 450px) { 
-        button.btn-news {
+        button.btn_new_1  {
             font-size: .4em;
             width: 30%;
         }
