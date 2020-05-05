@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Header from '../components/CommonComponents/Header/Header'
 import Home from '../components/Home/Home'
-import Footer from '../components/CommonComponents/Footer/Footer'
-export default function Index() {
+import Footer from '../components/CommonComponents/Footer/Footer';
+import {fetchListProduct} from './../api/products';
+function Index() {
   return (
     <React.StrictMode>
       <Head>
@@ -17,3 +18,12 @@ export default function Index() {
     </React.StrictMode>
   )
 }
+// Index.getInitialProps = async(ctx)=>{
+//   try {
+//       let resultFetch = await fetchListProduct();
+//       console.log(resultFetch.data);
+//   } catch (error) {
+//       console.error(error);
+//   }
+// }
+export default Index ;
