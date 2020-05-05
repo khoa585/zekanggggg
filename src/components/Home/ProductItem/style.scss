@@ -15,7 +15,7 @@
     font-size: 1.4em;
 }
 .content-text span{
-    font-size: 1.5em;
+    font-size: 1.8em;
     position: relative;
     color: #242424;
     overflow: hidden;
@@ -29,21 +29,32 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100%;
-    padding: 10%;
+    height: 15rem;
     background: #f7f7f7;
     position: relative;
     overflow: hidden;
     cursor: pointer;
 }
-.thumb::after {
-    content: '';
-    position: absolute;
-    box-shadow: red;
+.meta-inner {
+    padding: 5%;
 }
-.thumb:hover img{
-    transform: scale(1.1);
-    transition: .5s;
+.image-box.is-trending.has-discount{
+    cursor: pointer;
+}
+.image-box.is-trending.has-discount:hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.image-box.is-trending.has-discount:hover .hover-img-block{
+    display: none!important;
+}
+.image-box.is-trending.has-discount:hover .hover-img{
+    display: block !important;
+    width: 100%;
+    height: 100%;
+}
+.hover-img{
+    position: absolute;
+    display: none!important;
 }
 .nameProduct {
     padding: 5% 0 0 0;
@@ -60,6 +71,20 @@
 .star{
     color: #97c84e;
 }
+.thumbPai {
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.thumb-img-first {
+    width: 100%;
+    height: 100%;
+}
+
 .thumb-wrap {
     display: flex;
     width: 100%;

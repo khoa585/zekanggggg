@@ -93,6 +93,7 @@ function Contact(props) {
                     </form>
                 </div>
             </Container>
+            <div className="distant___"></div>
             <div style={{ height: '500px', width: '100%' }}>
                 <Map
                     google={props.google}
@@ -115,6 +116,7 @@ function Contact(props) {
                     </InfoWindow>
                 </Map>
             </div>
+            <div className="distant___"></div>
         </React.Fragment>
     );
 }

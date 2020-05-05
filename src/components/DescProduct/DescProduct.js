@@ -191,6 +191,7 @@ function DescProduct(props) {
                     </Row>
                 </div>
             </Container>
+            <div className="distant___"></div>
         </React.Fragment>
     );
 }

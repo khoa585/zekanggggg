@@ -1,11 +1,13 @@
 import React from 'react';
-import Nav from '../Router/Nav';
 import Contact from '../components/Contact/Contact';
+import Header from '../components/CommonComponents/Header/Header';
+import Footer from '../components/CommonComponents/Footer/Footer';
 function DescProducts(props) {
     return (
         <div>
-            <Nav></Nav>
-           <Contact></Contact>
+            <Header></Header>
+            <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 }

@@ -1,15 +1,15 @@
 import React from 'react';
+import Experopinion from '../components/Experopinion/Experopinion';
 import Header from '../components/CommonComponents/Header/Header';
 import Footer from '../components/CommonComponents/Footer/Footer';
-import DescProduct from '../components/DescProduct/DescProduct';
-function DescProducts(props) {
+function experopinion(props) {
     return (
         <div>
             <Header></Header>
-            <DescProduct></DescProduct>
+            <Experopinion></Experopinion>
             <Footer></Footer>
         </div>
     );
 }
 
-export default DescProducts;
+export default experopinion;

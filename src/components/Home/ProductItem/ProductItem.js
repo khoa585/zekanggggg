@@ -29,7 +29,12 @@ function ProductItem(props) {
                     <Col lg={3} md={3} sm={3} className="resp">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
-                                <img src="../img/product_1.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                <div className="thumbPai">
+                                    <div className="thumb-img-first">
+                                        <img src="../img/pro_1.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                    </div>
+                                    <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                </div>
                             </div>
                             <div className="meta-inner">
                                 <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
@@ -47,7 +52,12 @@ function ProductItem(props) {
                     <Col lg={3} md={3} sm={3} className="resp">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
-                                <img src="../img/product_2.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                <div className="thumbPai">
+                                    <div className="thumb-img-first">
+                                        <img src="../img/pro_2.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                    </div>
+                                    <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                </div>
                             </div>
                             <div className="meta-inner">
                                 <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
@@ -65,7 +75,12 @@ function ProductItem(props) {
                     <Col lg={3} md={3} sm={3} className="resp">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
-                                <img src="../img/product_3.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                <div className="thumbPai">
+                                    <div className="thumb-img-first">
+                                        <img src="../img/pro_3.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                    </div>
+                                    <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
+                                </div>
                             </div>
                             <div className="meta-inner">
                                 <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
@@ -83,8 +98,11 @@ function ProductItem(props) {
                     <Col lg={3} md={3} sm={3} className="resp">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
-                                <div className="thumb-img">
-                                    <img src="../img/product_4.png" alt="pro_1" className="img-fluid d-block mx-auto" />
+                                <div className="thumbPai">
+                                    <div className="thumb-img-first">
+                                        <img src="../img/pro_4.png" alt="pro_1" className="img-fluid d-block mx-auto hover-img-block" />
+                                    </div>
+                                    <img src="../img/products_2.jpg" alt="pro_1" className="img-fluid d-block mx-auto hover-img" />
                                 </div>
                             </div>
                             <div className="meta-inner">

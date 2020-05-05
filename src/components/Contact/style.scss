@@ -53,6 +53,7 @@ textarea#mission:focus{
 }
 textarea#mission {
     width: 100%;
+    border-radius: 4px;
 }
 .contact-submit{
     input[type="submit"] {
@@ -115,5 +116,68 @@ textarea#mission {
 .contact-name-0{
     span {
         font-weight: 700;
+    }
+}
+@media (max-width: 992px) { 
+    .form-name-contact-1 {
+        display: inline;
+        height: 100%;
+    }
+    .contact-submit {
+        padding: 2% 0;
+    }
+    .contact-name {
+        width: 80%;
+        height: 100%;
+        margin: auto;
+    }
+}
+@media (max-width: 768px) { 
+    .contact-name-0{
+        h6 {
+            font-size: 0.9em;
+        }
+        span {
+            font-size: 0.8em;
+        }
+        p {
+            font-size: 0.8em;
+        }
+    }
+    .contact-title-1 {
+        span{
+            font-size: 1em;
+        }
+    }
+    .contact-title-2{
+        span{
+            font-size: 1em;
+        }
+    }
+}
+@media (max-width: 550px) { 
+    .contact-name-0{
+        h6 {
+            font-size: 0.8em;
+        }
+        span {
+            font-size: 0.7em;
+        }
+        p {
+            font-size: 0.7em;
+        }
+    }
+    .contact-submit input[type="submit"] {
+        font-size: 0.8em;
+    }
+    .contact-title-1 {
+        span{
+            font-size: 0.8em;
+        }
+    }
+    .contact-title-2{
+        span{
+            font-size: 0.8em;
+        }
     }
 }

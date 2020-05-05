@@ -6,6 +6,7 @@ import { BsSearch, BsX } from "react-icons/bs"
 import './Header.scss';
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from 'next/link'
+import ContactFast from '../ContactFast/ContactFast';
 function Header(props) {
     const router = useRouter()
     const pathname = router.pathname;
@@ -40,13 +41,13 @@ function Header(props) {
                             <div className="wrap_nav">
                                 <nav id="main-nav" className="main-nav">
                                     <ul id="menu-primary-menu" className="menu">
-
                                         <Link href="/" as="/"><li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}>Trang Chủ</li></Link>
                                         <Link href="/introduces" as="/gioi-thieu"><li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>Giới Thiệu</li></Link>
                                         <Link href="/DescProducts" as="/chi-tiet"><li className={`menu-item ${state === '/DescProducts' ? 'active' : ''}`}>Sản Phẩm</li></Link>
-                                        <Link href="/" as="/"><li className={`menu-item ${state === '/' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
+                                        <Link href="/experopinion" as="/Y-kien-chuyen-gia"><li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
                                         <Link href="/News" as="/tin-tuc"><li className={`menu-item ${state === '/News' ? 'active' : ''}`}>Tin Tức</li></Link>
                                         <Link href="/Contact" as="/Lien-He"><li className={`menu-item ${state === '/Contact' ? 'active' : ''}`}>Liên Hệ</li></Link>
+                                        <li className="menu-item"><BsSearch></BsSearch></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -54,6 +55,7 @@ function Header(props) {
                     </Row>
                 </Container>
             </header>
+            <ContactFast></ContactFast>
             <header className="header-top_">
                 <Container>
                     <Row>
