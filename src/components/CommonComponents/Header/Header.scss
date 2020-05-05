@@ -255,12 +255,35 @@ header#site-header {
         @include fontSize(0.7)
     }
 }
+@media (max-width: 450px){
+    .btn {
+        width: 80%!important;
+    }
+    .text-wrap-box h4.titleWow {
+        font-size: 0.7em !important;
+    }
+    .text-wrap-box p {
+        font-size: 0.6em !important;
+    }
+}
+@media (max-width: 400px){
+    .btn {
+        width: 90%!important;
+    }
+    .text-wrap-box h4.titleWow {
+        font-size: 0.6em !important;
+    }
+    .text-wrap-box p {
+        font-size: 0.5em !important;
+    }
+}
 @media (max-width: 991px) { 
     .menu {
         @include fontSize(.7em)
     }
     .btn {
-        @include fontSize(.6em)
+        @include fontSize(.5em);
+        width: 60%!important;
     }
     .overlayBottom .text {
         font-size: .7em;

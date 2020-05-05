@@ -123,25 +123,30 @@ span.desc_Name {
 .content-text.news h6{
     color: #fff;
 }
+@media (max-width: 1200px) { 
+    .nameProduct h6 ,span.price, .star{
+        font-size: 0.9em;
+    }
+    .thumb {
+        height: 13rem;
+    }
+}
 @media (max-width: 991px) { 
     .thumb {
-        height : 12rem;
-        max-height: 12rem;
+        height : 9rem;
+        max-height: 9rem;
     }
+
     .content-text h6 {
         font-size: 1em;
-    }
-    .thumb img{
-        max-height: 10rem;
     }
     .content-text span {
         font-size: 1.1em;
     }
     .nameProduct h6 ,span.price, .star{
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
     .thumb-img-wrap {
-        height: 8rem;
         max-height: 12rem;
         display: flex;
         align-items: center;
@@ -213,18 +218,27 @@ span.desc_Name {
     .nameProduct h6, span.price, .star {
         font-size: 0.6em;
     }
+    .thumb {
+        height: 7rem;
+        max-height: 7rem;
+    }
 }
+
 @media (max-width: 700px) { 
     .resp{
         max-width: inherit;
         flex: 0 0 50%;
         margin-bottom: 10%;
     }
-    .content-text {
-        height: 100px;
+    .thumb {
+        height: 15rem!important;
+        max-height: 15rem!important;
     }
     .nameProduct h6, span.price, .star {
-        font-size: 0.8em;
+        font-size: 0.8em!important;
+    }
+    .content-text {
+        height: 100px;
     }
     .text span {
         font-size: 0.8!important;

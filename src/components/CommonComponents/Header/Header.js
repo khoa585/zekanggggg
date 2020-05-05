@@ -80,34 +80,34 @@ function Header(props) {
                     <nav className="navigation">
                         <ul className="navR">
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/" as="/">
                                     <span>Trang Chủ</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/introduces" as="/gioi-thieu">
                                     <span>Giới Thiệu</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/descproducts" as="/chi-tiet">
                                     <span>Sản Phẩm</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/experopinion" as="/y-kien-chuyen-gia">
                                     <span>Ý Kiến Chuyên Gia</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/news" as="/tin-tuc">
                                     <span>Tin Tức</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="navItem">
-                                <a href=" " className="heading">
+                                <Link href="/contact" as="/lien-he">
                                     <span>Liên Hệ</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
