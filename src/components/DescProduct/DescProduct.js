@@ -40,7 +40,7 @@ function DescProduct(props) {
                             <Row>
                                 <Col lg={5} md={5} sm={5} xs={5} className="desc_Prod_1">
                                     <div className="desc-img-1">
-                                        <img src="../img/products_1.jpg" alt="products_1" className="img-fluid" />
+                                        <img src="../img/products_1.JPG" alt="products_1" className="img-fluid" />
                                     </div>
                                     <div className="desc-img-2">
                                         <img src="../img/products_2.jpg" alt="products_2" className="img-fluid" />
