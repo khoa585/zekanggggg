@@ -40,7 +40,7 @@
     font-size: 1em;
     text-align: justify;
 }
-.btn {
+.text-wrap-context button.btn {
     background: none;
     border: 2px solid #fff;
     overflow: hidden;
@@ -55,10 +55,10 @@
     text-transform: uppercase;
     font-weight: 700;
 }
-.btn:hover {
+.text-wrap-context button.btn:hover {
     color: white;
 }
-.btn::before {
+.text-wrap-context button.btn::before {
     content: "";
     position: absolute;
     background: #7fa035;
@@ -69,13 +69,13 @@
     left: 0;
     border: none; 
 }
-.btn_::before {
+.text-wrap-context button.btn_::before {
     bottom: 0; 
 }
-.btn_:hover::before {
+.text-wrap-context button.btn_:hover::before {
     height: 100%;
 }
-.btn:focus{
+.text-wrap-context button.btn:focus{
     outline: none;
     box-shadow: inherit;
 }

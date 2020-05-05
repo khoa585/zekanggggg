@@ -30,7 +30,7 @@ app.prepare().then(()=>{
             },
             {
                 route:"/gioi-thieu",
-                rewrite:"/Introduces"
+                rewrite:"/introduces"
             },
             {
                 route:"/chi-tiet",

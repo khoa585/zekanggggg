@@ -4,7 +4,7 @@ import Introduce from '../components/Introduce/Introduce';
 import Header from "../components/CommonComponents/Header/Header";
 import Footer from "../components/CommonComponents/Footer/Footer";
 import MainHome from '../components/Home/MainHome/MainHome';
-function Introduces(props) {
+function introduces(props) {
     return (
         <div>
                 <Head>
@@ -18,4 +18,4 @@ function Introduces(props) {
     );
 }
 
-export default Introduces;
+export default introduces;
