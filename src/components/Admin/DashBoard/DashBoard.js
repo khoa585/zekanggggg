@@ -5,13 +5,11 @@ import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
     PlusCircleOutlined 
   } from '@ant-design/icons';
 const {Content,Header,Sider} = Layout ;
 const {SubMenu} = Menu ;
-function DashBoard(){
+function DashBoard(props){
     const [collapsed,setCollapsed] = useState(false);
     const [breakpoint,setBreakpoint] =useState(90);
     const toogle = ()=>{
@@ -56,7 +54,7 @@ function DashBoard(){
                 minHeight:1000
                 }}
                 >
-                Content
+                {props.children}
             </Content>
         </Layout>
         </Layout>
