@@ -1,0 +1,107 @@
+.title-experopinion-home::after{
+    content:"\203A";
+    padding: .9%;
+}
+@mixin outline {
+    outline: none;
+}
+.title-experopinion{
+    span{
+        cursor: pointer;
+    }
+}
+.wrap-contai {
+.experopinion-wrap {
+    padding: 5%;
+    box-shadow: 1px 5px 19px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.accordion-experopinion {
+    padding: 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: flex;
+    transition: 0.4s;
+    justify-content: space-between;
+    background: none;
+    background: #f9f8f8;
+    color: #49a347;
+}
+.accordion-experopinion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+}
+.active-experopinion:after {
+    content: "\2212";
+}
+.panel-experopinion {
+    background-color: white;
+    max-height : 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.panel-experopinion p{
+    padding: 2%;
+}
+.active-experopinion{
+background:#ececec;
+  }
+.experopinion-wrap .first-child-context{
+    padding: 0 0 2%;
+}
+}
+.send-wrap{
+    .submit-note input[type="submit"]{
+        width: 100%;
+        padding: 4%;
+        background: #2cb523;
+        border: none;
+        border-radius: 10px 10px 0 0;
+        color: #fff;
+        @include outline
+    }
+    textarea {
+        width: 100%;
+        padding: 4%;
+    }
+    .submit-note input[type="submit"]:focus{
+        @include outline
+    }
+    textarea:focus {
+        @include outline
+    }
+    .submit-note_ input[type="submit"]:focus{
+        @include outline
+    }
+    .input-text input[type="input"]:focus{
+        @include outline
+    }
+    .submit-note_ input[type="submit"]{
+        width: 100%;
+        padding: 4%;
+        background: #232eb5;
+        border: none;
+        border-radius: 0 0  10px 10px;
+        color: #fff;
+        @include outline
+    }
+    .input-text input[type="input"]{
+        width: 100%;
+        margin: 4% 0;
+        padding: 4%;
+    }
+}
+@media (max-width: 767px) { 
+    .title-experopinion {
+        font-size: .8em;
+    }
+    .wrap-contai-send{
+        padding: 10% 0;
+    }
+    .wrap-contai .accordion-experopinion {
+        font-size: 0.8em;
+    }
+}
