@@ -43,7 +43,7 @@ function Header(props) {
                                     <ul id="menu-primary-menu" className="menu">
                                         <Link href="/" as="/"><li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}>Trang Chủ</li></Link>
                                         <Link href="/introduces" as="/gioi-thieu"><li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>Giới Thiệu</li></Link>
-                                        <Link href="/descproducts" as="/chi-tiet"><li className={`menu-item ${state === '/descproducts' ? 'active' : ''}`}>Sản Phẩm</li></Link>
+                                        <Link href="/Products" as="/san-pham"><li className={`menu-item ${state === '/Products' ? 'active' : ''}`}>Sản Phẩm</li></Link>
                                         <Link href="/experopinion" as="/y-kien-chuyen-gia"><li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
                                         <Link href="/news" as="/tin-tuc"><li className={`menu-item ${state === '/news' ? 'active' : ''}`}>Tin Tức</li></Link>
                                         <Link href="/contact" as="/lien-he"><li className={`menu-item ${state === '/contact' ? 'active' : ''}`}>Liên Hệ</li></Link>
@@ -90,7 +90,7 @@ function Header(props) {
                                 </Link>
                             </li>
                             <li className="navItem">
-                                <Link href="/descproducts" as="/chi-tiet">
+                                <Link href="/Products" as="/san-pham">
                                     <span>Sản Phẩm</span>
                                 </Link>
                             </li>

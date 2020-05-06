@@ -37,6 +37,10 @@ app.prepare().then(()=>{
                 rewrite:"/descproducts"
             },
             {
+                route:"/san-pham",
+                rewrite:"/Products"
+            },
+            {
                 route:"/y-kien-chuyen-gia",
                 rewrite:"/experopinion"
             },
