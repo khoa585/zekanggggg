@@ -4,30 +4,6 @@ import './style.scss'
 function News(props) {
     return (
         <React.Fragment>
-            <style jsx>
-                {
-                    `
-                    .thumbPai{
-                        background-image: url(../img/pro_2.png);
-                        height: 100%;
-                        width: 100%;
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                    }
-                    .thumb-img-first{
-                        background-image: url(../img/products_2.jpg);
-                        height: 100%;
-                        width: 100%;
-                        background-position: center;
-                        background-size: cover;
-                        position: absolute;
-                        top: 0;
-                        background-repeat: no-repeat;
-                    }
-                    `
-                }
-            </style>
             <div className="distant"></div>
             <div className="content-text news">
                 <div>

@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss'
 import '../Home/ProductItem/style.scss'
 import { BsFillStarFill } from "react-icons/bs";
+import Link from 'next/link';
 function Newsz(props) {
     return (
         <React.Fragment>
@@ -48,7 +49,7 @@ function Newsz(props) {
                     </Row>
                     <div className="distant_news-1"></div>
                     <Row className="padding-news-note">
-                    <Col lg={5} md={5} sm={5} xs={5}>
+                        <Col lg={5} md={5} sm={5} xs={5}>
                             <div className="img-news-0">
                                 <img src="../img/note_2.jpg" alt="" className="img-fluid d-block mx-auto"></img>
                             </div>
@@ -63,7 +64,7 @@ function Newsz(props) {
                     </Row>
                     <div className="distant_news-1"></div>
                     <Row className="padding-news-note">
-                    <Col lg={5} md={5} sm={5} xs={5}>
+                        <Col lg={5} md={5} sm={5} xs={5}>
                             <div className="img-news-0">
                                 <img src="../img/note_4.jpg" alt="" className="img-fluid d-block mx-auto"></img>
                             </div>
@@ -82,91 +83,99 @@ function Newsz(props) {
                     <span className="title-opg">các sản phẩm bạn có thể quan tâm</span>
                     <div className="distant_news-1"></div>
                     <Row>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                        <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
+                        <Link href="/descproducts" as="/chi-tiet">
+                            <Col lg={3} md={3} sm={3} className="resp">
+                                <div className="image-box is-trending has-discount">
+                                    <div className="thumb">
+                                        <div className="thumbPai">
+                                        </div>
+                                        <div className="thumb-img-first">
+                                        </div>
                                     </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                        <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
-                                    </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                    <div className="meta-inner">
+                                        <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
+                                        <div className="formatProduct">
+                                            <div>
+                                                <span className="price">150.000 đ</span>
+                                            </div>
+                                            <div>
+                                                <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                        <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
+                            </Col>
+                        </Link>
+                        <Link href="/descproducts" as="/chi-tiet">
+                            <Col lg={3} md={3} sm={3} className="resp">
+                                <div className="image-box is-trending has-discount">
+                                    <div className="thumb">
+                                        <div className="thumbPai">
+                                        </div>
+                                        <div className="thumb-img-first">
+                                        </div>
                                     </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                        <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
-                                    </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                    <div className="meta-inner">
+                                        <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
+                                        <div className="formatProduct">
+                                            <div>
+                                                <span className="price">150.000 đ</span>
+                                            </div>
+                                            <div>
+                                                <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
+                            </Col>
+                        </Link>
+                        <Link href="/descproducts" as="/chi-tiet">
+                            <Col lg={3} md={3} sm={3} className="resp">
+                                <div className="image-box is-trending has-discount">
+                                    <div className="thumb">
+                                        <div className="thumbPai">
+                                        </div>
+                                        <div className="thumb-img-first">
+                                        </div>
+                                    </div>
+                                    <div className="meta-inner">
+                                        <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
+                                        <div className="formatProduct">
+                                            <div>
+                                                <span className="price">150.000 đ</span>
+                                            </div>
+                                            <div>
+                                                <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Link>
+                        <Link href="/descproducts" as="/chi-tiet">
+                            <Col lg={3} md={3} sm={3} className="resp">
+                                <div className="image-box is-trending has-discount">
+                                    <div className="thumb">
+                                        <div className="thumbPai">
+                                        </div>
+                                        <div className="thumb-img-first">
+                                        </div>
+                                    </div>
+                                    <div className="meta-inner">
+                                        <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
+                                        <div className="formatProduct">
+                                            <div>
+                                                <span className="price">150.000 đ</span>
+                                            </div>
+                                            <div>
+                                                <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Link>
+                    </Row>
                 </div>
             </Container>
             <div className="distant_news"></div>

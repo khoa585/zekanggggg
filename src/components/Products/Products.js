@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsFillStarFill } from "react-icons/bs";
-import '../Home/ProductItem/style.scss'
+import '../Home/ProductItem/style.scss';
+import Link from 'next/link';
 function Products(props) {
     return (
         <React.Fragment>
@@ -13,90 +14,98 @@ function Products(props) {
                 </div>
                 <div className="distant___"></div>
                 <Row>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                            <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
+                    <Link href="/descproducts" as="/chi-tiet">
+                        <Col lg={3} md={3} sm={3} className="resp">
+                            <div className="image-box is-trending has-discount">
+                                <div className="thumb">
+                                    <div className="thumbPai">
                                     </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                    <div className="thumb-img-first">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                            <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
-                                    </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                <div className="meta-inner">
+                                    <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
+                                    <div className="formatProduct">
+                                        <div>
+                                            <span className="price">150.000 đ</span>
+                                        </div>
+                                        <div>
+                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                            <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
+                        </Col>
+                    </Link>
+                    <Link href="/descproducts" as="/chi-tiet">
+                        <Col lg={3} md={3} sm={3} className="resp">
+                            <div className="image-box is-trending has-discount">
+                                <div className="thumb">
+                                    <div className="thumbPai">
                                     </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                    <div className="thumb-img-first">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={3} md={3} sm={3} className="resp">
-                        <div className="image-box is-trending has-discount">
-                            <div className="thumb">
-                                <div className="thumbPai">
-                                </div>
-                                <div className="thumb-img-first">
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price">150.000 đ</span>
-                                    </div>
-                                    <div>
-                                        <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                <div className="meta-inner">
+                                    <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
+                                    <div className="formatProduct">
+                                        <div>
+                                            <span className="price">150.000 đ</span>
+                                        </div>
+                                        <div>
+                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
+                        </Col>
+                    </Link>
+                    <Link href="/descproducts" as="/chi-tiet">
+                        <Col lg={3} md={3} sm={3} className="resp">
+                            <div className="image-box is-trending has-discount">
+                                <div className="thumb">
+                                    <div className="thumbPai">
+                                    </div>
+                                    <div className="thumb-img-first">
+                                    </div>
+                                </div>
+                                <div className="meta-inner">
+                                    <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
+                                    <div className="formatProduct">
+                                        <div>
+                                            <span className="price">150.000 đ</span>
+                                        </div>
+                                        <div>
+                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Link>
+                    <Link href="/descproducts" as="/chi-tiet">
+                        <Col lg={3} md={3} sm={3} className="resp">
+                            <div className="image-box is-trending has-discount">
+                                <div className="thumb">
+                                    <div className="thumbPai">
+                                    </div>
+                                    <div className="thumb-img-first">
+                                    </div>
+                                </div>
+                                <div className="meta-inner">
+                                    <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
+                                    <div className="formatProduct">
+                                        <div>
+                                            <span className="price">150.000 đ</span>
+                                        </div>
+                                        <div>
+                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Link>
                 </Row>
             </Container>
             <div className="distant___"></div>
