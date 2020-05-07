@@ -1,4 +1,5 @@
 import DashBoard from './../../components/Admin/DashBoard/DashBoard';
+import {auth,withAuthSync} from './../../untils/auth';
 function Index(){
     return (
         <DashBoard >
@@ -6,4 +7,10 @@ function Index(){
         </DashBoard>
     )
 }
-export default Index;
+// Index.getInitialProps = async (context) =>{
+//     let {ctx} = context;
+//     let token = auth(ctx);
+    
+//     return {token} ;
+// }
+export default withAuthSync(Index);
