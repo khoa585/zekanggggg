@@ -13,4 +13,4 @@ function Index(){
     
 //     return {token} ;
 // }
-export default withAuthSync(Index);
+ export default withAuthSync(Index);

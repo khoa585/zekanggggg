@@ -3,12 +3,12 @@ import cookies from 'next-cookies';
 export const auth = (ctx)=>{
     const {token} = cookies(ctx);
     if (ctx.req && !token) {
-        ctx.res.writeHead(302, { Location: '/login' })
+        ctx.res.writeHead(302, { Location: '/admin/login' })
         ctx.res.end()
         return
       }
       if (!token) {
-        Router.push('/login')
+        Router.push('/admin/login')
       }
       return token
 }
