@@ -41,7 +41,7 @@ function DashBoard(props) {
                 style={{ minHeight: "100%" }}
             >
                 <div className="logo">
-                    <Link href="/" as="/"><img src="../img/logo.png" alt="cover" className="img-fluid" /></Link>
+                    <Link href="/" as="/"><img src="../../img/logo.png" alt="cover" className="img-fluid" /></Link>
                 </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={({ key }) => { router.push(key) }}>
                     <SubMenu icon={<UserOutlined />} title={"Sản Phẩm"} key={"1"}>
