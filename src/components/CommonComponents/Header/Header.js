@@ -32,7 +32,7 @@ function Header(props) {
                             <div id="site-logo" className="clearFix">
                                 <div className="site-logo-inner">
                                     <a href=" " title="Logo" className="main-logo">
-                                        <img src="../img/logo.png" alt="cover" className="img-fluid" />
+                                    <Link href="/" as="/"><img src="../img/logo.png" alt="cover" className="img-fluid" /></Link>
                                     </a>
                                 </div>
                             </div>

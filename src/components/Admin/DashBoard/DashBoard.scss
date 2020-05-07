@@ -19,3 +19,23 @@
   .site-layout .site-layout-background {
     background: #fff;
   }
+header.ant-layout-header.site-layout-background {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+span.ant-avatar.ant-dropdown-trigger.triggers.ant-avatar-circle.ant-avatar-icon {
+  margin: 0 24px;
+  cursor: pointer;
+}
+.ant-layout-sider-children{
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    height: auto;
+    margin: 0;
+  }
+}

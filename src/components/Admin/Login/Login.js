@@ -11,11 +11,10 @@ function Login(props) {
         e.preventDefault();
         console.log(userRef.current.value)
         let data = await loginUser(userRef.current.value,passRef.current.value);
-        if(data.status==200&& data.data?.status=="success"){
+        if(data.status==200 && data.data?.status=="success"){
             toast.success("Đăng Nhập Thành Công");
             document.cookie= "token=" + data.data.data.token 
             Router.push("/admin");
-
         }else{
             toast.error("Đăng Nhập Không Thành Công")
         }
