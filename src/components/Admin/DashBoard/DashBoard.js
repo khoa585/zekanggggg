@@ -1,5 +1,6 @@
 import React ,{useState} from 'react';
-import './DashBoard.scss'
+import './DashBoard.scss';
+import { useRouter } from 'next/router'
 import {Layout,Menu} from 'antd';
 import {
     MenuUnfoldOutlined,
@@ -11,12 +12,13 @@ import {
   } from '@ant-design/icons';
 const {Content,Header,Sider} = Layout ;
 const {SubMenu} = Menu ;
-function DashBoard(){
+function DashBoard(props){
     const [collapsed,setCollapsed] = useState(false);
     const [breakpoint,setBreakpoint] =useState(90);
     const toogle = ()=>{
         setCollapsed(!collapsed);
     }
+    const router = useRouter()
     return (
         <Layout >
             <Sider trigger={null} collapsible collapsed={collapsed} breakpoint="lg" collapsedWidth={breakpoint} width={250}
@@ -30,10 +32,12 @@ function DashBoard(){
                 style={{minHeight:"100%"}}
                 >
                 <div className="logo" />
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                    <SubMenu icon={<UserOutlined />} title={"Sản Phẩm"}>
-                        <Menu.Item key="1" icon={<PlusCircleOutlined />}>Danh Sách Sản Phẩm</Menu.Item>
-                        <Menu.Item key="2" icon={<PlusCircleOutlined />}>Thêm Sản Phẩm</Menu.Item>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={({key})=>{router.push(key)}}>
+                    <SubMenu icon={<UserOutlined />} title={"Sản Phẩm"} key={"1"}>
+                        <Menu.Item  icon={<PlusCircleOutlined />} key="/admin/product">
+                                Danh Sách Sản Phẩm
+                        </Menu.Item>
+                        <Menu.Item key="/admin/product" icon={<PlusCircleOutlined />}>Thêm Sản Phẩm</Menu.Item>
                     </SubMenu>
                     <SubMenu icon={<UserOutlined />} title={"Tin Tức"}>
                         <Menu.Item key="3" icon={<PlusCircleOutlined />}>Danh Sách Tin Tức</Menu.Item>
@@ -56,7 +60,7 @@ function DashBoard(){
                 minHeight:1000
                 }}
                 >
-                Content
+                {props.children}
             </Content>
         </Layout>
         </Layout>
