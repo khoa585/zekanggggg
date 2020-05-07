@@ -4,12 +4,11 @@ import Header from '../components/CommonComponents/Header/Header'
 import Footer from '../components/CommonComponents/Footer/Footer';
 function products(props) {
     return (
-        <div>
+        <React.Fragment>
             <Header></Header>
             <Products></Products>
             <Footer></Footer>
-
-        </div>
+        </React.Fragment>
     );
 }
 

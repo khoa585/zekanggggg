@@ -120,5 +120,5 @@ function Contact(props) {
     );
 }
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyC1O2icKFEhF4N2DaCF2fAVZ3lP4I00WBA')
+    apiKey: ('AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes')
 })(Contact);

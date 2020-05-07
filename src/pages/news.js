@@ -4,11 +4,11 @@ import Header from '../components/CommonComponents/Header/Header'
 import Footer from '../components/CommonComponents/Footer/Footer';
 function News(props) {
     return (
-        <div>
+        <React.Fragment>
              <Header></Header>
             <Newsz></Newsz>
             <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 

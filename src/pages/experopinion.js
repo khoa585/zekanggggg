@@ -4,11 +4,11 @@ import Header from '../components/CommonComponents/Header/Header';
 import Footer from '../components/CommonComponents/Footer/Footer';
 function experopinion(props) {
     return (
-        <div>
+        <React.Fragment>
             <Header></Header>
             <Experopinion></Experopinion>
             <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 

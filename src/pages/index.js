@@ -6,7 +6,7 @@ import HeaderTag from './../components/CommonComponents/HeaderTag/HeaderTag';
 import {fetchListProduct} from './../api/products';
 function Index(props) {
   return (
-    <React.StrictMode>
+    <React.Fragment>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="../favicon.ico" />
@@ -17,7 +17,7 @@ function Index(props) {
         <Home></Home>
         <Footer></Footer>
       </main>
-    </React.StrictMode>
+    </React.Fragment>
   )
 }
 // Index.getInitialProps = async(ctx)=>{

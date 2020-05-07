@@ -38,7 +38,7 @@ app.prepare().then(()=>{
             },
             {
                 route:"/san-pham",
-                rewrite:"/Products"
+                rewrite:"/products"
             },
             {
                 route:"/y-kien-chuyen-gia",

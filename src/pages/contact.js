@@ -4,11 +4,11 @@ import Header from '../components/CommonComponents/Header/Header';
 import Footer from '../components/CommonComponents/Footer/Footer';
 function DescProducts(props) {
     return (
-        <div>
+        <React.Fragment>
             <Header></Header>
             <Contact></Contact>
             <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 

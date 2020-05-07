@@ -28,10 +28,11 @@
     background: none;
     background: #f9f8f8;
     color: #49a347;
+    font-weight: 600;
 }
 .accordion-experopinion:after {
     content: '\002B';
-    color: #777;
+    color: #70a36f;
     font-weight: bold;
 }
 .active-experopinion:after {
@@ -47,7 +48,7 @@
     padding: 2%;
 }
 .active-experopinion{
-background:#ececec;
+background:#e0e0e0;
   }
 .experopinion-wrap .first-child-context{
     padding: 0 0 2%;
@@ -66,6 +67,7 @@ background:#ececec;
     textarea {
         width: 100%;
         padding: 4%;
+        margin: 4% 0;
     }
     .submit-note input[type="submit"]:focus{
         @include outline

@@ -4,11 +4,11 @@ import Footer from '../components/CommonComponents/Footer/Footer';
 import Reason from '../components/Reason/Reason';
 function reason(props) {
     return (
-        <div>
+        <React.Fragment>
             <Header></Header>
             <Reason></Reason>
             <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 

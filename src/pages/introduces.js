@@ -6,7 +6,7 @@ import Footer from "../components/CommonComponents/Footer/Footer";
 import MainHome from '../components/Home/MainHome/MainHome';
 function introduces(props) {
     return (
-        <div>
+        <React.Fragment>
                 <Head>
                     <title>Về Công Ty chúng Tôi</title>
                 </Head>
@@ -14,7 +14,7 @@ function introduces(props) {
                 <MainHome></MainHome>
                 <Introduce></Introduce>
                 <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 

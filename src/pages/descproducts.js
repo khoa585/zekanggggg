@@ -4,11 +4,11 @@ import Footer from '../components/CommonComponents/Footer/Footer';
 import DescProduct from '../components/DescProduct/DescProduct';
 function DescProducts(props) {
     return (
-        <div>
+        <React.Fragment>
             <Header></Header>
             <DescProduct></DescProduct>
             <Footer></Footer>
-        </div>
+        </React.Fragment>
     );
 }
 
