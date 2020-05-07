@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Input, Button, Upload } from 'antd';
+import { Input, Button, Upload ,Breadcrumb ,InputNumber ,Rate} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+const { TextArea } = Input;
 import './style.scss';
 function AddProduct(props) {
 
@@ -17,21 +18,26 @@ function AddProduct(props) {
 
     return (
         <Container className="contai-add">
+            <Breadcrumb>
+                <Breadcrumb.Item>Admin</Breadcrumb.Item>
+                <Breadcrumb.Item>Sản Phẩm</Breadcrumb.Item>
+                <Breadcrumb.Item>Thêm Sản Phẩm</Breadcrumb.Item>
+            </Breadcrumb>
             <div>
                 <span>Tên sản phẩm</span><br />
                 <Input placeholder="Tên sản phẩm" />
             </div>
             <div>
                 <span>Giá sản phẩm</span><br />
-                <Input placeholder="Giá sản phẩm" />
+                <InputNumber defaultValue={0}  style={{padding:0,width:200}}/>
             </div>
             <div>
                 <span>Sao</span><br />
-                <Input placeholder="Sao" />
+                <Rate defaultValue={5} />
             </div>
             <div>
                 <span>Chi tiết sản phẩm</span><br />
-                <Input placeholder="Chi tiết sản phẩm" />
+                <TextArea rows={4} />
             </div>
             <div>
                 <span>Ảnh</span><br />
@@ -43,23 +49,23 @@ function AddProduct(props) {
             </div>
             <div>
                 <span>Thành phần</span><br />
-                <Input placeholder="Thành phần" />
+                <TextArea rows={2} />
             </div>
             <div>
                 <span>Cách sử dụng</span><br />
-                <Input placeholder="Cách sử dụng" />
+                <TextArea rows={2} />
             </div>
             <div>
                 <span>Chú ý</span><br />
-                <Input placeholder="Chú ý" />
+                <TextArea rows={2} />
             </div>
             <div>
                 <span>Hạn sử dụng</span><br />
-                <Input placeholder="Hạn sử dụng" />
+                <TextArea rows={2} />
             </div>
             <div>
                 <span>Đánh giá</span><br />
-                <Input placeholder="Đánh giá" />
+                <TextArea rows={2} />
             </div>
             <div className="submit">
                 <Button type="primary">Submit</Button>
