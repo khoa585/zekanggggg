@@ -1,21 +1,73 @@
-import React from 'react';
+import React ,{useState ,useRef} from 'react';
 import { Container } from 'react-bootstrap';
 import { Input, Button, Upload ,Breadcrumb ,InputNumber ,Rate} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import {fetchAddProduct} from './../../../api/products';
+import {toast} from 'react-toastify';
+import Router from 'next/router'
 const { TextArea } = Input;
 import './style.scss';
 function AddProduct(props) {
-
-    const fileList = [
-
-    ];
-
+    const [fileList,setFileList] = useState([]);
     const props2 = {
         listType: 'picture',
-        defaultFileList: [...fileList],
+        FileList: [...fileList],
         className: 'upload-list-inline',
+        action:'http://52.255.164.213:8000/upload',   
     };
-
+    const nameRef = useRef("");
+    const priceRef = useRef(0);
+    const rateRef = useRef(5);
+    const descriptionsRef= useRef("");
+    const ingredientsRef= useRef("");
+    const usageRef = useRef("");
+    const heedRef = useRef("");
+    const expirydateRef = useRef("");
+    const evaluationRef = useRef("");
+    const onChangeUpload=(info)=>{
+        let filesList=[...info.fileList];
+        filesList = filesList.map((file)=>{
+            if (file.response) {
+                // Component will show file.url as link
+                file.url = file.response.data.url;
+              }
+              return file;
+        })
+        setFileList(filesList);
+    }
+    const onAddProduct =async ()=>{
+        let images = fileList.map(file=>{
+            return file.url ;
+        })
+        let data = {
+            name:nameRef.current.state.value,
+            price:priceRef.current.state.value ,
+            images:images,
+            start:rateRef.current.state.value ,
+            descriptions:descriptionsRef.current.state.value,
+            ingredients:ingredientsRef.current.state.value,
+            usage:usageRef.current.state.value,
+            heed:heedRef.current.state.value,
+            expirydate:expirydateRef.current.state.value,
+            evaluation:evaluationRef.current.state.value
+        }
+        let resultAdd= await fetchAddProduct(data);
+        if(resultAdd.status==200 && resultAdd.data?.status=="success"){
+            toast.success("Tạo Thành Công Sản Phẩm");
+            nameRef.current.state.value= "";
+            priceRef.current.state.value=0;
+            rateRef.current.state.value=5 ;
+            setFileList([]);
+            descriptionsRef.current.state.value="";
+            ingredientsRef.current.state.value=""
+            expirydateRef.current.state.value=""
+            evaluationRef.current.state.value=""
+            Router.push("/admin/product");
+        }
+        else {
+            toast.error("Có Lỗi Xảy Ra Khi Tạo");
+        }
+    }
     return (
         <Container className="contai-add">
             <Breadcrumb>
@@ -25,23 +77,23 @@ function AddProduct(props) {
             </Breadcrumb>
             <div>
                 <span>Tên sản phẩm</span><br />
-                <Input placeholder="Tên sản phẩm" />
+                <Input value={nameRef.current.value??nameRef.current.state?.value} ref={nameRef} />
             </div>
             <div>
                 <span>Giá sản phẩm</span><br />
-                <InputNumber defaultValue={0}  style={{padding:0,width:200}}/>
+                <InputNumber defaultValue={0}  style={{padding:0,width:200}} ref={priceRef}/>
             </div>
             <div>
                 <span>Sao</span><br />
-                <Rate defaultValue={5} />
+                <Rate ref={rateRef}  defaultValue={5}/>
             </div>
             <div>
                 <span>Chi tiết sản phẩm</span><br />
-                <TextArea rows={4} />
+                <TextArea rows={4} ref={descriptionsRef} />
             </div>
             <div>
                 <span>Ảnh</span><br />
-                <Upload {...props2}>
+                <Upload {...props2} onChange={onChangeUpload}  >
                     <Button>
                         <UploadOutlined /> Upload
                     </Button>
@@ -49,26 +101,26 @@ function AddProduct(props) {
             </div>
             <div>
                 <span>Thành phần</span><br />
-                <TextArea rows={2} />
+                <TextArea rows={2} ref={ingredientsRef}/>
             </div>
             <div>
                 <span>Cách sử dụng</span><br />
-                <TextArea rows={2} />
+                <TextArea rows={2} ref={usageRef} />
             </div>
             <div>
                 <span>Chú ý</span><br />
-                <TextArea rows={2} />
+                <TextArea rows={2} ref={heedRef}/>
             </div>
             <div>
-                <span>Hạn sử dụng</span><br />
-                <TextArea rows={2} />
+                <span>Hàm Lượng Và Hạn sử dụng</span><br />
+                <TextArea rows={2} ref={expirydateRef} />
             </div>
             <div>
                 <span>Đánh giá</span><br />
-                <TextArea rows={2} />
+                <TextArea rows={2} ref={evaluationRef}/>
             </div>
             <div className="submit">
-                <Button type="primary">Submit</Button>
+                <Button type="primary" onClick={onAddProduct}>Thêm Sản Phẩm</Button>
             </div>
         </Container>
     );

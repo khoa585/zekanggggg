@@ -6,3 +6,6 @@ export const fetchListProduct=(numberitem)=>{
         numberitem:NUMBER_ITEM
     })
 }
+export const fetchAddProduct= (data)=>{
+    return axios.post("/product/add",{...data})
+}
