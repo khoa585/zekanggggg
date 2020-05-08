@@ -9,11 +9,11 @@ const bindMiddleware = middleware => {
     }
     return applyMiddleware(...middleware)
 }
-function configureStore() {
+function configureStore(initialSate) {
     const sagaMiddleware = createSagaMiddleware()
     const store = createStore(
       rootReducer,
-      {},
+      initialSate,
       bindMiddleware([sagaMiddleware])
     )
     store.sagaTask = sagaMiddleware.run(rootSaga)
