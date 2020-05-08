@@ -1,18 +1,14 @@
-import React ,{useState ,useRef} from 'react';
+import React ,{useState ,useRef,useEffect} from 'react';
 import { Container } from 'react-bootstrap';
 import { Input, Button, Upload ,Breadcrumb ,InputNumber ,Rate} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import {fetchAddProduct} from './../../../api/products';
+import {v4 as uuid4} from 'uuid';
 import {toast} from 'react-toastify';
 import Router from 'next/router'
 const { TextArea } = Input;
 export default function DetialProduct(props) {
-    const props2 = {
-        listType: 'picture',
-        FileList: [],
-        className: 'upload-list-inline',
-        action:'http://52.255.164.213:8000/upload',   
-    };
+    const [fileList,setFileList] = useState([]);
     const nameRef = useRef(props.name);
     const priceRef = useRef(props.price);
     const rateRef = useRef(props.start);
@@ -22,6 +18,25 @@ export default function DetialProduct(props) {
     const heedRef = useRef(props.heed);
     const expirydateRef = useRef(props.expirydate);
     const evaluationRef = useRef(props.evaluation);
+    const props2 = {
+        listType: 'picture',
+        FileList: [...fileList],
+        className: 'upload-list-inline',
+        action:'http://52.255.164.213:8000/upload',   
+    };
+    useEffect(()=>{
+        let listFile= props.images.map(file=>{
+            let options = {
+                uid:`${uuid4()}`,
+                name:file,
+                status:'done',
+                url:file
+            }
+            return options ;
+        })
+        console.log(listFile);
+        setFileList(listFile);
+    },[])
     return (
         <Container className="contai-add">
             <Breadcrumb>
@@ -43,11 +58,11 @@ export default function DetialProduct(props) {
             </div>
             <div>
                 <span>Chi tiết sản phẩm</span><br />
-                <TextArea rows={4} ref={descriptionsRef}  defaultValue={descriptionsRef.current}/>
+                <TextArea rows={4} ref={descriptionsRef}  defaultValue={descriptionsRef.current} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Ảnh</span><br />
-                <Upload {...props2}   >
+                <Upload {...props2} FileList={ [...fileList]}  >
                     <Button>
                         <UploadOutlined /> Upload
                     </Button>
@@ -55,11 +70,11 @@ export default function DetialProduct(props) {
             </div>
             <div>
                 <span>Thành phần</span><br />
-                <TextArea rows={2} ref={ingredientsRef} defaultValue={ingredientsRef.current}/>
+                <TextArea rows={2} ref={ingredientsRef} defaultValue={ingredientsRef.current} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Cách sử dụng</span><br />
-                <TextArea rows={2} ref={usageRef} defaultValue={usageRef.current}/>
+                <TextArea rows={2} ref={usageRef} defaultValue={usageRef.current} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Chú ý</span><br />
@@ -67,11 +82,11 @@ export default function DetialProduct(props) {
             </div>
             <div>
                 <span>Hàm Lượng Và Hạn sử dụng</span><br />
-                <TextArea rows={2} ref={expirydateRef} defaultValue={expirydateRef.current} />
+                <TextArea rows={2} ref={expirydateRef} defaultValue={expirydateRef.current} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Đánh giá</span><br />
-                <TextArea rows={2} ref={evaluationRef}/>
+                <TextArea rows={2} ref={evaluationRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div className="submit">
                 <Button type="primary">Cập Nhật sản Phẩm</Button>

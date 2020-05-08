@@ -26,6 +26,7 @@ function AddProduct(props) {
     const evaluationRef = useRef("");
     const onChangeUpload=(info)=>{
         let filesList=[...info.fileList];
+        console.log(filesList);
         filesList = filesList.map((file)=>{
             if (file.response) {
                 // Component will show file.url as link
@@ -89,7 +90,7 @@ function AddProduct(props) {
             </div>
             <div>
                 <span>Chi tiết sản phẩm</span><br />
-                <TextArea rows={4} ref={descriptionsRef} />
+                <TextArea rows={4} ref={descriptionsRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Ảnh</span><br />
@@ -101,23 +102,23 @@ function AddProduct(props) {
             </div>
             <div>
                 <span>Thành phần</span><br />
-                <TextArea rows={2} ref={ingredientsRef}/>
+                <TextArea rows={2} ref={ingredientsRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Cách sử dụng</span><br />
-                <TextArea rows={2} ref={usageRef} />
+                <TextArea rows={2} ref={usageRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Chú ý</span><br />
-                <TextArea rows={2} ref={heedRef}/>
+                <TextArea rows={2} ref={heedRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Hàm Lượng Và Hạn sử dụng</span><br />
-                <TextArea rows={2} ref={expirydateRef} />
+                <TextArea rows={2} ref={expirydateRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div>
                 <span>Đánh giá</span><br />
-                <TextArea rows={2} ref={evaluationRef}/>
+                <TextArea rows={2} ref={evaluationRef} style={{whiteSpace:"pre-line"}}/>
             </div>
             <div className="submit">
                 <Button type="primary" onClick={onAddProduct}>Thêm Sản Phẩm</Button>
