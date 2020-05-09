@@ -51,8 +51,8 @@ function DashBoard(props) {
                         <Menu.Item key="/admin/product/add" icon={<PlusCircleOutlined />}>Thêm Sản Phẩm</Menu.Item>
                     </SubMenu>
                     <SubMenu icon={<UserOutlined />} title={"Tin Tức"}>
-                        <Menu.Item key="3" icon={<PlusCircleOutlined />}>Danh Sách Tin Tức</Menu.Item>
-                        <Menu.Item key="4" icon={<PlusCircleOutlined />}>Thêm Tin Tức</Menu.Item>
+                        <Menu.Item key="/admin/news" icon={<PlusCircleOutlined />}>Danh Sách Tin Tức</Menu.Item>
+                        <Menu.Item key="/admin/news/add" icon={<PlusCircleOutlined />}>Thêm Tin Tức</Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>
