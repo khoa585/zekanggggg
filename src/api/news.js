@@ -13,3 +13,9 @@ export const fetchListNews = (page=PAGE_DEFAULT,numberitem=NUMBER_ITEM)=>{
 export const fetchGetDetialNew = (id)=>{
     return axios.get(`/news/detial/${id}`);
 }
+export const fetchUpdateNews = (data)=>{
+    return axios.post("/news/update",{...data})
+}
+export const fetchDeleteNews = (id)=>{
+    return axios.post("/news/delete",{id})
+}
