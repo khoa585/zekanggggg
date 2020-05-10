@@ -1,5 +1,6 @@
 import {all} from 'redux-saga/effects';
 import ProductsSaga from './products';
+import NewsSaga from './news';
 function* hello(){
     yield console.log("Xin Chào");
 }
@@ -7,6 +8,7 @@ function* hello(){
  export default function * index(){
     yield all([
         hello(),
-        ProductsSaga()
+        ProductsSaga(),
+        NewsSaga()
     ])
 }

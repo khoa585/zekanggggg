@@ -3,16 +3,16 @@ import dynamic from 'next/dynamic';
 import { Input, Button, Upload ,Breadcrumb ,InputNumber ,Rate} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { Container } from 'react-bootstrap';
-import {fetchAddNews} from './../../../api/news';
+import {fetchAddNews} from '../../../api/news';
 import {toast} from 'react-toastify';
-import Router from 'next/router'
-const Ckeditor = dynamic(()=>import("./../../CommonComponents/Ckeditor/Ckeditor"),{
+import Router from 'next/router';
+const { TextArea } = Input;
+const Ckeditor = dynamic(()=>import("../../CommonComponents/Ckeditor/Ckeditor"),{
     ssr:false
 })
 import './style.scss';
-const { TextArea } = Input;
-export default function AddNews() {
-    const [content,setContent] = useState("");
+export default function Detial(props){
+    const [content,setContent] = useState(props.html);
     const titleRef = useRef();
     const desRef = useRef();
     const [fileList,setFileList] = useState([]);
@@ -24,6 +24,9 @@ export default function AddNews() {
     };
     const onEditorChange = (evt)=>{
         setContent(evt.editor.getData());
+    }
+    const onUpdateNews =()=>{
+
     }
     const onChangeUpload=(info)=>{
         let filesList=[...info.fileList];
@@ -37,22 +40,7 @@ export default function AddNews() {
         })
         setFileList(filesList);
     }
-    const onAddNews = async()=>{
-        let data = {
-            title:titleRef.current.state.value,
-            description:desRef.current.state.value,
-            image:fileList[0]?.url,
-            html:content
-        }
-        let resultAdd= await fetchAddNews(data);
-        if(resultAdd.status==200 && resultAdd.data?.status=="success"){
-            toast.success("Tạo Thành Công Sản Phẩm");
-            Router.push("/admin/news");
-        }else {
-            toast.error("Có Lỗi Xảy Ra Khi Tạo");
-        }
-    }
-    return (
+    return(
         <Container className="contai-add">
             <Breadcrumb>
                 <Breadcrumb.Item>Admin</Breadcrumb.Item>
@@ -61,7 +49,7 @@ export default function AddNews() {
             </Breadcrumb>
             <div>
                 <span>Tiêu Đề</span><br />
-                <Input  ref={titleRef} />
+                <Input  ref={titleRef}  value={props?.title}/>
             </div>
             <div>
                 <span>Mô Tả</span><br />
@@ -83,7 +71,7 @@ export default function AddNews() {
                 />
             </div>
             <div className="submit">
-                <Button type="primary" onClick={onAddNews}>Thêm Tin Tức</Button>
+                <Button type="primary" onClick={onUpdateNews}>Cập Nhật Tin Tức</Button>
             </div>
         </Container>
     )
