@@ -31,6 +31,7 @@ function AddProduct(props) {
         })
         setFileList(filesList);
     }
+    console.log(fileList)
     const rateRef = useRef(5);
     const images = fileList.map(file => {
         return file.url;
@@ -42,11 +43,9 @@ function AddProduct(props) {
     }
     return (
         <Container className="contai-add">
-            <Breadcrumb>
-                {/* <Link href="/admin"><Breadcrumb.Item>Admin</Breadcrumb.Item></Link>
+                <Link href="/admin"><Breadcrumb.Item>Admin</Breadcrumb.Item></Link>
                 <Link href="/admin/product"><Breadcrumb.Item>Sản Phẩm</Breadcrumb.Item></Link>
-                <Breadcrumb.Item>Thêm Sản Phẩm</Breadcrumb.Item> */}
-            </Breadcrumb>
+                <Breadcrumb.Item className="name_P">Thêm Sản Phẩm</Breadcrumb.Item>
             <Formik
                 initialValues={{
                     nameProduct: '',
@@ -110,7 +109,7 @@ function AddProduct(props) {
                         <div>
                             <Form onSubmit={handleSubmit}>
                                 <div>
-                                    <lable htmlFor='nameProduct'>Tên sản phẩm</lable>
+                                    <span htmlFor='nameProduct'>Tên sản phẩm</span>
                                     <Input
                                         name='nameProduct'
                                         value={values.nameProduct}
@@ -124,7 +123,7 @@ function AddProduct(props) {
                                     }
                                 </div>
                                 <div>
-                                    <lable htmlFor='priceProduct'>Giá sản phẩm</lable>
+                                    <span htmlFor='priceProduct'>Giá sản phẩm</span>
                                     <InputNumber
                                         defaultValue={0}
                                         style={{ padding: 0, width: 200 }}
@@ -139,14 +138,14 @@ function AddProduct(props) {
                                     }
                                 </div>
                                 <div>
-                                    <lable htmlFor='starProduct'>Sao</lable><br />
+                                    <span htmlFor='starProduct'>Sao</span><br/>
                                     <Rate ref={rateRef}
                                         defaultValue={5}
                                         className="form-product"
                                     />
                                 </div>
                                 <div>
-                                    <lable htmlFor='descriptionsProduct'>Chi tiết sản phẩm</lable>
+                                    <span htmlFor='descriptionsProduct'>Chi tiết sản phẩm</span>
                                     <TextArea rows={4}
                                         name='descriptionsProduct'
                                         value={values.descriptionsProduct}
@@ -160,7 +159,7 @@ function AddProduct(props) {
                                     }
                                 </div>
                                 <div>
-                                    <lable>Ảnh</lable><br />
+                                    <span>Ảnh</span><br/>
                                     <Upload {...props2}
                                         onChange={onChangeUpload}
                                     >
@@ -173,7 +172,7 @@ function AddProduct(props) {
                                     }
                                 </div>
                                 <div>
-                                    <lable htmlFor="ingredients">Thành phần</lable>
+                                    <span htmlFor="ingredients">Thành phần</span>
                                     <TextArea rows={2}
                                         name="ingredients"
                                         value={values.ingredients}
@@ -181,7 +180,7 @@ function AddProduct(props) {
                                     />
                                 </div>
                                 <div>
-                                    <lable htmlFor="usage">Cách sử dụng</lable>
+                                    <span htmlFor="usage">Cách sử dụng</span>
                                     <TextArea rows={2}
                                         name="usage"
                                         value={values.usage}
@@ -189,7 +188,7 @@ function AddProduct(props) {
                                     />
                                 </div>
                                 <div>
-                                    <lable htmlFor="heed">Chú ý</lable>
+                                    <span htmlFor="heed">Chú ý</span>
                                     <TextArea rows={2}
                                         name="heed"
                                         value={values.heed}
@@ -197,7 +196,7 @@ function AddProduct(props) {
                                     />
                                 </div>
                                 <div>
-                                    <lable htmlFor="expirydate">Hàm Lượng Và Hạn sử dụng</lable>
+                                    <span htmlFor="expirydate">Hàm Lượng Và Hạn sử dụng</span>
                                     <TextArea rows={2}
                                         name="expirydate"
                                         value={values.expirydate}
@@ -205,7 +204,7 @@ function AddProduct(props) {
                                     />
                                 </div>
                                 <div>
-                                    <lable htmlFor="evaluation">Đánh giá</lable>
+                                    <span htmlFor="evaluation">Đánh giá</span>
                                     <TextArea rows={2}
                                         name="evaluation"
                                         value={values.evaluation}

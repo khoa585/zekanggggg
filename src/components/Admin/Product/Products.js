@@ -3,21 +3,17 @@ import {useSelector} from 'react-redux';
 import { Breadcrumb ,Table ,Space ,Button} from 'antd';
 import {v4 as uuid4} from 'uuid';
 import Router from 'next/router';
-import {toast} from 'react-toastify';
-import {fetchDeleteProduct} from '../../../api/products';
+import { useDispatch } from 'react-redux';
+import * as ActionDeleteProduct from '../../../actions/productsAction'
 export default function Products() {
     const products = useSelector(state=>state.products.listproducts);
+    const dispatch = useDispatch()
     const goDetial= (id)=>{
         Router.push(`/admin/product/${id}`);
     }
     const deleteProduct = async (id) =>{
-        let resultDelete = await fetchDeleteProduct(id)
-        if(resultDelete.status==200 && resultDelete.data?.status=="success"){
-            toast.success("Xóa Thành Công Sản Phẩm");
-        }
-        else {
-            toast.error("Có Lỗi Xảy Ra Khi Xóa");
-        }
+        let {ACTION_DELETE_PRODUCT} = ActionDeleteProduct;
+        dispatch(ACTION_DELETE_PRODUCT(id))
     }
     const columns = [
     {
