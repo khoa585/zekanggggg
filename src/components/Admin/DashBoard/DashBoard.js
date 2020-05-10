@@ -6,9 +6,7 @@ import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    PlusCircleOutlined
+    SendOutlined,
 } from '@ant-design/icons';
 import { Dropdown, Avatar } from 'antd';
 import Link from 'next/link'
@@ -45,14 +43,14 @@ function DashBoard(props) {
                 </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={({ key }) => { router.push(key) }}>
                     <SubMenu icon={<UserOutlined />} title={"Sản Phẩm"} key={"1"}>
-                        <Menu.Item icon={<PlusCircleOutlined />} key="/admin/product">
+                        <Menu.Item icon={<SendOutlined />} key="/admin/product">
                             Danh Sách Sản Phẩm
                         </Menu.Item>
-                        <Menu.Item key="/admin/product/add" icon={<PlusCircleOutlined />}>Thêm Sản Phẩm</Menu.Item>
+                        <Menu.Item key="/admin/product/add" icon={<SendOutlined />}>Thêm Sản Phẩm</Menu.Item>
                     </SubMenu>
                     <SubMenu icon={<UserOutlined />} title={"Tin Tức"}>
-                        <Menu.Item key="/admin/news" icon={<PlusCircleOutlined />}>Danh Sách Tin Tức</Menu.Item>
-                        <Menu.Item key="/admin/news/add" icon={<PlusCircleOutlined />}>Thêm Tin Tức</Menu.Item>
+                        <Menu.Item key="/admin/news" icon={<SendOutlined />}>Danh Sách Tin Tức</Menu.Item>
+                        <Menu.Item key="/admin/news/add" icon={<SendOutlined />}>Thêm Tin Tức</Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>

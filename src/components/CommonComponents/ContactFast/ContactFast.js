@@ -1,15 +1,14 @@
 import React from 'react';
 import './style.scss'
-import { FaFacebookF } from "react-icons/fa";
-import { MdCall } from "react-icons/md";
-function ContactFast(props) {
+import { FacebookOutlined, YoutubeOutlined, PhoneOutlined } from '@ant-design/icons';
+function ContactFast() {
     return (
         <React.Fragment>
             <div className="contact-Fact">
                 <div className="contact-Fact-0">
-                    <span>   <FaFacebookF></FaFacebookF></span>
-                    <span>   <FaFacebookF></FaFacebookF></span>
-                    <span>  <MdCall></MdCall></span>
+                    <span><FacebookOutlined /></span>
+                    <span><YoutubeOutlined /></span>
+                    <span><PhoneOutlined /></span>
                 </div>
             </div>
         </React.Fragment>

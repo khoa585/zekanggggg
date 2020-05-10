@@ -12,8 +12,10 @@ export default function Products() {
         Router.push(`/admin/product/${id}`);
     }
     const deleteProduct = async (id) =>{
-        let {ACTION_DELETE_PRODUCT} = ActionDeleteProduct;
-        dispatch(ACTION_DELETE_PRODUCT(id))
+        if(confirm("Bạn Muốn Xóa Sản phẩm Này Không")){
+            let {ACTION_DELETE_PRODUCT} = ActionDeleteProduct;
+            dispatch(ACTION_DELETE_PRODUCT(id))
+        }
     }
     const columns = [
     {

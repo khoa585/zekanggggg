@@ -89,19 +89,3 @@ input.ant-input {
     display: flex;
     justify-content: flex-end;
 }
-.ant-upload-list-picture-item-0 {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #d9d9d9;
-  img{
-    height: 80px;
-    width: 80px;
-  }
-}
-.ant-upload-list-item-card-actions.picture {
-  top: 40%!important;
-  line-height: 1;
-  opacity: 1;
-  right: 2%;
-  font-size: 1.2em;
-}
