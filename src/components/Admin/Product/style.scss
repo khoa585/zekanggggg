@@ -1,12 +1,77 @@
 .contai-add{
     div{
-        padding: 8px;
+      display: block;
+      padding: 8px 0;
     }
-    input.ant-input {
-        margin: 10px 0;
+    lable{
+      font-weight: bold;
     }
-    .submit{
+    .submitForm{
         display: flex;
         justify-content: flex-end;
     }
+    .submitForm button {
+        background: #72b2e8;
+        border: none;
+        padding: 20px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1em;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .submitForm button:after {
+        content: "";
+        background: #f1f1f1;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+      }
+      .submitForm button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+      }
+      .submitForm button:focus{
+        outline: none;
+      }
+      .form-product {
+
+    }
+    .errors {
+      color: #ea0202;
+  }
+}
+input.ant-input.form-product,.ant-input-number.form-product,textarea.ant-input.form-product {
+  margin: 10px 0;
+}
+.ant-upload.ant-upload-select {
+  display: inline-block;
+}
+ul.ant-rate.form-product {
+  margin: 0;
+}
+.ant-breadcrumb{
+    span{
+        cursor: pointer;
+    }
+    span:nth-child(3){
+        font-weight: 700;
+    }
+        padding: 8px;
+    }
+input.ant-input {
+    margin: 10px 0;
+}
+.submit{
+    display: flex;
+    justify-content: flex-end;
 }
