@@ -68,8 +68,8 @@ export default function Detial(props){
         <Container className="contai-add">
             <Breadcrumb>
                 <Breadcrumb.Item>Admin</Breadcrumb.Item>
-                <Breadcrumb.Item>Tin Tức</Breadcrumb.Item>
-                <Breadcrumb.Item>Thêm Tin Tức</Breadcrumb.Item>
+                <Breadcrumb.Item>Cập Nhật Tin Tức</Breadcrumb.Item>
+                <Breadcrumb.Item>{props.title}</Breadcrumb.Item>
             </Breadcrumb>
             <div>
                 <span>Tiêu Đề</span><br />
