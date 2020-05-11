@@ -31,9 +31,8 @@ export default function Detial(props){
             status: 'done',
             url: props.image
         })
-        console.log(files);
         setFileList([...files])}
-        ,[])
+    ,[])
     const onEditorChange = (evt)=>{
         setContent(evt.editor.getData());
     }

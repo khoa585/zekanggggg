@@ -70,6 +70,7 @@ function AddProduct(props) {
                         expirydate: values.expirydate,
                         evaluation: values.evaluation
                     }
+                    console.log(data)
                     let resultAdd = await fetchAddProduct(data);
                     if (resultAdd.status == 200 && resultAdd.data?.status == "success") {
                         toast.success("Tạo Thành Công Sản Phẩm");
@@ -77,7 +78,7 @@ function AddProduct(props) {
                         values.nameProduct = '',
                             values.priceProduct = '',
                             rateRef.current.state.value = 5
-                        values.descriptionsProduct = '',
+                            values.descriptionsProduct = '',
                             values.ingredients = '',
                             values.usage = '',
                             values.heed = '',

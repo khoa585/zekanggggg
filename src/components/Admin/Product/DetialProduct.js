@@ -1,107 +1,9 @@
-// import React ,{useState ,useRef,useEffect} from 'react';
-// import { Container } from 'react-bootstrap';
-// import { Input, Button, Upload ,Breadcrumb ,InputNumber ,Rate} from 'antd';
-// import { UploadOutlined } from '@ant-design/icons';
-// import {fetchAddProduct} from './../../../api/products';
-// import {v4 as uuid4} from 'uuid';
-// import {toast} from 'react-toastify';
-// import Router from 'next/router'
-// const { TextArea } = Input;
-// export default function DetialProduct(props) {
-//     const [fileList,setFileList] = useState([]);
-//     const nameRef = useRef(props.name);
-//     const priceRef = useRef(props.price);
-//     const rateRef = useRef(props.start);
-//     const descriptionsRef= useRef(props.descriptions);
-//     const ingredientsRef= useRef(props.ingredients);
-//     const usageRef = useRef(props.usage);
-//     const heedRef = useRef(props.heed);
-//     const expirydateRef = useRef(props.expirydate);
-//     const evaluationRef = useRef(props.evaluation);
-//     const props2 = {
-//         listType: 'picture',
-//         FileList: [...fileList],
-//         className: 'upload-list-inline',
-//         action:'http://52.255.164.213:8000/upload',   
-//     };
-//     useEffect(()=>{
-//         let listFile= props.images.map(file=>{
-//             let options = {
-//                 uid:`${uuid4()}`,
-//                 name:file,
-//                 status:'done',
-//                 url:file
-//             }
-//             return options ;
-//         })
-//         console.log(listFile);
-//         setFileList(listFile);
-//     },[])
-//     return (
-//         <Container className="contai-add">
-//             <Breadcrumb>
-//                 <Breadcrumb.Item>Admin</Breadcrumb.Item>
-//                 <Breadcrumb.Item>Sản Phẩm</Breadcrumb.Item>
-//                 <Breadcrumb.Item>{props.name}</Breadcrumb.Item>
-//             </Breadcrumb>
-//             <div>
-//                 <span>Tên sản phẩm</span><br />
-//                 <Input defaultValue={nameRef.current} ref={nameRef} />
-//             </div>
-//             <div>
-//                 <span>Giá sản phẩm</span><br />
-//                 <InputNumber defaultValue={priceRef.current}  style={{padding:0,width:200}} ref={priceRef}/>
-//             </div>
-//             <div>
-//                 <span>Sao</span><br />
-//                 <Rate ref={rateRef}  defaultValue={rateRef.current}/>
-//             </div>
-//             <div>
-//                 <span>Chi tiết sản phẩm</span><br />
-//                 <TextArea rows={4} ref={descriptionsRef}  defaultValue={descriptionsRef.current} style={{whiteSpace:"pre-line"}}/>
-//             </div>
-//             <div>
-//                 <span>Ảnh</span><br />
-//                 <Upload {...props2} FileList={ [...fileList]}  >
-//                     <Button>
-//                         <UploadOutlined /> Upload
-//                     </Button>
-//                 </Upload>
-//             </div>
-//             <div>
-//                 <span>Thành phần</span><br />
-//                 <TextArea rows={2} ref={ingredientsRef} defaultValue={ingredientsRef.current} style={{whiteSpace:"pre-line"}}/>
-//             </div>
-//             <div>
-//                 <span>Cách sử dụng</span><br />
-//                 <TextArea rows={2} ref={usageRef} defaultValue={usageRef.current} style={{whiteSpace:"pre-line"}}/>
-//             </div>
-//             <div>
-//                 <span>Chú ý</span><br />
-//                 <TextArea rows={2} ref={heedRef} defaultValue={heedRef.current}/>
-//             </div>
-//             <div>
-//                 <span>Hàm Lượng Và Hạn sử dụng</span><br />
-//                 <TextArea rows={2} ref={expirydateRef} defaultValue={expirydateRef.current} style={{whiteSpace:"pre-line"}}/>
-//             </div>
-//             <div>
-//                 <span>Đánh giá</span><br />
-//                 <TextArea rows={2} ref={evaluationRef} style={{whiteSpace:"pre-line"}}/>
-//             </div>
-//             <div className="submit">
-//                 <Button type="primary">Cập Nhật sản Phẩm</Button>
-//             </div>
-//         </Container>
-//     )
-// }
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button, Upload, Breadcrumb, Rate } from 'antd';
 import { Form, Input, InputNumber } from 'formik-antd';
 import { UploadOutlined, DeleteFilled } from '@ant-design/icons';
-import { fetchAddProduct } from './../../../api/products';
+import { fetchUpdateProduct } from './../../../api/products';
 import { toast } from 'react-toastify';
 import { v4 as uuid4 } from 'uuid';
 import Router from 'next/router'
@@ -112,7 +14,14 @@ import Link from 'next/link';
 import './style.scss';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 function AddProduct(props) {
-    const [fileList, setFileList] = useState([]);
+    const [fileList, setFileList] = useState([
+        {
+            uid: '-1',
+            name: 'xxx.png',
+            status: 'done',
+            url: 'http://res.cloudinary.com/no-company-name/image/upload/v1589129938/zekang/1589129935283-img-reason.jpg',
+        }
+    ]);
     const nameRef = useRef(props.name);
     const priceRef = useRef(props.price);
     const rateRef = useRef(props.start);
@@ -123,41 +32,43 @@ function AddProduct(props) {
     const expirydateRef = useRef(props.expirydate);
     const evaluationRef = useRef(props.evaluation);
     const [state, setState] = useState(false)
-    const props2 = {
-        listType: 'picture',
-        FileList: [...fileList],
-        className: 'upload-list-inline',
-        action: 'http://52.255.164.213:8000/upload',
-    };
     useEffect(() => {
-        let listFile = props.images.map(file => {
+        let files = fileList;
+        props.images.map(file => {
             let options = {
                 uid: `${uuid4()}`,
                 name: file,
                 status: 'done',
-                url: file
+                url: file,
             }
-            return options;
+            files.push(options)
+            setFileList([...files])
         })
-        setFileList(listFile);
     }, [])
-    const findIndex = (list,id) =>{
-        let result = -1;
-        list.forEach((element,index) => {
-            result = index
-        });
-        return result;
+    const props2 = {
+        listType: 'picture',
+        defaultFileList: fileList,
+        action: 'http://52.255.164.213:8000/upload',
+    };
+    const onChangeUpload = (info) => {
+        let filesList = [...info.fileList];
+        filesList = filesList.slice(-1);
+        filesList = filesList.map((file) => {
+            if (file.response) {
+                file.url = file.response.data.url;
+            }
+            return file;
+        })
+        setFileList(filesList);
     }
-    const onAddProduct = () => {
+    const Rate_Ref = useRef(rateRef.current);
+    const images = fileList.map(file => {
+        return file.url;
+    })
+    const onUpdateProduct = () => {
         if (!fileList.length) {
             setState(true);
         }
-    }
-    const remotePicture = (iditem) =>{
-        let index = findIndex(fileList,iditem)
-        let arr = fileList.slice(index,1)
-        setFileList(arr);
-        console.log(arr)
     }
     return (
         <Container className="contai-add">
@@ -176,7 +87,26 @@ function AddProduct(props) {
                     evaluation: evaluationRef.current,
                 }}
                 onSubmit={async (values, { setSubmitting }) => {
-
+                    let data = {
+                        id: props.id.toString(),
+                        name: values.nameProduct,
+                        price: values.priceProduct,
+                        images: images,
+                        start: Rate_Ref.current.state.value,
+                        descriptions: values.descriptionsProduct,
+                        ingredients: values.ingredients,
+                        usage: values.usage,
+                        heed: values.heed,
+                        expirydate: values.expirydate,
+                        evaluation: values.evaluation
+                    }
+                    let resultUpdate = await fetchUpdateProduct(data);
+                    if (resultUpdate.status == 200 && resultUpdate.data?.status == "success") {
+                        toast.success("Cập Nhật Thành Công Sản Phẩm");
+                        Router.push("/admin/product");
+                    } else {
+                        toast.error("Có Lỗi Xảy Ra Khi Update");
+                    }
                 }}
                 validationSchema={
                     yup.object().shape({
@@ -228,8 +158,8 @@ function AddProduct(props) {
                                 </div>
                                 <div>
                                     <span htmlFor='starProduct'>Sao</span><br />
-                                    <Rate ref={rateRef}
-                                        defaultValue={5}
+                                    <Rate ref={Rate_Ref}
+                                        defaultValue={Rate_Ref.current}
                                         className="form-product"
                                     />
                                 </div>
@@ -249,27 +179,11 @@ function AddProduct(props) {
                                 </div>
                                 <div>
                                     <span>Ảnh</span><br />
-                                    <Upload {...props2} >
+                                    <Upload {...props2} onChange={onChangeUpload}>
                                         <Button>
                                             <UploadOutlined /> Upload
                                     </Button>
                                     </Upload>
-                                    {
-                                        fileList.map((item, index) => {
-                                            return <div className="ant-upload-list-item-0" key={index}>
-                                                <div className="ant-upload-list-picture-item-0">
-                                                    <span>
-                                                        <a className="ant-upload" href="" target="_blank" rel="noopener noreferrer">
-                                                            <img className="img-fluid" src={item.name}></img>
-                                                        </a>
-                                                    </span>
-                                                    <span className="ant-upload-list-item-card-actions picture" onClick={() => remotePicture(item.uid)}>
-                                                        <DeleteFilled />
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        })
-                                    }
                                     {
                                         state && !fileList.length ? <span className="errors"><ExclamationCircleOutlined /> Hãy tải ảnh </span> : ''
                                     }
@@ -315,7 +229,7 @@ function AddProduct(props) {
                                     />
                                 </div>
                                 <div className="submitForm">
-                                    <button type="submit" onClick={onAddProduct}>
+                                    <button type="submit" onClick={onUpdateProduct}>
                                         Cập Nhật sản Phẩm
                                     </button>
                                 </div>
