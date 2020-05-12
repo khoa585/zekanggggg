@@ -4,6 +4,8 @@ import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsFillStarFill } from "react-icons/bs";
 import Link from 'next/link';
+import { useRouter } from 'next/router'
+import { withRouter } from 'next/router'
 const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
 function reducer(state, action) {
     switch (action.type) {
@@ -23,8 +25,9 @@ function reducer(state, action) {
             throw new Error();
     }
 }
-function DescProduct(props) {
+function DescProduct({ router }) {
     const [state, dispatch] = useReducer(reducer, initialState);
+    console.log(router.asPath.replace(/\/[a-zA-Z-]+\/.*[?]/g, ""))
     return (
         <React.Fragment>
             <div className="distant___"></div>
@@ -250,4 +253,4 @@ function DescProduct(props) {
     );
 }
 
-export default DescProduct;
+export default withRouter(DescProduct);

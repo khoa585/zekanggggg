@@ -22,7 +22,7 @@ function Index(props) {
 }
 Index.getInitialProps = async (ctx) => {
   try {
-    let resultFetch = await fetchListProduct();
+    let resultFetch = await fetchListProduct(1,4);
     if (resultFetch?.data?.data) {
       let data = resultFetch.data.data;
       return [data];

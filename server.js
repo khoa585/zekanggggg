@@ -51,6 +51,10 @@ app.prepare().then(()=>{
             {
                 route:"/lien-He",
                 rewrite:"/contact"
+            },
+            {
+                router:"/san-pham/:id",
+                rewrite:"/product/[id]"
             }
         ]
         for(let i =0 ;i< routers.length ;i++){
