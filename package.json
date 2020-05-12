@@ -26,6 +26,7 @@
     "next-cookies": "^2.0.3",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^6.0.0-rc.7",
+    "next-routes": "^1.4.2",
     "node-sass": "^4.14.0",
     "path-match": "^1.2.4",
     "react": "16.13.1",

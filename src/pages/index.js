@@ -11,7 +11,7 @@ function Index(props) {
         <title>Create Next App</title>
         <link rel="icon" href="../favicon.ico" />
       </Head>
-      <HeaderTag {...props[0]}/>
+      <HeaderTag {...props[0]} />
       <main>
         <Header></Header>
         <Home List={props[0]}></Home>
@@ -20,15 +20,15 @@ function Index(props) {
     </React.Fragment>
   )
 }
-Index.getInitialProps = async (ctx) => {
+Index.getInitialProps = async () => {
   try {
-    let resultFetch = await fetchListProduct(1,4);
+    let resultFetch = await fetchListProduct(1, 4);
     if (resultFetch?.data?.data) {
       let data = resultFetch.data.data;
       return [data];
     }
   } catch (error) {
-    console.error(error);
+    return error;
   }
 }
 export default Index;

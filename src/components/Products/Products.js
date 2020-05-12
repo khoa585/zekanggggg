@@ -1,9 +1,40 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { BsFillStarFill } from "react-icons/bs";
 import '../Home/ProductItem/style.scss';
 import Link from 'next/link';
+import { formatStar, to_slug, formatNumber } from '../../commons/index';
 function Products(props) {
+    const { List } = props;
+    const showProduct = () => {
+        let result = List.map((task, index) => {
+            return <Link href={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
+                <Col lg={3} md={3} sm={3} className="resp pest" key={index}>
+                    <div className="image-box is-trending has-discount">
+                        <div className="thumb">
+                            <div className="background-image">
+                                <img src={task.images[0]} className="" className="img-fluid d-block mx-auto" />
+                            </div>
+                            <div className="background-image thumb-img-first secondary-image" >
+                                <img src={task.images[1]} className="" className="img-fluid d-block mx-auto" />
+                            </div>
+                        </div>
+                        <div className="meta-inner">
+                            <div className="nameProduct"><h6>{task.name}</h6></div>
+                            <div className="formatProduct">
+                                <div>
+                                    <span className="price">{formatNumber(task.price)} đ</span>
+                                </div>
+                                <div>
+                                    <span className="star">{formatStar(task.start)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
+            </Link>
+        })
+        return result;
+    }
     return (
         <React.Fragment>
             <div className="distant___"></div>
@@ -14,125 +45,10 @@ function Products(props) {
                 </div>
                 <div className="distant___"></div>
                 <Row>
-                    <Link href="/descproducts" as="/chi-tiet">
-                        <Col lg={3} md={3} sm={3} className="resp">
-                            <div className="image-box is-trending has-discount">
-                                <div className="thumb">
-                                    <div className="thumbPai">
-                                    </div>
-                                    <div className="thumb-img-first">
-                                    </div>
-                                </div>
-                                <div className="meta-inner">
-                                    <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                    <div className="formatProduct">
-                                        <div>
-                                            <span className="price">150.000 đ</span>
-                                        </div>
-                                        <div>
-                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Link>
-                    <Link href="/descproducts" as="/chi-tiet">
-                        <Col lg={3} md={3} sm={3} className="resp">
-                            <div className="image-box is-trending has-discount">
-                                <div className="thumb">
-                                    <div className="thumbPai">
-                                    </div>
-                                    <div className="thumb-img-first">
-                                    </div>
-                                </div>
-                                <div className="meta-inner">
-                                    <div className="nameProduct"><h6>Allantoin VE Ointment</h6></div>
-                                    <div className="formatProduct">
-                                        <div>
-                                            <span className="price">150.000 đ</span>
-                                        </div>
-                                        <div>
-                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Link>
-                    <Link href="/descproducts" as="/chi-tiet">
-                        <Col lg={3} md={3} sm={3} className="resp">
-                            <div className="image-box is-trending has-discount">
-                                <div className="thumb">
-                                    <div className="thumbPai">
-                                    </div>
-                                    <div className="thumb-img-first">
-                                    </div>
-                                </div>
-                                <div className="meta-inner">
-                                    <div className="nameProduct"><h6>Black Bean Distillate Oil</h6></div>
-                                    <div className="formatProduct">
-                                        <div>
-                                            <span className="price">150.000 đ</span>
-                                        </div>
-                                        <div>
-                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Link>
-                    <Link href="/descproducts" as="/chi-tiet">
-                        <Col lg={3} md={3} sm={3} className="resp">
-                            <div className="image-box is-trending has-discount">
-                                <div className="thumb">
-                                    <div className="thumbPai">
-                                    </div>
-                                    <div className="thumb-img-first">
-                                    </div>
-                                </div>
-                                <div className="meta-inner">
-                                    <div className="nameProduct"><h6>Bacteriostatic Shower Gel</h6></div>
-                                    <div className="formatProduct">
-                                        <div>
-                                            <span className="price">150.000 đ</span>
-                                        </div>
-                                        <div>
-                                            <span className="star"><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill><BsFillStarFill></BsFillStarFill></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Link>
+                    {showProduct()}
                 </Row>
             </Container>
             <div className="distant___"></div>
-            <style jsx>
-                {
-                    `
-                    .thumbPai{
-                        background-image: url(../img/pro_2.png);
-                        height: 100%;
-                        width: 100%;
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                    }
-                    .thumb-img-first{
-                        background-image: url(../img/products_2.jpg);
-                        height: 100%;
-                        width: 100%;
-                        background-position: center;
-                        background-size: cover;
-                        position: absolute;
-                        top: 0;
-                        background-repeat: no-repeat;
-                    }
-                    `
-                }
-            </style>
         </React.Fragment>
     );
 }

@@ -14,6 +14,7 @@
     background-size: cover;
     img.img-fluid.d-block.mx-auto {
         height: 100%;
+        width: 100%;
         object-fit: cover;
     }
 }
@@ -67,6 +68,9 @@
 .resp .image-box.is-trending.has-discount:hover .thumb-img-first {
     opacity: 1;
     visibility: visible;
+}
+.resp.pest{
+    margin: 3% 0;
 }
 .thumb .thumb-img-first.secondary-image {
     position: absolute;
