@@ -14,7 +14,7 @@ function Introduce(props) {
                     }`
                 }
             </style>
-            <div className="distant___"></div>
+            <div className="distant__"></div>
             <Container>
                 <Row>
                     <Col lg={6} md={6} sm={6} className="inf-img ing-img_ ing-img_1">
@@ -40,7 +40,7 @@ function Introduce(props) {
                     </Col>
                 </Row>
             </Container>
-            <div className="distant_ distant___"></div>
+            <div className="distant_ distant__"></div>
             <Container>
                 <Row>
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img-0 inf-img_1">
@@ -66,7 +66,7 @@ function Introduce(props) {
                     </Col>
                 </Row>
             </Container>
-            <div className="distant___"></div>
+            <div className="distant__"></div>
         </React.Fragment>
     );
 }

@@ -4,14 +4,37 @@
 .distant_news_0{
     height: 15px;
 }
+.gallery-item-news{
+    .img-content-news{
+        height: 100%;
+        width: 55%;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: 0;
+    }
+}
 .distant_news-1{
     height: 45px;
 }
 .distant_news-2{
     height: 90px;
 }
-.title-wrap-news span {
+.title-wrap-news span:nth-child(1) {
     cursor: pointer;
+}
+.container .title-wrap-news{
+    span.title-wrap-news{
+        color:#868686;
+        font-weight: 600;
+    }
+    a{
+        color:#868686
+    }
+    a:hover{
+        color:#91af77;
+    }
 }
 .title-wrap-home-news::after{
     content:"\203A";

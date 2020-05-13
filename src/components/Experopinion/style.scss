@@ -6,8 +6,12 @@
     outline: none;
 }
 .title-experopinion{
-    span{
+    .title-experopinion-home:hover{
         cursor: pointer;
+        color: #91af77;
+    }
+    .title-experopinion_{
+        font-weight: 600;
     }
 }
 .wrap-contai {

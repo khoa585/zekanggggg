@@ -5,7 +5,7 @@
     height: 100px;
 }
 .title-wrap {
-    span {
+    span:nth-child(1),.title-wrap-nameproduct {
         cursor: pointer;
     }
     .title-wrap-nameProduct{
@@ -41,6 +41,9 @@
 .title-wrap-home::after ,.title-wrap-nameproduct::after{
     content:"\203A";
     padding: .9%;
+}
+.title-wrap-home:hover,.title-wrap-nameproduct:hover{
+    color: #91af77;
 }
 .desc_Prod_1 .desc-img-1,.desc_Prod_1 .desc-img-2{
     height: 12rem;

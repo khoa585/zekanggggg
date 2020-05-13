@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DashBoard.scss';
+import './style.scss';
 import { useRouter } from 'next/router'
 import { Layout, Menu } from 'antd';
 import {

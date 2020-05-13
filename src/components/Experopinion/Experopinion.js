@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './style.scss'
+import './style.scss';
+import { Link } from './../../../routers';
 function Experopinion(props) {
     const Question = [
         {
@@ -70,8 +71,8 @@ function Experopinion(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-experopinion">
-                    <span className="title-experopinion-home">Home</span>
-                    <span className="title-experopinion">Ý Kiến Chuyên Gia</span>
+                    <Link route="/"><span className="title-experopinion-home">Home</span></Link>
+                    <span className="title-experopinion_">Ý Kiến Chuyên Gia</span>
                 </div>
                 <div className="distant___"></div>
                 <div>

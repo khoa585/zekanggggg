@@ -2,9 +2,8 @@ import React from 'react';
 import Header from './../components/CommonComponents/Header/Header';
 import Footer from './../components/CommonComponents/Footer/Footer';
 import DescProduct from './../components/DescProduct/DescProduct';
-import { fetchGetDetialProduct } from './../api/products';
+import { fetchGetDetialProduct,fetchListProduct } from './../api/products';
 import HeaderTag from './../components/CommonComponents/HeaderTag/HeaderTag';
-import { fetchListProduct } from './../api/products';
 function nameproduct(props) {
     const { descriptions, images,name } = props[0]
     return (

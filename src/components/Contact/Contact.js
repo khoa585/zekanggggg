@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Link } from './../../../routers';
 function Contact(props) {
     const [state, setState] = useState({
         showingInfoWindow: false,
@@ -23,7 +24,7 @@ function Contact(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-wrap-contact">
-                    <span className="title-wrap-contact-0">Home</span>
+                    <Link route="/"><span className="title-wrap-contact-0">Home</span></Link>
                     <span className="title-wrap-contact-1">Liên hệ</span>
                 </div>
                 <div className="distant___"></div>

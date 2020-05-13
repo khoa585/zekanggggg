@@ -1,15 +1,19 @@
 .title-wrap-contact-0::after{
     content:"\203A";
     padding: .9%;
-
 }
-.title-wrap-contact-0,.title-wrap-contact-1{
+.title-wrap-contact-0{
     cursor: pointer;
     color: #292929;
     font-size: .9em;
 }
-.form_0{
-    
+.title-wrap-contact-0:hover{
+    color:#91af77;
+}
+.title-wrap-contact{
+    .title-wrap-contact-1{
+        font-weight: 600;
+    }
 }
 .contact-title-0 {
     display: flex;

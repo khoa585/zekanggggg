@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
-import { to_slug, formatNumber, formatStar } from '../../commons/index'
+import { to_slug, formatStar } from '../../commons/index'
 import { Link } from './../../../routers';
 import reducer from '../../commons/reducer';
 import CurrencyFormat from 'react-currency-format';
@@ -45,8 +45,8 @@ function DescProduct(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-wrap">
-                    <Link href="/" as="/"><span className="title-wrap-home">Home</span></Link>
-                    <Link href="/products" as="/san-pham"><span className="title-wrap-nameproduct">Sản Phẩm </span></Link>
+                    <Link route="/"><span className="title-wrap-home">Home</span></Link>
+                    <Link route="/san-pham"><span className="title-wrap-nameproduct">Sản Phẩm </span></Link>
                     <span className="title-wrap-nameProduct">{name}</span>
                 </div>
                 <div className="distant___"></div>
@@ -85,7 +85,7 @@ function DescProduct(props) {
                             <div className="desc-product">
                                 <div className="title-desc-prod">
                                     <h6>{name}</h6>
-                                    <span>{formatNumber(price)} đ</span>
+                                    <span><CurrencyFormat value={price} displayType={'text'} thousandSeparator={true} />  đ</span>
                                 </div>
                                 <div className="title-infor-prod">
                                     <p>{descriptions}</p>
@@ -135,7 +135,7 @@ function DescProduct(props) {
                         </Col>
                     </Row>
                 </div>
-                <div className="distant___"></div>
+                <div className="distant____"></div>
                 <div>
                     <span className="title-opg">các sản phẩm liên quan khác</span>
                     <div className="distant___"></div>
