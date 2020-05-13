@@ -3,7 +3,8 @@ import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { to_slug, formatNumber, formatStar } from '../../commons/index'
-import Link from 'next/link';
+//import Link from 'next/link';
+import {Link} from './../../../routers';
 import reducer from '../../commons/reducer'
 const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
 function DescProduct(props) {
@@ -11,7 +12,7 @@ function DescProduct(props) {
     const { name, price, evaluation, heed, descriptions, usage, ingredients, expirydate, images } = props[0]
     const showProduct = () => {
         let result = props[1].map((task, index) => {
-            return <Link href={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
+            return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
                 <Col lg={3} md={3} sm={3} className="resp" key={index}>
                     <div className="image-box is-trending has-discount">
                         <div className="thumb">

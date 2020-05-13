@@ -16,9 +16,7 @@ const HeaderTag = props =>(
         <meta property="description" content={props.description || "The convenient & affordable way to find a construction project"} />
         {!!props.video && <meta property='og:video' content={props.video} />}
         {!!props.video && <meta property='video' content={props.video} />}
-        <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet" />
-        <link href="/static/css/loading.css" rel="stylesheet" media="all" />
         <title>{props.title||"Zekang"}</title>
   </Head>
 )

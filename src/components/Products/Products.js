@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../Home/ProductItem/style.scss';
-import Link from 'next/link';
+//import Link from 'next/link';
+import {Link} from './../../../routers';
 import { formatStar, to_slug, formatNumber } from '../../commons/index';
 function Products(props) {
     const { List } = props;
     const showProduct = () => {
         let result = List.map((task, index) => {
-            return <Link href={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
+            return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
                 <Col lg={3} md={3} sm={3} className="resp pest" key={index}>
                     <div className="image-box is-trending has-discount">
                         <div className="thumb">

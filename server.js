@@ -19,7 +19,6 @@ app.prepare().then(()=>{
     server.use(bodyParser.json());
     
     server.use("/static", express.static(__dirname + "/static"));
-    server.use("/_/static", express.static(__dirname + "/static/bridge/static"));
     server.use(handle);
     server.listen(process.env.PORT || 3000,()=>{
         console.log("App running On  http://localhost:"+ process.env.PORT )
