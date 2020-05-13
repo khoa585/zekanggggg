@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Footer.scss'
+import './Footer.scss';
+import { Link } from './../../../../routers';
 function Footer(props) {
     return (
         <React.Fragment>
@@ -26,7 +27,7 @@ function Footer(props) {
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Điện Thoại: (04) 35148042 - Fax: (04) 35148043 <br/>E-mail: info@zekang.com</span>
+                                    <span>Điện Thoại: (04) 35148042 - Fax: (04) 35148043 <br />E-mail: info@zekang.com</span>
                                 </div>
                             </Col>
                         </Row>
@@ -35,15 +36,15 @@ function Footer(props) {
                 <div className="footerMenu_">
                     <Container>
                         <Row>
-                            <Col lg={8} md={10} sm={9} sm={9}   className="footer-main-nav">
+                            <Col lg={8} md={10} sm={9} sm={9} className="footer-main-nav">
                                 <nav id="footer-main-nav">
                                     <ul id="footer-menu-primary-menu" className="footer-menu">
-                                        <li className="footer-menu-item footer-Item"><span>Trang Chủ</span></li>
-                                        <li className="footer-menu-item "><span>Giới Thiệu</span></li>
-                                        <li className="footer-menu-item "><span>Sản Phẩm</span></li>
-                                        <li className="footer-menu-item "><span>Ý Kiến Chuyên Gia</span></li>
-                                        <li className="footer-menu-item "><span>Tin Tức</span></li>
-                                        <li className="footer-menu-item "><span>Liên Hệ</span></li>
+                                        <li className="footer-menu-item footer-Item"><Link route="/"><span>Trang Chủ</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/gioi-thieu"><span>Giới Thiệu</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/san-pham"><span>Sản Phẩm</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/experopinion"><span>Ý Kiến Chuyên Gia</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/news"><span>Tin Tức</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/contact"><span>Liên Hệ</span></Link></li>
                                     </ul>
                                 </nav>
                             </Col>
@@ -57,7 +58,7 @@ function Footer(props) {
                 </div>
             </div>
             <style jsx>{
-                    `
+                `
                     .footerBottom_imgRight{
                         background-image: url('/img/tree_1.png');
                         width: 100%;

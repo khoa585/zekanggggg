@@ -7,6 +7,7 @@ import './Header.scss';
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from 'next/link'
 import ContactFast from '../ContactFast/ContactFast';
+import BackToTop from '../BackToTop/BackToTop';
 function Header(props) {
     const router = useRouter()
     const pathname = router.pathname;
@@ -56,6 +57,7 @@ function Header(props) {
                 </Container>
             </header>
             <ContactFast></ContactFast>
+            <BackToTop></BackToTop>
             <header className="header-top_">
                 <Container>
                     <Row>

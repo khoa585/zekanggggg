@@ -95,6 +95,7 @@ function Experopinion(props) {
                                 <div className="submit-note"><input type="submit" value="Gửi câu hỏi"></input></div>
                                 <div className="input-text"> <input type="input" placeholder="Họ và tên" ></input></div>
                                 <div className="input-text"> <input type="input" placeholder="Số điện thoại" ></input></div>
+                                <div className="input-text"> <input type="input" placeholder="Nhập Email" ></input></div>
                                 <div className="textarea-text" ><textarea placeholder="Nhập nội dung và câu hỏi..." rows="8" ></textarea></div>
                                 <div className="submit-note_"><input type="submit" value="Gửi câu hỏi"></input></div>
                             </div>

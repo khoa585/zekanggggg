@@ -3,7 +3,6 @@ import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { to_slug, formatNumber, formatStar } from '../../commons/index'
-//import Link from 'next/link';
 import {Link} from './../../../routers';
 import reducer from '../../commons/reducer'
 const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
