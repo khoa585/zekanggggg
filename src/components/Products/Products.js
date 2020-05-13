@@ -23,7 +23,7 @@ function Products(props) {
                             <div className="nameProduct"><h6>{task.name}</h6></div>
                             <div className="formatProduct">
                                 <div>
-                                    <span className="price">{formatNumber(task.price)} đ</span>
+                                    <span className="price">{formatNumber(task.price)}</span>
                                 </div>
                                 <div>
                                     <span className="star">{formatStar(task.start)}</span>

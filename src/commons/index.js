@@ -16,9 +16,8 @@ export const to_slug = (str) => {
 }
 
 export const formatNumber = (num) => {
-    return new Intl.NumberFormat({ style: 'currency', currency: 'VND' }).format(num);
+    return num.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
 }
-
 export const formatStar = (star) => {
     if (star === 5) {
         return <><BsFillStarFill /> <BsFillStarFill /> <BsFillStarFill /> <BsFillStarFill /> <BsFillStarFill /></>
