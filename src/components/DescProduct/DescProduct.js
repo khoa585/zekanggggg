@@ -3,8 +3,9 @@ import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { to_slug, formatNumber, formatStar } from '../../commons/index'
-import {Link} from './../../../routers';
-import reducer from '../../commons/reducer'
+import { Link } from './../../../routers';
+import reducer from '../../commons/reducer';
+import CurrencyFormat from 'react-currency-format';
 const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
 function DescProduct(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -26,7 +27,7 @@ function DescProduct(props) {
                             <div className="nameProduct"><h6>{task.name}</h6></div>
                             <div className="formatProduct">
                                 <div>
-                                    <span className="price">{formatNumber(task.price)}</span>
+                                    <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
                                 </div>
                                 <div>
                                     <span className="star">{formatStar(task.start)}</span>

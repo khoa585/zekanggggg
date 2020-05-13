@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
-import { formatStar, to_slug, formatNumber } from '../../../commons/index';
+import { formatStar, to_slug } from '../../../commons/index';
+import CurrencyFormat from 'react-currency-format';
 import './style.scss';
 function ProductItem(props) {
     const { List } = props;
@@ -22,7 +23,7 @@ function ProductItem(props) {
                             <div className="nameProduct"><h6>{task.name}</h6></div>
                             <div className="formatProduct">
                                 <div>
-                                    <span className="price">{formatNumber(task.price)}</span>
+                                    <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
                                 </div>
                                 <div>
                                     <span className="star">{formatStar(task.start)}</span>
