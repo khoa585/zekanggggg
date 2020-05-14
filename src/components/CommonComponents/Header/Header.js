@@ -5,7 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { BsSearch, BsX } from "react-icons/bs"
 import './Header.scss';
 import { AiOutlineMenu } from "react-icons/ai";
-import Link from 'next/link'
+//import Link from 'next/link' ;
+import {Link} from './../../../../routers';
 import ContactFast from '../ContactFast/ContactFast';
 import BackToTop from '../BackToTop/BackToTop';
 function Header(props) {
@@ -42,12 +43,12 @@ function Header(props) {
                             <div className="wrap_nav">
                                 <nav id="main-nav" className="main-nav">
                                     <ul id="menu-primary-menu" className="menu">
-                                        <Link href="/" as="/"><li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}>Trang Chủ</li></Link>
-                                        <Link href="/introduces" as="/gioi-thieu"><li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>Giới Thiệu</li></Link>
-                                        <Link href="/products" as="/san-pham"><li className={`menu-item ${state === '/products' ? 'active' : ''}`}>Sản Phẩm</li></Link>
-                                        <Link href="/experopinion" as="/y-kien-chuyen-gia"><li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
-                                        <Link href="/news" as="/tin-tuc"><li className={`menu-item ${state === '/news' ? 'active' : ''}`}>Tin Tức</li></Link>
-                                        <Link href="/contact" as="/lien-he"><li className={`menu-item ${state === '/contact' ? 'active' : ''}`}>Liên Hệ</li></Link>
+                                        <Link route="/"><li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}>Trang Chủ</li></Link>
+                                        <Link  route="/gioi-thieu"><li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>Giới Thiệu</li></Link>
+                                        <Link  route="/san-pham"><li className={`menu-item ${state === '/products' ? 'active' : ''}`}>Sản Phẩm</li></Link>
+                                        <Link  route="/y-kien-chuyen-gia"><li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}>Ý Kiến Chuyên Gia</li></Link>
+                                        <Link  route="/tin-tuc"><li className={`menu-item ${state === '/news' ? 'active' : ''}`}>Tin Tức</li></Link>
+                                        <Link  route="/lien-he"><li className={`menu-item ${state === '/contact' ? 'active' : ''}`}>Liên Hệ</li></Link>
                                         <li className="menu-item"><BsSearch></BsSearch></li>
                                     </ul>
                                 </nav>
