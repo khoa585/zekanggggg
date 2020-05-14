@@ -1,10 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-<<<<<<< HEAD
 import {Link} from '../../../../routers';
-=======
-import {Link} from './../../../../routers';
->>>>>>> 3f10236222984e2ee47482bdd9c9520d5753fa94
 import { formatStar, to_slug } from '../../../commons/index';
 import CurrencyFormat from 'react-currency-format';
 import './style.scss';
