@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Link from 'next/link';
+import {Link} from '../../../../routers';
 import { formatStar, to_slug } from '../../../commons/index';
 import CurrencyFormat from 'react-currency-format';
 import './style.scss';
@@ -9,7 +9,7 @@ function ProductItem(props) {
     const showProduct = () => {
         if (List) {
             let result = List.map((task, index) => {
-                return <Link href={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
+                return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
                     <Col lg={3} md={3} sm={3} className="resp" key={index}>
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">

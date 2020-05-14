@@ -9,7 +9,7 @@ function Newsz(props) {
     const List = props[0];
     const ListN = props[1];
     const ListP = props[0][0];
-    const { image, title, description } = ListP
+    const { image, title, description,id } = ListP
     const showNews = () => {
         if (List) {
             let result = List.slice(1).map((task, index) => {
@@ -24,7 +24,7 @@ function Newsz(props) {
                             <div className="img-news-1">
                                 <h4>{task.title}</h4>
                                 <p>{task.description}</p>
-                                <button className="btn-news-0 btn-news_0">xem chi tiết</button>
+                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><span><button className="btn-news-0 btn-news_0">xem chi tiết</button></span></Link>
                             </div>
                         </Col>
                     </Row>
@@ -71,7 +71,7 @@ function Newsz(props) {
             <div className="distant_news"></div>
             <Container>
                 <div className="title-wrap-news">
-                    <span className="title-wrap-home-news"><Link route="/">Home</Link></span>
+                    <Link route="/"><span className="title-wrap-home-news">Home</span></Link>
                     <span className="title-wrap-news">Tin tức </span>
                 </div>
                 <div className="distant_news_0"></div>
@@ -87,7 +87,7 @@ function Newsz(props) {
                                     <span>12/04/2020</span>
                                 </div>
                                 <p>{description}</p>
-                                <button className="btn-news btn-news_">xem chi tiết</button>
+                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><span> <button className="btn-news btn-news_">xem chi tiết</button></span></Link>
                             </div>
                         </div>
                     </div>

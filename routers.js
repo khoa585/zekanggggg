@@ -5,4 +5,5 @@ routers.add("detialproduct","/san-pham/:slug.:id");
 routers.add("experopinion","/y-kien-chuyen-gia")
 routers.add("news","/tin-tuc")
 routers.add("contact","/lien-he");
+routers.add("reason","/tin-tuc/:slug.:id");
 module.exports = routers ;
