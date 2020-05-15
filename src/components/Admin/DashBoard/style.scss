@@ -6,6 +6,10 @@ section.ant-layout.ant-layout-has-sider{
     cursor: pointer;
     transition: color 0.3s;
   }
+  li.ant-menu-item {
+    display: flex;
+    align-items: center;
+}
   .trigger:hover {
     color: #1890ff;
   }

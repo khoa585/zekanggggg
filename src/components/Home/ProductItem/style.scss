@@ -25,7 +25,7 @@
     font-size: 1.4em;
 }
 .content-text span{
-    font-size: 1.8em;
+    font-size: 1.5em;
     position: relative;
     color: #242424;
     overflow: hidden;
@@ -149,9 +149,6 @@ span.desc_Name {
     .text-wrap-box {
         width: 40%!important;
     }
-    .distant {
-        height: 0px;
-    }
 }
 @media (max-width: 600px) { 
     button.btn {
@@ -182,6 +179,12 @@ span.desc_Name {
     }
 }
 @media (max-width: 991px) { 
+    .text-wrap-context h4{
+        font-size: 1.3rem;
+    }
+    .distant {
+        height: 50px!important;
+    }
     .thumb {
         height: 9rem;
     }
@@ -337,13 +340,5 @@ span.desc_Name {
     .content-text h6,
      .content-text span {
         font-size: 0.7em!important;
-    }
-}
-@media (max-width: 991px){
-    .text-wrap-context h4{
-        font-size: 1.3rem;
-    }
-    .distant {
-        height: 50!important;
     }
 }

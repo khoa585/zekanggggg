@@ -6,6 +6,12 @@
     cursor: pointer;
     color: #292929;
     font-size: .9em;
+    span.errors {
+        font-size: 0.8em;
+        display: flex;
+        align-items: baseline;
+        padding: 2% 0;
+    }
 }
 .title-wrap-contact-0:hover{
     color:#91af77;
@@ -23,13 +29,13 @@
 .contact-title-1{
     display: flex;
     flex-direction: column;
-    input[type="input"] {
+    .Title-question {
         border-radius: 4px;
         border: none;
         padding: 1%;
         margin: 3% 0;
     }
-    input[type="input"]:focus{
+    .Title-question:focus{
         outline: none;
     }
     span {
@@ -43,9 +49,10 @@
         font-size: 1.1em;
     }
 }
-textarea#mission:focus{
+#mission:focus{
     outline: none;
 }
+
 .contact-title-2{
     display: flex;
     flex-direction: column;
@@ -55,11 +62,12 @@ textarea#mission:focus{
         font-size: 1.1em;
     }
 }
-textarea#mission {
+#mission {
     width: 100%;
     border-radius: 4px;
 }
 .contact-submit{
+    padding: 3% 0 0 0;
     input[type="submit"] {
         width: 50%;
         background: #39803d;
@@ -73,6 +81,11 @@ textarea#mission {
 }
 .contact-title-1 {
     width: 45%;
+}
+.form-contact-bast{
+    form {
+        width: initial;
+    }
 }
 .form-contact{
     width: 90%;

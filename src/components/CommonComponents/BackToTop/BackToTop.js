@@ -26,7 +26,7 @@ const BackToTop = () => {
         <div>
             {state && (
                 <div className="scroll-to-top">
-                    <div onClick={() => scrollToTop()}>
+                    <div onClick={() => scrollToTop()} className="btn_scroll">
                         <UpOutlined />
                     </div>
                 </div>

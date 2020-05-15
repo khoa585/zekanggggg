@@ -8,6 +8,10 @@
     .swiper-button-prev:after, .swiper-button-next:after {
         font-size: 2em;
     }
+    .swiper-button-prev:hover::after, .swiper-button-next:hover::after {
+        transition: all .5s;
+        color: #479626
+    }
     .swiper-wrapper{
         .text-wrap-context {
             width: 70%;

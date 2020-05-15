@@ -59,45 +59,36 @@ background:#e0e0e0;
 }
 }
 .send-wrap{
-    .submit-note input[type="submit"]{
+    .submit-note .submit-form,.submit-note_ .submit-form{
         width: 100%;
-        padding: 4%;
+        height: 50px;
         background: #2cb523;
         border: none;
         border-radius: 10px 10px 0 0;
         color: #fff;
         @include outline
     }
-    textarea {
+    .submit-note_ .submit-form{
         width: 100%;
-        padding: 4%;
-        margin: 4% 0;
-    }
-    .submit-note input[type="submit"]:focus{
-        @include outline
-    }
-    textarea:focus {
-        @include outline
-    }
-    .submit-note_ input[type="submit"]:focus{
-        @include outline
-    }
-    .input-text input[type="input"]:focus{
-        @include outline
-    }
-    .submit-note_ input[type="submit"]{
-        width: 100%;
-        padding: 4%;
-        background: #232eb5;
+        height: 50px;
+        background: #5b65a1;
         border: none;
-        border-radius: 0 0  10px 10px;
+        border-radius: 0 0 10px 10px;
         color: #fff;
         @include outline
     }
-    .input-text input[type="input"]{
+    .input-text .form-question,.textarea-text .form-question{
         width: 100%;
         margin: 4% 0;
         padding: 4%;
+    }
+    .submit-note_ {
+        padding: 3% 0 0 0;
+    }
+    .errors {
+        color: #ea0202;
+        display: flex;
+        align-items: baseline;
     }
 }
 @media (max-width: 767px) { 

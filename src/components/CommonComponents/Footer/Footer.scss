@@ -16,7 +16,7 @@
     span{
         color: #fff;
         font-size: 1.5em;
-        }
+    }
 }
 .footerMenu_{
     background: #00000030;
@@ -51,6 +51,22 @@ li.footer-menu-item {
     font-size: 1em;
     color: #242424;
     align-items: center;
+    span{
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffffff;
+        transition: width .3s;
+    }
+    .cool-link:hover::after {
+        width: 100%;
+    }
 }
 .footerMess{
     height: 100%;
@@ -151,7 +167,7 @@ nav#footer-main-nav {
 }
 .footer-main-nav{
     li.footer-menu-item span:hover{
-        color: white;
+        color: #fff;
         transition: .3s;
     }
 }

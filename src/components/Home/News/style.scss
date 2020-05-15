@@ -58,9 +58,8 @@
     width: 100%;
     background: #00000040;
     display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    flex-direction: column;
 }
 .overlayBottom{
     width: 80%;

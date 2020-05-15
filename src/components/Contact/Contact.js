@@ -3,6 +3,11 @@ import './style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { Link } from './../../../routers';
+import { Formik } from 'formik';
+import * as yup from 'yup';
+import { Form, Input } from 'formik-antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+const { TextArea } = Input;
 function Contact(props) {
     const [state, setState] = useState({
         showingInfoWindow: false,
@@ -28,70 +33,149 @@ function Contact(props) {
                     <span className="title-wrap-contact-1">Liên hệ</span>
                 </div>
                 <div className="distant___"></div>
-                <div>
-                    <form>
-                        <Row>
-                            <Col lg={12}>
-                                <div className="form-name-contact">
-                                    <div className="form-name-contact-1">
-                                        <div className="form-contact-0">
-                                            <div className="form-contact">
-                                                <div className="contact-title-0">
-                                                    <div className="contact-title-1">
-                                                        <span>Tiêu đề</span>
-                                                        <input type="input"></input>
-                                                    </div>
-                                                    <div className="contact-title-1">
-                                                        <span>Họ tên</span>
-                                                        <input type="input"></input>
-                                                    </div>
-                                                </div>
-                                                <div className="contact-title-0">
-                                                    <div className="contact-title-1">
-                                                        <span>Địa chỉ</span>
-                                                        <input type="input"></input>
-                                                    </div>
-                                                    <div className="contact-title-1">
-                                                        <span>Email</span>
-                                                        <input type="input"></input>
-                                                    </div>
-                                                </div>
-                                                <div className="contact-title-0 contact-title-0-mission">
-                                                    <div className="contact-title-2">
-                                                        <span>Lời nhắn</span>
-                                                        <textarea id="mission">
-                                                        </textarea>
-                                                    </div>
-                                                </div>
-                                                <div className="contact-submit">
-                                                    <input type="submit" value="GỬI LỜI NHẮN"></input>
-                                                </div>
-                                            </div>
+                <div className="form-contact-bast">
+                    <Row>
+                        <Col lg={12}>
+                            <div className="form-name-contact">
+                                <div className="form-name-contact-1">
+                                    <div className="form-contact-0">
+                                        <div className="form-contact">
+                                            <Formik
+                                                initialValues={{
+                                                    Title: '',
+                                                    usename: '',
+                                                    Email: '',
+                                                    address: '',
+                                                    Message: ''
+                                                }}
+                                                onSubmit={async (values, { setSubmitting }) => {
+                                                    console.log(values)
+                                                }}
+                                                validationSchema={
+                                                    yup.object().shape({
+                                                        Title: yup.string().required('Hãy nhập Tiêu đề.'),
+                                                        usename: yup.string().required('Hãy nhập Họ tên.'),
+                                                        Email: yup.string().required('Hãy nhập nhập Email.'),
+                                                        address: yup.string().required('Hãy nhập Địa chỉ.'),
+                                                        Message: yup.string().required('Hãy nhập Lời nhắn.'),
+                                                    })
+                                                }
+                                            >
+                                                {({
+                                                    values,
+                                                    handleSubmit,
+                                                    handleChange,
+                                                    errors,
+                                                    touched
+                                                }) => (
+                                                        <Form onSubmit={handleSubmit}>
+                                                            <div className="contact-title-0">
+                                                                <div className="contact-title-1">
+                                                                    <span>Tiêu đề</span>
+                                                                    <Input
+                                                                        name='Title'
+                                                                        value={values.Title}
+                                                                        onChange={handleChange}
+                                                                        className="Title-question"
+                                                                    />
+                                                                    {
+                                                                        errors.Title && touched.Title && (
+                                                                            <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.Title}</span>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                                <div className="contact-title-1">
+                                                                    <span>Họ tên</span>
+                                                                    <Input
+                                                                        name='usename'
+                                                                        value={values.usename}
+                                                                        onChange={handleChange}
+                                                                        className="Title-question"
+                                                                    />
+                                                                    {
+                                                                        errors.usename && touched.usename && (
+                                                                            <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.usename}</span>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                            <div className="contact-title-0">
+                                                                <div className="contact-title-1">
+                                                                    <span>Địa chỉ</span>
+                                                                    <Input
+                                                                        name='address'
+                                                                        value={values.address}
+                                                                        onChange={handleChange}
+                                                                        className="Title-question"
+                                                                    />
+                                                                    {
+                                                                        errors.address && touched.address && (
+                                                                            <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.address}</span>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                                <div className="contact-title-1">
+                                                                    <span>Email</span>
+                                                                    <Input
+                                                                        name='Email'
+                                                                        value={values.Email}
+                                                                        onChange={handleChange}
+                                                                        className="Title-question"
+                                                                    />
+                                                                    {
+                                                                        errors.Email && touched.Email && (
+                                                                            <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.Email}</span>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                            <div className="contact-title-0 contact-title-0-mission">
+                                                                <div className="contact-title-2">
+                                                                    <span>Lời nhắn</span>
+                                                                    <TextArea rows={2}
+                                                                        name="Message"
+                                                                        value={values.Message}
+                                                                        className="Title-question"
+                                                                        id="mission"
+                                                                    />
+                                                                    {
+                                                                        errors.Message && touched.Message && (
+                                                                            <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.Message}</span>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                            <div className="contact-submit">
+                                                                <input type="submit" value="GỬI LỜI NHẮN"></input>
+                                                            </div>
+                                                        </Form>
+                                                    )}
+                                            </Formik>
                                         </div>
-                                        <div className="contact-name">
-                                            <div className="contact-name-0">
-                                                <div>
-                                                    <h6>CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI VÀ GIẢI PHÁP QUỐC TẾ ANT GROUP</h6>
-                                                </div>
-                                                <div>
-                                                    <span>Trụ sở chính</span>
-                                                    <p>Tầng 3, Tòa nhà Lotus, Số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy, Hà Nội</p>
-                                                </div>
-                                                <div>
-                                                    <span>Tel</span>
-                                                    <p>024 3640 1123</p>
-                                                </div>
-                                                <div>
-                                                    <span>Email</span>
-                                                    <p>info@antgroup.com</p>
-                                                </div>
+                                    </div>
+                                    <div className="contact-name">
+                                        <div className="contact-name-0">
+                                            <div>
+                                                <h6>CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI VÀ GIẢI PHÁP QUỐC TẾ ANT GROUP</h6>
+                                            </div>
+                                            <div>
+                                                <span>Trụ sở chính</span>
+                                                <p>Tầng 3, Tòa nhà Lotus, Số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy, Hà Nội</p>
+                                            </div>
+                                            <div>
+                                                <span>Tel</span>
+                                                <p>024 3640 1123</p>
+                                            </div>
+                                            <div>
+                                                <span>Email</span>
+                                                <p>info@antgroup.com</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </Col>
-                        </Row>
-                    </form>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
             </Container>
             <div className="distant___"></div>

@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss';
 import { Link } from './../../../routers';
+import { Formik } from 'formik';
+import * as yup from 'yup';
+import { Form, Input } from 'formik-antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+const { TextArea } = Input;
 function Experopinion(props) {
     const Question = [
         {
@@ -93,12 +98,99 @@ function Experopinion(props) {
                         </Col>
                         <Col lg={4} md={4} sm={12} xs={12} className="wrap-contai-send">
                             <div className="send-wrap">
-                                <div className="submit-note"><input type="submit" value="Gửi câu hỏi"></input></div>
-                                <div className="input-text"> <input type="input" placeholder="Họ và tên" ></input></div>
-                                <div className="input-text"> <input type="input" placeholder="Số điện thoại" ></input></div>
-                                <div className="input-text"> <input type="input" placeholder="Nhập Email" ></input></div>
-                                <div className="textarea-text" ><textarea placeholder="Nhập nội dung và câu hỏi..." rows="8" ></textarea></div>
-                                <div className="submit-note_"><input type="submit" value="Gửi câu hỏi"></input></div>
+                                <Formik
+                                    initialValues={{
+                                        usename: '',
+                                        phone: '',
+                                        Email: '',
+                                        contentQuestion: '',
+                                    }}
+                                    onSubmit={async (values, { setSubmitting }) => {
+                                        console.log(values)
+                                    }}
+                                    validationSchema={
+                                        yup.object().shape({
+                                            usename: yup.string().required('Hãy nhập họ và tên.'),
+                                            phone: yup.string().required('Hãy nhập số điện thoại.'),
+                                            Email: yup.string().required('Hãy nhập nhập Email.'),
+                                            contentQuestion: yup.string().required('Hãy nhập nhập nội dung và câu hỏi.'),
+                                        })
+                                    }
+                                >
+                                    {({
+                                        values,
+                                        handleSubmit,
+                                        handleChange,
+                                        errors,
+                                        touched
+                                    }) => (
+                                            <div>
+                                                <Form onSubmit={handleSubmit}>
+                                                    <div className="submit-note">
+                                                        <button type="submit" className="submit-form">Gửi câu hỏi</button>
+                                                    </div>
+                                                    <div className="input-text">
+                                                        <Input
+                                                            name='usename'
+                                                            value={values.usename}
+                                                            onChange={handleChange}
+                                                            placeholder="Họ và tên"
+                                                            className="form-question"
+                                                        />
+                                                        {
+                                                            errors.usename && touched.usename && (
+                                                                <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.usename}</span>
+                                                            )
+                                                        }
+                                                    </div>
+                                                    <div className="input-text">
+                                                        <Input
+                                                            name='phone'
+                                                            value={values.phone}
+                                                            onChange={handleChange}
+                                                            placeholder="Số điện thoại"
+                                                            className="form-question"
+                                                        />
+                                                        {
+                                                            errors.phone && touched.phone && (
+                                                                <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.phone}</span>
+                                                            )
+                                                        }
+                                                    </div>
+                                                    <div className="input-text">
+                                                        <Input
+                                                            name='Email'
+                                                            value={values.Email}
+                                                            onChange={handleChange}
+                                                            placeholder="Nhập Email"
+                                                            className="form-question"
+                                                        />
+                                                        {
+                                                            errors.Email && touched.Email && (
+                                                                <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.Email}</span>
+                                                            )
+                                                        }
+                                                    </div>
+                                                    <div className="textarea-text" >
+                                                        <TextArea rows={2}
+                                                            name="contentQuestion"
+                                                            value={values.contentQuestion}
+                                                            className="form-question"
+                                                            placeholder="Nhập nội dung và câu hỏi..."
+                                                        />
+                                                        {
+                                                            errors.contentQuestion && touched.contentQuestion && (
+                                                                <span className="errors"><ExclamationCircleOutlined />&emsp;{errors.contentQuestion}</span>
+                                                            )
+                                                        }
+                                                    </div>
+                                                    <div className="submit-note_">
+                                                        <button type="submit" className="submit-form">Gửi câu hỏi</button>
+                                                    </div>
+                                                </Form>
+                                            </div>
+                                        )}
+                                </Formik>
                             </div>
                         </Col>
                     </Row>

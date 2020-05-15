@@ -39,12 +39,12 @@ function Footer(props) {
                             <Col lg={8} md={10} sm={9} sm={9} className="footer-main-nav">
                                 <nav id="footer-main-nav">
                                     <ul id="footer-menu-primary-menu" className="footer-menu">
-                                        <li className="footer-menu-item footer-Item"><Link route="/"><span>Trang Chủ</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/gioi-thieu"><span>Giới Thiệu</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/san-pham"><span>Sản Phẩm</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/experopinion"><span>Ý Kiến Chuyên Gia</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/news"><span>Tin Tức</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/contact"><span>Liên Hệ</span></Link></li>
+                                        <li className="footer-menu-item footer-Item"><Link route="/"><span className="cool-link">Trang Chủ</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/gioi-thieu"><span className="cool-link">Giới Thiệu</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/san-pham"><span className="cool-link">Sản Phẩm</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/experopinion"><span className="cool-link">Ý Kiến Chuyên Gia</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/news"><span className="cool-link">Tin Tức</span></Link></li>
+                                        <li className="footer-menu-item "><Link route="/contact"><span className="cool-link">Liên Hệ</span></Link></li>
                                     </ul>
                                 </nav>
                             </Col>
