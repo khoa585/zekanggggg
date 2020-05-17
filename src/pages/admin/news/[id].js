@@ -10,7 +10,9 @@ function Index(props){
     )
 }
 Index.getInitialProps =async({query,res}) =>{
+    console.log(query.id);
     const datarequest = await fetchGetDetialNew(query.id);
+    console.log(datarequest);
     if(datarequest?.data?.data){
         return {...datarequest.data.data};
     }
