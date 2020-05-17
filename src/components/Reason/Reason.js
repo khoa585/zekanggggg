@@ -59,9 +59,8 @@ function Reason(props) {
                     <div className="content-reason">
                         <div className="content-reason-o">
                             <p>{description}</p>
-                            {html}
+                            <div className="content-reason-o" dangerouslySetInnerHTML={{ __html: html }}></div>
                         </div>
-                        <p>VTV1 - Lần đầu ti&ecirc;n một hội nghị da liễu quốc tế được tổ chức tại H&agrave; nội do Bệnh viện Da liễu Trung ương chủ tr&igrave; với sự tham gia của gần 1000 gần chuy&ecirc;n gia da liễu tr&ecirc;n thế giới.</p>
                         {/* <p className="content-reason-as">Bệnh vảy nến là căn bệnh ngoài da thường gặp ở người Việt Nam. Bệnh không lây nhiễm nhưng gây ra nhiều khó chịu, làm ảnh hưởng trầm trọng đến sinh hoạt của người bệnh. Nếu không được điều trị kịp thời bệnh có thể dẫn đến nhiều biến chứng nguy hiểm như đỏ da toàn thân, vảy nến mủ, viêm khớp, nhiễm trùng da…</p>
                         <div className="content-reason-o">
                             <p>Hiện nay, nguyên nhân chính xác gây ra bệnh vảy nến vẫn chưa được xác định. Tuy nhiên, một số chuyên gia da liễu cho rằng bệnh vảy nến có liên quan đến gene và rối loạn miễn dịch. Từ đó dẫn đến các tế bào da tăng sinh nhanh so với bình thường.

@@ -145,8 +145,8 @@ function Contact(props) {
                                                                     }
                                                                 </div>
                                                             </div>
-                                                            <div className="contact-submit">
-                                                                <input type="submit" value="GỬI LỜI NHẮN"></input>
+                                                            <div className="contact-submit submitForm">
+                                                                <button type="submit">GỬI LỜI NHẮN</button>
                                                             </div>
                                                         </Form>
                                                     )}

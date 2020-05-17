@@ -7,8 +7,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import ContactFast from '../ContactFast/ContactFast';
 import BackToTop from '../BackToTop/BackToTop';
 import { Input } from 'antd';
-import { CloseOutlined } from '@ant-design/icons';
 import { Link } from './../../../../routers';
+import Searchsugg from '../Searchs/Searchs';
 import Modal from 'react-bootstrap/Modal';
 import './Header.scss';
 function Header(props) {
@@ -18,15 +18,11 @@ function Header(props) {
     const [header, setHeader] = useState(false)
     const state = pathname;
     const [stateIcon, setstateIcon] = useState(false);
-    const [searchs, setSearchs] = useState(false);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const showMenu = (open) => {
         setstateIcon(!open)
-    }
-    const showSearch = () => {
-        setSearchs(!searchs)
     }
     const handleScroll = (e) => {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -66,11 +62,12 @@ function Header(props) {
                                         <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}> <Link route="/y-kien-chuyen-gia"><span className="cool-link">Ý Kiến Chuyên Gia</span></Link></li>
                                         <li className={`menu-item ${state === '/news' ? 'active' : ''}`}><Link route="/tin-tuc"><span className="cool-link">Tin Tức</span></Link></li>
                                         <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}> <Link route="/lien-he"><span className="cool-link">Liên Hệ</span></Link></li>
+                                        {/* <li className="menu-item container-search ">
+                                            <input type="search" id="search" placeholder="Search..." />
+                                            <BsSearch></BsSearch>
+                                        </li> */}
                                         {
-                                            searchs ? <li className="menu-item"><CloseOutlined onClick={() => showSearch()} /></li> : <li className="menu-item"><BsSearch onClick={() => showSearch()}></BsSearch></li>
-                                        }
-                                        {
-                                            searchs ? <li className="menu-item search-item"><Search placeholder="Nhập từ khóa cần tìm" onSearch={value => console.log(value)} enterButton /></li> : ''
+                                            <Searchsugg></Searchsugg>
                                         }
                                     </ul>
                                 </nav>

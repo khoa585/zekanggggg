@@ -24,7 +24,7 @@ function Newsz(props) {
                             <div className="img-news-1">
                                 <h4>{task.title}</h4>
                                 <p>{task.description}</p>
-                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><span><button className="btn-news-0 btn-news_0">xem chi tiết</button></span></Link>
+                                <Link route={`/tin-tuc/${to_slug(task.title)}.${task.id}`}><span><button className="btn-news-0 btn-news_0">xem chi tiết</button></span></Link>
                             </div>
                         </Col>
                     </Row>

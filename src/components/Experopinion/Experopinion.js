@@ -6,6 +6,8 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Form, Input } from 'formik-antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { fetchSendQuestion } from '../../api/question';
+import { toast } from 'react-toastify';
 const { TextArea } = Input;
 function Experopinion(props) {
     const Question = [
@@ -106,7 +108,18 @@ function Experopinion(props) {
                                         contentQuestion: '',
                                     }}
                                     onSubmit={async (values, { setSubmitting }) => {
-                                        console.log(values)
+                                        const data = {
+                                            name: values.usename,
+                                            phone: values.phone,
+                                            email: values.Email,
+                                            content: values.contentQuestion,
+                                        }
+                                        const result = await fetchSendQuestion(data)
+                                        if (result.status == 200 && result.data?.status == "success") {
+                                            toast.success("Gửi thành công");
+                                        } else {
+                                            toast.error("Có Lỗi Xảy Ra Khi Gửi");
+                                        }
                                     }}
                                     validationSchema={
                                         yup.object().shape({
@@ -126,7 +139,7 @@ function Experopinion(props) {
                                     }) => (
                                             <div>
                                                 <Form onSubmit={handleSubmit}>
-                                                    <div className="submit-note">
+                                                    <div className="submit-note submitForm">
                                                         <button type="submit" className="submit-form">Gửi câu hỏi</button>
                                                     </div>
                                                     <div className="input-text">
@@ -184,7 +197,7 @@ function Experopinion(props) {
                                                             )
                                                         }
                                                     </div>
-                                                    <div className="submit-note_">
+                                                    <div className="submit-note_ submitForm">
                                                         <button type="submit" className="submit-form">Gửi câu hỏi</button>
                                                     </div>
                                                 </Form>

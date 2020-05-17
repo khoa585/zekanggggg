@@ -6,12 +6,7 @@
     cursor: pointer;
     color: #292929;
     font-size: .9em;
-    span.errors {
-        font-size: 0.8em;
-        display: flex;
-        align-items: baseline;
-        padding: 2% 0;
-    }
+
 }
 .title-wrap-contact-0:hover{
     color:#91af77;
@@ -25,14 +20,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    span.errors {
+        font-size: 1em;
+        color: #feffc5;
+        display: flex;
+        align-items: center;
+        svg{
+            color: #feffc5;
+        }
+    }
 }
 .contact-title-1{
     display: flex;
     flex-direction: column;
+    padding: 2% 0 2% 0%;
+    width: 45%;
     .Title-question {
         border-radius: 4px;
         border: none;
-        padding: 1%;
         margin: 3% 0;
     }
     .Title-question:focus{
@@ -41,18 +46,10 @@
     span {
         color: azure;
         font-size: 1.1em;
+        display: flex;
+        align-items: center;
     }
 }
-.contact-title-1{
-    span {
-        color: azure;
-        font-size: 1.1em;
-    }
-}
-#mission:focus{
-    outline: none;
-}
-
 .contact-title-2{
     display: flex;
     flex-direction: column;
@@ -63,24 +60,52 @@
     }
 }
 #mission {
+    margin: 3% 0;
     width: 100%;
     border-radius: 4px;
 }
 .contact-submit{
     padding: 3% 0 0 0;
-    input[type="submit"] {
+    button {
         width: 50%;
         background: #39803d;
         border: navajowhite;
         padding: 2%;
         color: #fff;
     }
-    input[type="submit"]:focus{
+    button:focus{
         outline: none;
     }
 }
-.contact-title-1 {
-    width: 45%;
+.contact-submit.submitForm button {
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.contact-submit.submitForm button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  .contact-submit.submitForm button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+.contact-submit.submitForm button:focus{
+    outline: none;
 }
 .form-contact-bast{
     form {
@@ -123,6 +148,9 @@
     justify-content: center;
     padding: 5%;
     color: #fff;
+    h6{
+        color: #fff;
+    }
 }
 .form-name-contact-1{
     width: 100%;
@@ -184,7 +212,7 @@
             font-size: 0.7em;
         }
     }
-    .contact-submit input[type="submit"] {
+    .contact-submit button {
         font-size: 0.8em;
     }
     .contact-title-1 {

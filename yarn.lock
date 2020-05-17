@@ -6268,7 +6268,7 @@ react-currency-format@^1.0.0:
   dependencies:
     prop-types "^15.6.0"
 
-react-dom@16.13.1:
+react-dom@16.13.1, react-dom@^16.2.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -6378,7 +6378,7 @@ react-transition-group@^4.0.0, react-transition-group@^4.4.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@16.13.1:
+react@16.13.1, react@^16.2.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -6809,6 +6809,11 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+search-suggestion@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/search-suggestion/-/search-suggestion-1.0.3.tgz#26c3ce47fd593593b5679b891310d98af9578bb4"
+  integrity sha512-y18NRSiLs+N+LR50TDug/6MXXMIXgqSxjoUb/3GDOJTZ3QeAYm5P6iMgdEXvpOshQRaaqvZCfnad8HCuXMbE8A==
 
 "semver@2 || 3 || 4 || 5", semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"
@@ -7305,6 +7310,14 @@ stylis@3.5.4:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
   integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
+
+suggestion-react-input-search@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/suggestion-react-input-search/-/suggestion-react-input-search-1.4.0.tgz#d93e9db1112f613c8b9679f3a378b4976dce098e"
+  integrity sha512-SupkSHxEzNw2LUHS1ClAJs9i9rxc7ePpXv3fMOogVfV7NaKPz9Aa1YYUR39zXGiKaU70PUUueiKOzPSOKfgM9w==
+  dependencies:
+    react "^16.2.0"
+    react-dom "^16.2.0"
 
 supports-color@^2.0.0:
   version "2.0.0"

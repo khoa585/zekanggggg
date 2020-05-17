@@ -4,9 +4,11 @@ import Header from '../components/CommonComponents/Header/Header'
 import Footer from '../components/CommonComponents/Footer/Footer';
 import { fetchListNews } from './../api/news';
 import { fetchListProduct } from './../api/products';
+import HeaderTag from './../components/CommonComponents/HeaderTag/HeaderTag';
 function News(props) {
     return (
         <React.Fragment>
+            <HeaderTag />
             <Header></Header>
             <Newsz {...props}></Newsz>
             <Footer></Footer>
