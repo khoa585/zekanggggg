@@ -1,6 +1,6 @@
 import axios from './axios';
 export const loginUser= (username,password)=>{
-    return axios.post("/user/login",{
+    return axios.post("/api/user/login",{
         username,password
     })
 }
