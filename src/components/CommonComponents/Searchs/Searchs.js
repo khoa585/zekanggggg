@@ -17,44 +17,55 @@ const Searchs = (props) => {
     const showsearch = () => {
         if (search.length != 0) {
             const result = search.map((item, index) => {
-                return <Link route={`/san-pham/${to_slug(item.name)}.${item.id}`} key={index}><div>{item.name}</div ></Link>
+                return <div className="items" key={index}>
+                    <div>{item.name}</div >
+                    <div>
+                        <Link route={`/san-pham/${to_slug(item.name)}.${item.id}`}>
+                            <span>Xem chi tiết</span>
+                        </Link>
+                    </div>
+                </div>
             })
             return result;
         } else {
-            return;
+            return <div className="noresult">Không có kết quả cần tìm</div>
         }
     }
     const shows = (val) => {
         if (val === '') {
-            return <div>Không có kết quả cần tìm</div>
+            return;
         } else {
             return <div>
                 <div>gợi ý</div>
+                <div><span>Sản phẩm</span></div>
                 <Container fluid>
-                    <Row>
-                        <Col lg={2}>
-                            <div>Sản phẩm</div>
-                        </Col>
-                        <Col lg={10}>
-                            {
-                                showsearch()
-                            }
-                        </Col>
-                    </Row>
+                    {
+                        showsearch()
+                    }
                 </Container>
             </div>
 
         }
     }
+    const myFunctiononBlur = () => {
+        setTimeout(()=>{
+            setVal('')
+        },150)
+    }
     return (
         <>
             <li className="menu-item container-search ">
-                <input
-                    type="text"
-                    id="__inputItemProps"
-                    onChange={(e) => hasdallsearch(e.target.value)}
-                />
-                <BsSearch></BsSearch>
+                <div className="container-search_">
+                    <input
+                        type="text"
+                        id="__inputItemProps"
+                        placeholder="Tìm kiếm"
+                        value={val}
+                        onChange={(e) => hasdallsearch(e.target.value)}
+                        onBlur={myFunctiononBlur}
+                    />
+                    <BsSearch></BsSearch>
+                </div>
                 <div id="__listItemProps">
                     {
                         shows(val)

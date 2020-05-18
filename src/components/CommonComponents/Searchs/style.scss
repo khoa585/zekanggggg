@@ -1,24 +1,62 @@
 li.menu-item.container-search {
     overflow: inherit!important;
-    position: initial!important;;
+    position: initial!important;
     div#__listItemProps {
         position: absolute;
         right: 0;
         top: 75%;
         width: 40%;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        z-index: 99999;
+        .noresult{
+            padding: 10%;
+            text-align: center;
+        }
+        .container-fluid{
+            .items{
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                margin: auto;
+                padding: 5% 0;
+                border-bottom: 1px solid #ded5d5;
+                position: relative;
+                z-index: 99999;
+                div:first-child{
+                    font-size: 0.9em;
+                }
+            }
+            .items:hover{
+                background-color: #f3f3f3 !important;
+                transition: .5s;
+            }
+            span{
+                font-size: 0.8em;
+                text-transform: initial;
+                background: #cecbcb;
+                padding: 5px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
     }
     div#__listItemProps > div{
         background-color: #ffffff !important;
         font-weight: normal;
-        color: #0a8300;
-        padding: 10%;
+        color: #6c6f6c;
         border-bottom: 1px solid;
-        cursor: pointer;
-    }
-    div#__listItemProps > div:hover{
-        background-color: #f3f3f3 !important;
-        transition: .5s;
+        > div:nth-child(1) {
+            padding: 5%;
+            border-bottom: 1px solid #ded5d5;
+            font-weight: 500;
+        }
+        > div:nth-child(2) {
+            padding: 2% 0 2% 5%;
+            span{
+                border-bottom: 1px solid #ded5d5;
+            }
+        }
     }
 }
 a:hover {
@@ -35,10 +73,11 @@ a:hover {
     -o-transition: width .55s ease;
     transition: width .55s ease;
 }
-.container-search input#__inputItemProps:focus, .container-search input#__inputItemProps:active{
+.container-search_ input#__inputItemProps:focus, .container-search_ input#__inputItemProps:active{
     outline:none;
     width: 10rem;
 }
-.container-search:hover input#__inputItemProps{
+.container-search_:hover input#__inputItemProps{
     width: 10rem;
+    border-left: 1px solid #dadada;
 }
