@@ -10,6 +10,7 @@ const { TextArea } = Input;
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Link from 'next/link';
+import {BASE_URL} from './../../../api/config';
 import './style.scss';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 function AddProduct(props) {
@@ -19,7 +20,7 @@ function AddProduct(props) {
         listType: 'picture',
         FileList: [...fileList],
         className: 'upload-list-inline',
-        action: 'http://52.255.164.213:8000/upload',
+        action:BASE_URL+'/api/upload',   
     };
     const onChangeUpload = (info) => {
         let filesList = [...info.fileList];

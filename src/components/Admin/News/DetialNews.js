@@ -7,6 +7,7 @@ import { v4 as uuid4 } from 'uuid';
 import {fetchUpdateNews} from '../../../api/news';
 import {toast} from 'react-toastify';
 import Router from 'next/router';
+import {BASE_URL} from './../../../api/config';
 const { TextArea } = Input;
 const Ckeditor = dynamic(()=>import("../../CommonComponents/Ckeditor/Ckeditor"),{
     ssr:false
@@ -21,7 +22,7 @@ export default function Detial(props){
         listType: 'picture',
         fileList: [...fileList],
         className: 'upload-list-inline',
-        action:'http://52.255.164.213:8000/upload',   
+        action:BASE_URL+'/api/upload',   
     };
     useEffect(()=>{
         let files = fileList ;
