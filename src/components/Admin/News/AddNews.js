@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import {fetchAddNews} from './../../../api/news';
 import {toast} from 'react-toastify';
 import Router from 'next/router'
+import {BASE_URL} from './../../../api/config';
 const Ckeditor = dynamic(()=>import("./../../CommonComponents/Ckeditor/Ckeditor"),{
     ssr:false
 })
@@ -20,7 +21,7 @@ export default function AddNews() {
         listType: 'picture',
         FileList: [...fileList],
         className: 'upload-list-inline',
-        action:'http://52.255.164.213:8000/upload',   
+        action:BASE_URL+'/api/upload',   
     };
     const onEditorChange = (evt)=>{
         setContent(evt.editor.getData());
