@@ -1,112 +1,67 @@
 import React, { useState } from 'react';
-import { Input } from 'antd';
 import { BsSearch } from "react-icons/bs"
-import { fetchSearchProduct } from '../../../api/products'
+import { fetchSearchProduct } from '../../../api/products';
+import * as lodashs from "lodash";
+import { to_slug } from '../../../commons/index';
 import './style.scss';
+import { Link } from '../../../../routers';
+import { Container, Row, Col } from 'react-bootstrap';
 const Searchs = (props) => {
-    const [search,setSearch] = useState([])
-    const hasdallsearch = async (e) => {
-        const result = await fetchSearchProduct(e.target.value)
-        setSearch(result)
-    };
-    console.log(search)
+    const [val, setVal] = useState('')
+    const [search, setSearch] = useState([])
+    const hasdallsearch = lodashs.debounce(async (value) => {
+        setVal(value)
+        const result = await fetchSearchProduct(value)
+        value === '' ? setSearch([]) : setSearch(result.data?.data)
+    }, 500)
+    const showsearch = () => {
+        if (search.length != 0) {
+            const result = search.map((item, index) => {
+                return <Link route={`/san-pham/${to_slug(item.name)}.${item.id}`} key={index}><div>{item.name}</div ></Link>
+            })
+            return result;
+        } else {
+            return;
+        }
+    }
+    const shows = (val) => {
+        if (val === '') {
+            return <div>Không có kết quả cần tìm</div>
+        } else {
+            return <div>
+                <div>gợi ý</div>
+                <Container fluid>
+                    <Row>
+                        <Col lg={2}>
+                            <div>Sản phẩm</div>
+                        </Col>
+                        <Col lg={10}>
+                            {
+                                showsearch()
+                            }
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
+        }
+    }
     return (
         <>
             <li className="menu-item container-search ">
-                <input type="text" id="__inputItemProps" onChange={hasdallsearch} />
+                <input
+                    type="text"
+                    id="__inputItemProps"
+                    onChange={(e) => hasdallsearch(e.target.value)}
+                />
                 <BsSearch></BsSearch>
+                <div id="__listItemProps">
+                    {
+                        shows(val)
+                    }
+                </div>
             </li>
         </>
     )
 }
 export default Searchs;
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { Input } from 'antd';
-// import Suggestion from 'search-suggestion';
-// import { BsSearch, BsX } from "react-icons/bs";
-// import { fetchListProduct } from '../../../api/products'
-// import './style.scss';
-// const Searchs = (props) => {
-//     const [currentData, setCurrentData] = useState([])
-//     const [items,setItems] = useState([])
-//     const { Search } = Input;
-//     const createData = (word, data) => {
-//         const re = new RegExp(`${word.toLowerCase()}.*\\B`, 'g');
-//         return data.filter(item => re.test(item.toLowerCase()));
-//     };
-//     console.log(items)
-//     const handleChange = e => {
-//         const value = e.target.value;
-//         let filterData = [];
-//         if (value) {
-//             filterData = createData(value, items);
-//         }
-//         setCurrentData(filterData)
-//     };
-//     const fetchdata = (data) =>{
-//         const result = data.map((task,index)=>{
-//             return task.name
-//         })
-//         setItems(result)
-//     }
-//     useEffect(() => {
-//         const fetch = async () => {
-//             const result = await fetchListProduct()
-//             fetchdata(result.data.data)
-//         }
-//         fetch()
-//     }, [])
-//     return (
-//         <>
-//             <Suggestion
-//                 getDisplayName={item => item}
-//                 items={currentData}
-//             >
-//                 {({
-//                     getInputProps,
-//                     getListItemProps,
-//                     getItemProps,
-//                     inputValue,
-//                     selectedItem,
-//                     highlightedIndex,
-//                     items,
-//                     isOpen,
-//                     clearInputValue
-//                 }) => (
-//                         <li className="menu-item container-search ">
-//                             <input type="search"
-//                                 id="search"
-//                                 {...getInputProps({
-//                                     placeholder: "Search...",
-//                                     onChange: handleChange
-//                                 })}
-//                             />
-//                             <BsSearch></BsSearch>
-//                             {isOpen && (
-//                                 <div {...getListItemProps()}>
-//                                     {
-//                                         items.map((item, index) => (
-//                                             <>
-//                                                 <div
-//                                                     {...getItemProps({ item, index })}
-//                                                     key={item}
-//                                                 >
-//                                                     {item}
-//                                                 </div>
-//                                             </>
-//                                         ))}
-//                                 </div>
-//                             )}
-//                         </li>
-//                     )}
-//             </Suggestion>
-//         </>
-//     )
-// }
-// export default Searchs;

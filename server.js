@@ -20,7 +20,7 @@ app.prepare().then(()=>{
         headers: {
             "Connection": "keep-alive"
         },
-        pathRewrite: function (path, req) {  console.log(path.replace('/api/', '/')); return path.replace('/api/', '/') }
+        pathRewrite: function (path, req) {  return path.replace('/api/', '/') }
     }))
     server.use(handle);
     server.listen(process.env.PORT || 3000,()=>{

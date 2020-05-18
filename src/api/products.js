@@ -17,7 +17,7 @@ export const fetchDeleteProduct = (id) => {
     return axios.post("/api/product/delete", { id: id.toString() })
 }
 export const fetchSearchProduct = (data) => {
-    return axios.get("/product/search", { name: data })
+    return axios.post("/api/product/search", { name: data })
 } 
 export const fetchUpdateProduct = (data) =>{
     return axios.post("/api/product/update", { ...data })

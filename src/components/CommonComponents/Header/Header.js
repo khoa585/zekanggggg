@@ -62,10 +62,6 @@ function Header(props) {
                                         <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}> <Link route="/y-kien-chuyen-gia"><span className="cool-link">Ý Kiến Chuyên Gia</span></Link></li>
                                         <li className={`menu-item ${state === '/news' ? 'active' : ''}`}><Link route="/tin-tuc"><span className="cool-link">Tin Tức</span></Link></li>
                                         <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}> <Link route="/lien-he"><span className="cool-link">Liên Hệ</span></Link></li>
-                                        {/* <li className="menu-item container-search ">
-                                            <input type="search" id="search" placeholder="Search..." />
-                                            <BsSearch></BsSearch>
-                                        </li> */}
                                         {
                                             <Searchsugg></Searchsugg>
                                         }

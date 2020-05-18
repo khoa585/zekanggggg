@@ -5,7 +5,7 @@ import { formatStar, to_slug } from '../../../commons/index';
 import CurrencyFormat from 'react-currency-format';
 import './style.scss';
 function ProductItem(props) {
-    const { List } = props;
+    const  List  = props[1];
     const showProduct = () => {
         if (List) {
             let result = List.map((task, index) => {

@@ -1,41 +1,44 @@
-// li.menu-item.container-search {
-//     overflow: inherit!important;
-//     position: initial!important;;
-//     div#__listItemProps {
-//         position: absolute;
-//         right: 0;
-//         top: 75%;
-//         width: 40%;
-//         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-//     }
-//     div#__listItemProps > div{
-//         background-color: #ffffff !important;
-//         font-weight: normal;
-//         color: #0a8300;
-//         padding: 10%;
-//         border-bottom: 1px solid;
-//         cursor: pointer;
-//     }
-//     div#__listItemProps > div:hover{
-//         background-color: #f3f3f3 !important;
-//         transition: .5s;
-//     }
-// }
-    .container-search input#__inputItemProps{
-        width: 0;
-        padding: 10px 0 ;
-        border: none;
-        color: #262626;
-        -webkit-transition: width .55s ease;
-        -moz-transition: width .55s ease;
-        -ms-transition: width .55s ease;
-        -o-transition: width .55s ease;
-        transition: width .55s ease;
+li.menu-item.container-search {
+    overflow: inherit!important;
+    position: initial!important;;
+    div#__listItemProps {
+        position: absolute;
+        right: 0;
+        top: 75%;
+        width: 40%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     }
-    .container-search input#__inputItemProps:focus, .container-search input#__inputItemProps:active{
-        outline:none;
-        width: 10rem;
+    div#__listItemProps > div{
+        background-color: #ffffff !important;
+        font-weight: normal;
+        color: #0a8300;
+        padding: 10%;
+        border-bottom: 1px solid;
+        cursor: pointer;
     }
-    .container-search:hover input#__inputItemProps{
-        width: 10rem;
+    div#__listItemProps > div:hover{
+        background-color: #f3f3f3 !important;
+        transition: .5s;
     }
+}
+a:hover {
+    text-decoration: none;
+}
+.container-search input#__inputItemProps{
+    width: 0;
+    padding: 10px 0 ;
+    border: none;
+    color: #262626;
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+}
+.container-search input#__inputItemProps:focus, .container-search input#__inputItemProps:active{
+    outline:none;
+    width: 10rem;
+}
+.container-search:hover input#__inputItemProps{
+    width: 10rem;
+}

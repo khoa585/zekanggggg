@@ -49,7 +49,7 @@ function Contact(props) {
                                                     Message: ''
                                                 }}
                                                 onSubmit={async (values, { setSubmitting }) => {
-                                                    console.log(values)
+                                                    // console.log(values)
                                                 }}
                                                 validationSchema={
                                                     yup.object().shape({

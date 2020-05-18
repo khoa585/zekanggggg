@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss'
 function News(props) {
+    const List = props[0]
     return (
         <React.Fragment>
             <div className="distant"></div>
@@ -17,27 +18,27 @@ function News(props) {
                 <Row>
                     <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
                         <div className="dest_1">
-                            <img src="../img/product_5.png" alt="" className="img-fluid" />
+                            <img src={List[0].image} alt="" className="img-fluid" />
                             <div className="overlay">
                                 <div className="overlayBottom">
                                     <div className="date">
                                         <span>04/04/2020</span>
                                     </div>
                                     <div className="text">
-                                        <span>Bộ sản phẩm mới chữa trị bệnh vẩy nên hiệu quả</span>
+                                        <span>{List[0].title}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="dest_2">
-                            <img src="../img/product_8.png" alt="" className="img-fluid" />
+                            <img src={List[1].image} alt="" className="img-fluid" />
                             <div className="overlay">
                                 <div className="overlayBottom">
                                     <div className="date">
                                         <span>12/04/2020</span>
                                     </div>
                                     <div className="text">
-                                        <span>Hội nghị Da liễu Đông dương mở rộng và Hội nghị Da liễu cấp cao thế giới lần đầu tiên được tổ chức tại Hà Nội</span>
+                                        <span>{List[1].title}</span>
                                     </div>
                                 </div>
                             </div>
@@ -45,27 +46,27 @@ function News(props) {
                     </Col>
                     <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
                         <div className="dest_3">
-                            <img src="../img/product_6.png" alt="" className="img-fluid" />
+                            <img src={List[2].image} alt="" className="img-fluid" />
                             <div className="overlay">
                                 <div className="overlayBottom">
                                     <div className="date">
                                         <span>20/02/2020</span>
                                     </div>
                                     <div className="text">
-                                        <span>Hiệu quả cao - Không tác dụng phụ</span>
+                                        <span>{List[2].title}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="dest_4">
-                            <img src="../img/product_7.png" alt="" className="img-fluid" />
+                            <img src={List[3].image} alt="" className="img-fluid" />
                             <div className="overlay">
                                 <div className="overlayBottom">
                                     <div className="date">
                                         <span>20/02/2020</span>
                                     </div>
                                     <div className="text">
-                                        <span>Zekang Shower Gel không chứa Corticosteroids</span>
+                                        <span>{List[3].title}</span>
                                     </div>
                                 </div>
                             </div>
