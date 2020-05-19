@@ -5,11 +5,12 @@ import '../Home/ProductItem/style.scss';
 import { Link } from '../../../routers';
 import { to_slug, formatStar } from '../../commons/index';
 import CurrencyFormat from 'react-currency-format';
+import Moment from 'react-moment';
 function Newsz(props) {
     const List = props[0];
     const ListN = props[1];
     const ListP = props[0][0];
-    const { image, title, description,id } = ListP
+    const { image, title, description,id,createdAt } = ListP
     const showNews = () => {
         if (List) {
             let result = List.slice(1).map((task, index) => {
@@ -84,7 +85,7 @@ function Newsz(props) {
                             <div className="text-wrap-context-news">
                                 <div className="news-opg">
                                     <h4 className="titleWow-news">{title}</h4>
-                                    <span>12/04/2020</span>
+                                    <span><Moment format="DD/MM/YYYY" date={createdAt} /></span>
                                 </div>
                                 <p>{description}</p>
                                 <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><span> <button className="btn-news btn-news_">xem chi tiết</button></span></Link>

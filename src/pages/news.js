@@ -16,7 +16,7 @@ function News(props) {
     );
 }
 News.getInitialProps = async () => {
-    let [resultFetchData, resultFetch] = await Promise.all([fetchListNews(1, 4), fetchListProduct(1, 4)])
+    let [resultFetchData, resultFetch] = await Promise.all([fetchListNews(2,4), fetchListProduct(1, 4)])
     if (resultFetchData?.data?.data && resultFetch?.data?.data) {
         return [[...resultFetchData.data.data], [...resultFetch.data.data]];
     }

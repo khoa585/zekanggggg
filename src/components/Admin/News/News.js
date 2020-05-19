@@ -13,7 +13,6 @@ export default function Index(){
         Router.push(`/admin/news/${id}`);
     }
     const onDeleteNews =async(id)=>{
-        console.log(id);
         if(confirm("Bạn Muốn Xóa Tin Tức Này Không")){
             let resultDelete = await fetchDeleteNews(id);
             if(resultDelete.status==200 && resultDelete.data?.status=="success"){

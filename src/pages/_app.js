@@ -17,6 +17,8 @@ import '../components/Home/News/style.scss';
 import '../components/Home/ProductItem/style.scss';
 import '../components/Products/style.scss';
 import '../components/Reason/style.scss';
+import '../components/CommonComponents/Searchs/style.scss';
+import '../components/CommonComponents/ModalSearch/style.scss';
 import 'swiper/css/swiper.css';
 import "antd/dist/antd.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
