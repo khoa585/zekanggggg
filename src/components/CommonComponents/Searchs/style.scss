@@ -64,7 +64,7 @@ a:hover {
 }
 .container-search input#__inputItemProps{
     width: 0;
-    padding: 10px 0 ;
+    padding: 10px 10px;
     border: none;
     color: #262626;
     -webkit-transition: width .55s ease;
@@ -80,4 +80,35 @@ a:hover {
 .container-search_:hover input#__inputItemProps{
     width: 10rem;
     border-left: 1px solid #dadada;
+}
+.container-search_{
+    cursor: pointer;
+}
+@media (max-width: 1200px) { 
+    .container-search_ input#__inputItemProps:focus, .container-search_ input#__inputItemProps:active{
+        outline:none;
+        width: 8rem;
+    }
+    .container-search_:hover input#__inputItemProps{
+        width: 8rem;
+        border-left: 1px solid #dadada;
+    }
+}
+@media (max-width: 1100px) { 
+    header#site-header .menu {
+        font-size: 0.7em;
+    }
+}
+@media (max-width: 700px) { 
+    .container-search_ input#__inputItemProps:focus, .container-search_ input#__inputItemProps:active{
+        outline:none;
+        width: 5rem;
+    }
+    .container-search_:hover input#__inputItemProps{
+        width: 5rem;
+        border-left: 1px solid #dadada;
+    }
+    header#site-header .menu {
+        font-size: 0.6em!important;
+    }
 }

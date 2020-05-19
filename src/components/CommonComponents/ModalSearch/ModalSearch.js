@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { BsSearch } from "react-icons/bs"
 import { fetchSearchProduct } from '../../../api/products';
 import * as lodashs from "lodash";
 import { to_slug } from '../../../commons/index';
-import './style.scss';
 import { Link } from '../../../../routers';
 import { Container } from 'react-bootstrap';
-const Searchs = (props) => {
+import Modal from 'react-bootstrap/Modal';
+import { BsSearch } from "react-icons/bs"
+import './style.scss'
+const ModalSearch = (props) => {
     const [val, setVal] = useState('')
     const [search, setSearch] = useState([])
     const hasdallsearch = lodashs.debounce(async (value) => {
@@ -48,31 +49,32 @@ const Searchs = (props) => {
         }
     }
     const myFunctiononBlur = () => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setVal('')
-        },150)
+        }, 150)
     }
     return (
         <>
-            <li className="menu-item container-search ">
-                <div className="container-search_">
-                    <input
-                        type="text"
-                        id="__inputItemProps"
-                        placeholder="Tìm kiếm"
-                        value={val}
-                        onChange={(e) => hasdallsearch(e.target.value)}
-                        onBlur={myFunctiononBlur}
-                    />
-                    <BsSearch></BsSearch>
-                </div>
-                <div id="__listItemProps">
-                    {
-                        shows(val)
-                    }
-                </div>
-            </li>
+            <Modal.Header closeButton>
+                <Modal.Title><Link route="/"><img src="../img/logo.png" alt="cover" className="img-fluid" /></Link></Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <input
+                    placeholder="Nhập từ khóa cần tìm"
+                    value={val}
+                    id="__inputItemProps"
+                    onBlur={myFunctiononBlur}
+                    onChange={(e) => hasdallsearch(e.target.value)}
+                    enterButton
+                />
+                <BsSearch />
+            </Modal.Body>
+            <div id="__listItemProps">
+                {
+                    shows(val)
+                }
+            </div>
         </>
     )
 }
-export default Searchs;
+export default ModalSearch;

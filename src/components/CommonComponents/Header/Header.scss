@@ -208,6 +208,9 @@ header#site-header {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            svg{
+                cursor: pointer;
+            }
         }
         .header-top_ .container .row {
             height: 100%;
@@ -219,6 +222,9 @@ header#site-header {
             display: flex;
             justify-content: end;
             align-items: center;
+            svg{
+                cursor: pointer;
+            }
         }
         .sidenav {
             height: 100%;
@@ -252,6 +258,11 @@ header#site-header {
             font-size: 18px;
             border-bottom: 1px solid #e5e5e5;
             width: 100%;
+            cursor: pointer;
+        }
+        .navR li.navItem:hover {
+            background: #efecec;
+            transition: .3s;
         }
         .heading{
             width: 100%;

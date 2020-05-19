@@ -11,6 +11,7 @@ import { Link } from './../../../../routers';
 import Searchsugg from '../Searchs/Searchs';
 import Modal from 'react-bootstrap/Modal';
 import './Header.scss';
+import ModalSearch from '../ModalSearch/ModalSearch';
 function Header(props) {
     const router = useRouter()
     const { Search } = Input;
@@ -93,11 +94,8 @@ function Header(props) {
                     </Row>
                 </Container>
                 <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title><Link route="/"><img src="../img/logo.png" alt="cover" className="img-fluid" /></Link></Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body><Search placeholder="Nhập từ khóa cần tìm" onSearch={value => console.log(value)} enterButton /></Modal.Body>
-                </Modal>
+                    <ModalSearch></ModalSearch>
+               </Modal>
                 <div className={`sidenav ${stateIcon ? 'mySidenav' : 'closeSidenav'}`}>
                     <nav className="navigation">
                         <ul className="navR">
