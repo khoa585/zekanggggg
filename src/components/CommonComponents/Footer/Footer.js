@@ -27,7 +27,7 @@ function Footer(props) {
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Điện Thoại: (04) 35148042 - Fax: (04) 35148043 <br />E-mail: info@zekang.com</span>
+                                    <span>Điện Thoại: (09) 77552086 - Fax: (09) 77552086 <br />E-mail: info@zekang.com</span>
                                 </div>
                             </Col>
                         </Row>

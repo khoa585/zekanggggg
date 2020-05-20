@@ -6,9 +6,9 @@ function ContactFast() {
         <React.Fragment>
             <div className="contact-Fact">
                 <div className="contact-Fact-0">
-                    <span><FacebookOutlined /></span>
+                    <span><a href="https://www.facebook.com/ZekangVietNam/" target="_blank"><FacebookOutlined /></a></span>
                     <span><YoutubeOutlined /></span>
-                    <span><PhoneOutlined /></span>
+                    <span><a href="callto:0977552086"><PhoneOutlined /></a></span>
                 </div>
             </div>
         </React.Fragment>
