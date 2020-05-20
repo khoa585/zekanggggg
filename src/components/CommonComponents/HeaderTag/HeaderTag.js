@@ -14,6 +14,7 @@ const HeaderTag = props =>(
         <meta property="og:image" content={props.image || "https://zekangg.tk/img/logo.png"} />
         <meta property="og:description" content={props.description || "Sản Phẩm Vẩy nến"} />
         <meta property="description" content={props.description || "Sản Phẩm Vẩy nến"} />
+        <link rel="icon" type="image/png" href="../img/logo.png"/>
         {!!props.video && <meta property='og:video' content={props.video} />}
         {!!props.video && <meta property='video' content={props.video} />}
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet" />
