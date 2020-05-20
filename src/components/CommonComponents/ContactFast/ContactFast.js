@@ -8,7 +8,7 @@ function ContactFast() {
                 <div className="contact-Fact-0">
                     <span><a href="https://www.facebook.com/ZekangVietNam/" target="_blank"><FacebookOutlined /></a></span>
                     <span><YoutubeOutlined /></span>
-                    <span><a href="callto:0977552086"><PhoneOutlined /></a></span>
+                    <span><a href="tel:0977552086"><PhoneOutlined /></a></span>
                 </div>
             </div>
         </React.Fragment>
