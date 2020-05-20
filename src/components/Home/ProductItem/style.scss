@@ -18,6 +18,11 @@
         object-fit: cover;
     }
 }
+.product-show {
+    a:hover{
+        text-decoration: none;
+    }
+}
 .content-text h6{
     text-transform: uppercase;
     color: #47b749;
@@ -121,7 +126,7 @@ span.desc_Name {
 }
 @media (max-width: 1200px) { 
     .nameProduct h6 ,span.price, .star{
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 @media (max-width: 925px) { 
@@ -290,7 +295,7 @@ span.desc_Name {
     .nameProduct h6, span.price, .star {
         font-size: 1em;
     }
-    .container .row .resp{
+    .container .product-show a.resp{
         max-width: inherit!important;
         flex: 0 0 50%!important;
         margin-bottom: 10%!important;

@@ -1,38 +1,38 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import {Link} from '../../../../routers';
+import { Link } from '../../../../routers';
 import { formatStar, to_slug } from '../../../commons/index';
 import CurrencyFormat from 'react-currency-format';
 import './style.scss';
 function ProductItem(props) {
-    const  List  = props[1];
+    const List = props[1];
     const showProduct = () => {
         if (List) {
             let result = List.map((task, index) => {
                 return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
-                    <Col lg={3} md={3} sm={3} className="resp" key={index}>
-                        <div className="image-box is-trending has-discount">
-                            <div className="thumb">
-                                <div className="background-image">
-                                    <img src={task.images[0]} className="" className="img-fluid d-block mx-auto" />
-                                </div>
-                                <div className="background-image thumb-img-first secondary-image" >
-                                    <img src={task.images[1]} className="" className="img-fluid d-block mx-auto" />
-                                </div>
-                            </div>
-                            <div className="meta-inner">
-                                <div className="nameProduct"><h6>{task.name}</h6></div>
-                                <div className="formatProduct">
-                                    <div>
-                                        <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
+                    <a className="resp col-lg-3 col-md-3 col-sm-3">
+                            <div className="image-box is-trending has-discount">
+                                <div className="thumb">
+                                    <div className="background-image">
+                                        <img src={task.images[0]} className="" className="img-fluid d-block mx-auto" />
                                     </div>
-                                    <div>
-                                        <span className="star">{formatStar(task.start)}</span>
+                                    <div className="background-image thumb-img-first secondary-image" >
+                                        <img src={task.images[1]} className="" className="img-fluid d-block mx-auto" />
                                     </div>
                                 </div>
+                                <div className="meta-inner">
+                                    <div className="nameProduct"><h6>{task.name}</h6></div>
+                                    <div className="formatProduct">
+                                        <div>
+                                            <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
+                                        </div>
+                                        <div>
+                                            <span className="star">{formatStar(task.start)}</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </Col>
+                    </a>
                 </Link>
             })
             return result;
@@ -61,7 +61,7 @@ function ProductItem(props) {
                         <span>Bộ sản phẩm chăm sóc toàn diện cho da của bạn</span>
                     </div>
                 </div>
-                <Row>
+                <Row className="product-show">
                     {
                         showProduct()
                     }

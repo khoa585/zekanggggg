@@ -13,7 +13,7 @@ function Reason(props) {
         if (list) {
             let result = list.map((task, index) => {
                 return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
-                    <Col lg={3} md={3} sm={3} className="resp" key={index}>
+                    <a className="resp col-lg-3 col-md-3 col-sm-3 ">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
                                 <div className="background-image">
@@ -35,7 +35,7 @@ function Reason(props) {
                                 </div>
                             </div>
                         </div>
-                    </Col>
+                    </a>
                 </Link>
             })
             return result;

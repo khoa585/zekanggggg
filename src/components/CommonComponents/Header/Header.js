@@ -57,12 +57,12 @@ function Header(props) {
                             <div className="wrap_nav">
                                 <nav id="main-nav" className="main-nav">
                                     <ul id="menu-primary-menu" className="menu">
-                                        <li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}> <Link route="/"><span className="cool-link">Trang Chủ</span></Link></li>
-                                        <li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}> <Link route="/gioi-thieu"><span className="cool-link">Giới Thiệu</span></Link></li>
-                                        <li className={`menu-item ${state === '/products' ? 'active' : ''}`}> <Link route="/san-pham"><span className="cool-link">Sản Phẩm</span></Link></li>
-                                        <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}> <Link route="/y-kien-chuyen-gia"><span className="cool-link">Ý Kiến Chuyên Gia</span></Link></li>
-                                        <li className={`menu-item ${state === '/news' ? 'active' : ''}`}><Link route="/tin-tuc"><span className="cool-link">Tin Tức</span></Link></li>
-                                        <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}> <Link route="/lien-he"><span className="cool-link">Liên Hệ</span></Link></li>
+                                        <li className="menu-item " className={`menu-item ${state === '/' ? 'active' : ''}`}> <Link route="/"><a><span className="cool-link">Trang Chủ</span></a></Link></li>
+                                        <li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}> <Link route="/gioi-thieu"><a><span className="cool-link">Giới Thiệu</span></a></Link></li>
+                                        <li className={`menu-item ${state === '/products' ? 'active' : ''}`}> <Link route="/san-pham"><a><span className="cool-link">Sản Phẩm</span></a></Link></li>
+                                        <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}> <Link route="/y-kien-chuyen-gia"><a><span className="cool-link">Ý Kiến Chuyên Gia</span></a></Link></li>
+                                        <li className={`menu-item ${state === '/news' ? 'active' : ''}`}><Link route="/tin-tuc"><a><span className="cool-link">Tin Tức</span></a></Link></li>
+                                        <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}> <Link route="/lien-he"><a><span className="cool-link">Liên Hệ</span></a></Link></li>
                                         {
                                             <Searchsugg></Searchsugg>
                                         }
@@ -95,38 +95,38 @@ function Header(props) {
                 </Container>
                 <Modal show={show} onHide={handleClose}>
                     <ModalSearch></ModalSearch>
-               </Modal>
+                </Modal>
                 <div className={`sidenav ${stateIcon ? 'mySidenav' : 'closeSidenav'}`}>
                     <nav className="navigation">
                         <ul className="navR">
                             <li className="navItem">
                                 <Link href="/" as="/">
-                                    <span>Trang Chủ</span>
+                                    <a><span>Trang Chủ</span></a>
                                 </Link>
                             </li>
                             <li className="navItem">
                                 <Link href="/introduces" as="/gioi-thieu">
-                                    <span>Giới Thiệu</span>
+                                    <a> <span>Giới Thiệu</span></a>
                                 </Link>
                             </li>
                             <li className="navItem">
                                 <Link href="/products" as="/san-pham">
-                                    <span>Sản Phẩm</span>
+                                    <a> <span>Sản Phẩm</span></a>
                                 </Link>
                             </li>
                             <li className="navItem">
                                 <Link href="/experopinion" as="/y-kien-chuyen-gia">
-                                    <span>Ý Kiến Chuyên Gia</span>
+                                    <a>  <span>Ý Kiến Chuyên Gia</span></a>
                                 </Link>
                             </li>
                             <li className="navItem">
                                 <Link href="/news" as="/tin-tuc">
-                                    <span>Tin Tức</span>
+                                    <a>  <span>Tin Tức</span></a>
                                 </Link>
                             </li>
                             <li className="navItem">
                                 <Link href="/contact" as="/lien-he">
-                                    <span>Liên Hệ</span>
+                                    <a><span>Liên Hệ</span></a>
                                 </Link>
                             </li>
                         </ul>

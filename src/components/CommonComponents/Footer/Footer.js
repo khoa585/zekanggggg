@@ -39,12 +39,12 @@ function Footer(props) {
                             <Col lg={8} md={10} sm={9} sm={9} className="footer-main-nav">
                                 <nav id="footer-main-nav">
                                     <ul id="footer-menu-primary-menu" className="footer-menu">
-                                        <li className="footer-menu-item footer-Item"><Link route="/"><span className="cool-link">Trang Chủ</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/gioi-thieu"><span className="cool-link">Giới Thiệu</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/san-pham"><span className="cool-link">Sản Phẩm</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/experopinion"><span className="cool-link">Ý Kiến Chuyên Gia</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/news"><span className="cool-link">Tin Tức</span></Link></li>
-                                        <li className="footer-menu-item "><Link route="/contact"><span className="cool-link">Liên Hệ</span></Link></li>
+                                        <li className="footer-menu-item footer-Item"><Link route="/"><a><span className="cool-link">Trang Chủ</span></a></Link></li>
+                                        <li className="footer-menu-item "><Link route="/gioi-thieu"><a><span className="cool-link">Giới Thiệu</span></a></Link></li>
+                                        <li className="footer-menu-item "><Link route="/san-pham"><a><span className="cool-link">Sản Phẩm</span></a></Link></li>
+                                        <li className="footer-menu-item "><Link route="/experopinion"><a><span className="cool-link">Ý Kiến Chuyên Gia</span></a></Link></li>
+                                        <li className="footer-menu-item "><Link route="/news"><a><span className="cool-link">Tin Tức</span></a></Link></li>
+                                        <li className="footer-menu-item "><Link route="/contact"><a><span className="cool-link">Liên Hệ</span></a></Link></li>
                                     </ul>
                                 </nav>
                             </Col>

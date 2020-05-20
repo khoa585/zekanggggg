@@ -51,6 +51,10 @@ li.footer-menu-item {
     font-size: 1em;
     color: #242424;
     align-items: center;
+    a{
+        color: #242424;
+        text-decoration: none
+    }
     span{
         position: relative;
         overflow: hidden;

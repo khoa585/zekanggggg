@@ -11,7 +11,7 @@ function Products(props) {
         if (List) {
             let result = List.map((task, index) => {
                 return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
-                    <Col lg={3} md={3} sm={3} className="resp pest" key={index}>
+                    <a className="resp col-lg-3 col-md-3 col-sm-3 pest">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
                                 <div className="background-image">
@@ -33,7 +33,7 @@ function Products(props) {
                                 </div>
                             </div>
                         </div>
-                    </Col>
+                    </a>
                 </Link>
             })
             return result;
@@ -47,7 +47,7 @@ function Products(props) {
                     <Link route="/"><span className="title-wrap-home">Home</span></Link>
                     <span className="title-wrap-product">Sản Phẩm </span>
                 </div>
-                <Row>
+                <Row className="product-show">
                     {showProduct()}
                 </Row>
             </Container>

@@ -10,7 +10,7 @@ function Newsz(props) {
     const List = props[0];
     const ListN = props[1];
     const ListP = props[0][0];
-    const { image, title, description,id,createdAt } = ListP
+    const { image, title, description, id, createdAt } = ListP
     const showNews = () => {
         if (List) {
             let result = List.slice(1).map((task, index) => {
@@ -25,7 +25,7 @@ function Newsz(props) {
                             <div className="img-news-1">
                                 <h4>{task.title}</h4>
                                 <p>{task.description}</p>
-                                <Link route={`/tin-tuc/${to_slug(task.title)}.${task.id}`}><span><button className="btn-news-0 btn-news_0">xem chi tiết</button></span></Link>
+                                <Link route={`/tin-tuc/${to_slug(task.title)}.${task.id}`}><a><span><button className="btn-news-0 btn-news_0">xem chi tiết</button></span></a></Link>
                             </div>
                         </Col>
                     </Row>
@@ -39,7 +39,7 @@ function Newsz(props) {
         if (ListN) {
             let result = props[1].map((task, index) => {
                 return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
-                    <Col lg={3} md={3} sm={3} className="resp pest" key={index}>
+                    <a className="resp col-lg-3 col-md-3 col-sm-3 pest">
                         <div className="image-box is-trending has-discount">
                             <div className="thumb">
                                 <div className="background-image">
@@ -61,7 +61,7 @@ function Newsz(props) {
                                 </div>
                             </div>
                         </div>
-                    </Col>
+                    </a>
                 </Link>
             })
             return result;
@@ -88,7 +88,7 @@ function Newsz(props) {
                                     <span><Moment format="DD/MM/YYYY" date={createdAt} /></span>
                                 </div>
                                 <p>{description}</p>
-                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><span> <button className="btn-news btn-news_">xem chi tiết</button></span></Link>
+                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><a><span> <button className="btn-news btn-news_">xem chi tiết</button></span></a></Link>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ function Newsz(props) {
                 <div className="distant_news-2"></div>
                 <div>
                     <span className="title-opg">các sản phẩm bạn có thể quan tâm</span>
-                    <Row>
+                    <Row className="product-show">
                         {
                             showProduct()
                         }

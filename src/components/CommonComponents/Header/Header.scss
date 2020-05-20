@@ -73,6 +73,10 @@ header#site-header {
         position: relative;
         overflow: hidden;
         color: #242424;
+        a{
+            color: #242424;
+            text-decoration: none;
+        }
         span{
             position: relative;
             overflow: hidden;
