@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { Link } from './../../../routers';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -9,27 +8,13 @@ import { Form, Input } from 'formik-antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 function Contact(props) {
-    const [state, setState] = useState({
-        showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {},
-    })
-    const lat = 16.333481;
-    const lng = 107.748174
-    const onMarkerClick = (props, marker, e) => {
-        setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        })
-    }
 
     return (
         <React.Fragment>
             <div className="distant___"></div>
             <Container>
                 <div className="title-wrap-contact">
-                    <Link route="/"><span className="title-wrap-contact-0">Home</span></Link>
+                    <Link route="/"><a><span className="title-wrap-contact-0">Home</span></a></Link>
                     <span className="title-wrap-contact-1">Liên hệ</span>
                 </div>
                 <div className="distant___"></div>
@@ -179,31 +164,23 @@ function Contact(props) {
                 </div>
             </Container>
             <div className="distant___"></div>
-            <div style={{ height: '500px', width: '100%' }}>
-                <Map
-                    google={props.google}
-                    initialCenter={{
-                        lat: lat,
-                        lng: lng
+            {/* <div style={{ height: '500px', width: '100%' }}>
+                <script async  src="https://www.googletagmanager.com/gtag/js?id=167335695-1"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'UA-167335695-1', {
+                        page_path: window.location.pathname,
+                        });
+                    `,
                     }}
-                    zoom={15}
-                >
-                    <Marker onClick={onMarkerClick}
-                        position={{ lat: lat, lng: lng }}
-                        name={'Hi'}
-                    />
-                    <InfoWindow
-                        marker={state.activeMarker}
-                        visible={state.showingInfoWindow}>
-                        <div>
-                            <h1>{state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow>
-                </Map>
-            </div>
+                />
+
+            </div> */}
         </React.Fragment>
     );
 }
-export default GoogleApiWrapper({
-    apiKey: ('AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes')
-})(Contact);
+export default Contact;

@@ -45,8 +45,8 @@ function DescProduct(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-wrap">
-                    <Link route="/"><span className="title-wrap-home">Home</span></Link>
-                    <Link route="/san-pham"><span className="title-wrap-nameproduct">Sản Phẩm </span></Link>
+                    <Link route="/"><a><span className="title-wrap-home">Home</span></a></Link>
+                    <Link route="/san-pham"><a><span className="title-wrap-nameproduct">Sản Phẩm </span></a></Link>
                     <span className="title-wrap-nameProduct">{name}</span>
                 </div>
                 <div className="distant___"></div>

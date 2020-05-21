@@ -10,24 +10,24 @@ function Footer(props) {
                 <div className="footerBottom_imgLeft"></div>
                 <Container>
                     <div className="footerContent">
-                        <h4>công ty cổ phần dược phẩm ant</h4>
-                        <span>Hotline: 1900 1886</span>
+                        <h4>Công ty Cổ phần Đầu tư Thương mại và Giải pháp Quốc tế ANT GROUP</h4>
+                        <span>Hotline: (+84) 0977552086</span>
                     </div>
                     <div className="footerItem">
                         <Row>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Trụ sở: Lô B10/D6 Khu đô thị Cầu Giấy, phường Dịch Vọng, Quận Cầu Giấy, Hà Nội.</span>
+                                    <span>Trụ sở: Tầng 3, tòa Lotus Building, số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy Hà Nội.</span>
                                 </div>
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Văn phòng làm việc: Lô A3/D21 Khu đô thị Cầu Giấy, Phường Dịch Vọng, Quận Cầu Giấy, Hà Nội.</span>
+                                    <span>Văn phòng làm việc: Tầng 3, tòa Lotus Building, số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy Hà Nội.</span>
                                 </div>
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Điện Thoại: (09) 77552086 - Fax: (09) 77552086 <br />E-mail: info@zekang.com</span>
+                                    <span>Điện Thoại: (+84) 0977552086<br></br>- Fax: (+84) 0977552086 <br />E-mail: zekang@antgroup.com.vn</span>
                                 </div>
                             </Col>
                         </Row>
@@ -61,20 +61,18 @@ function Footer(props) {
                 `
                     .footerBottom_imgRight{
                         background-image: url('/img/tree_1.png');
-                        width: 100%;
+                        width: 15%;
                         height: 100%;
-                        left: 0;
-                        background-position: right;
+                        right: 0;
                         background-repeat: no-repeat;
                         position: absolute;
                         background-size: contain;
                     }
                     .footerBottom_imgLeft{
                         background-image: url('/img/tree_2.png');
-                        width: 100%;
+                        width: 15%;
                         height: 100%;
                         left: 0;
-                        background-position: left;
                         background-repeat: no-repeat;
                         position: absolute;
                         background-size: contain;
