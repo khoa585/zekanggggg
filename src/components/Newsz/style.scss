@@ -25,6 +25,9 @@
     cursor: pointer;
 }
 .container .title-wrap-news{
+    a:hover{
+        text-decoration: none;
+    }
     span.title-wrap-news{
         color:#868686;
         font-weight: 600;

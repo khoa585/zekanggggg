@@ -6,6 +6,12 @@
     outline: none;
 }
 .title-experopinion{
+    a{
+        color: #000;
+    }
+    a:hover{
+        text-decoration: none;
+    }
     .title-experopinion-home:hover{
         cursor: pointer;
         color: #91af77;

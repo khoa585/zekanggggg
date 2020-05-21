@@ -8,21 +8,20 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167335695-1"></script>;
-
+        <Head/>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167335695-1"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+              function gtag(){dataLayer.push(arguments)}
               gtag('js', new Date());
              
               gtag('config', 'UA-167335695-1')  ;
           `,
             }}
           />
-        </Head>
+
         <body>
           <Main />
           <NextScript />

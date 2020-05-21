@@ -72,7 +72,7 @@ function Newsz(props) {
             <div className="distant_news"></div>
             <Container>
                 <div className="title-wrap-news">
-                    <Link route="/"><span className="title-wrap-home-news">Home</span></Link>
+                    <Link route="/"><a><span className="title-wrap-home-news">Home</span></a></Link>
                     <span className="title-wrap-news">Tin tức </span>
                 </div>
                 <div className="distant_news_0"></div>

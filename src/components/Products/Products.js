@@ -44,7 +44,7 @@ function Products(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-wrap">
-                    <Link route="/"><span className="title-wrap-home">Home</span></Link>
+                    <Link route="/"><a><span className="title-wrap-home">Home</span></a></Link>
                     <span className="title-wrap-product">Sản Phẩm </span>
                 </div>
                 <Row className="product-show">

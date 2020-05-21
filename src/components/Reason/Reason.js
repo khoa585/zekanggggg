@@ -46,8 +46,8 @@ function Reason(props) {
             <div className="distantComp"></div>
             <Container>
                 <div className="title-wrap-reason">
-                    <Link route="/"><span className="title-wrap-reason-home">Home</span></Link>
-                    <Link route="/tin-tuc" ><span className="title-wrap-reason-news">Tin tức</span></Link>
+                    <Link route="/"><a><span className="title-wrap-reason-home">Home</span></a></Link>
+                    <Link route="/tin-tuc" ><a><span className="title-wrap-reason-news">Tin tức</span></a></Link>
                     <span className="title-wrap-reason-product">{title}</span>
                 </div>
                 <div className="distant-Comp"></div>

@@ -78,7 +78,7 @@ function Experopinion(props) {
             <div className="distant___"></div>
             <Container>
                 <div className="title-experopinion">
-                    <Link route="/"><span className="title-experopinion-home">Home</span></Link>
+                    <Link route="/"><a><span className="title-experopinion-home">Home</span></a></Link>
                     <span className="title-experopinion_">Ý Kiến Chuyên Gia</span>
                 </div>
                 <div className="distant___"></div>
