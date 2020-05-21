@@ -4,6 +4,8 @@ import DetialProduct from '../../../components/Admin/Product/DetialProduct';
 import {withAuthSync} from './../../../untils/auth';
 import {fetchGetDetialProduct} from './../../../api/products';
 function Detial(props){
+    console.log(props)
+
     return(
         <DoashBoard>
             <DetialProduct {...props} />

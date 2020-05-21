@@ -32,7 +32,6 @@ function AddProduct(props) {
         })
         setFileList(filesList);
     }
-    console.log(fileList)
     const rateRef = useRef(5);
     const images = fileList.map(file => {
         return file.url;
@@ -71,7 +70,6 @@ function AddProduct(props) {
                         expirydate: values.expirydate,
                         evaluation: values.evaluation
                     }
-                    console.log(data)
                     let resultAdd = await fetchAddProduct(data);
                     if (resultAdd.status == 200 && resultAdd.data?.status == "success") {
                         toast.success("Tạo Thành Công Sản Phẩm");

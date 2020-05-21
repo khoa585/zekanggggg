@@ -56,27 +56,27 @@ function DescProduct(props) {
                             <Row>
                                 <Col lg={5} md={5} sm={5} xs={5} className="desc_Prod_1">
                                     <div className="desc-img-1">
-                                        <img src={images[2]} alt="products_1" className="img-fluid" />
+                                        <img src={images[1]} alt="products_1" className="img-fluid" />
                                     </div>
                                     <div className="desc-img-2">
-                                        <img src={images[3]} alt="products_2" className="img-fluid" />
+                                        <img src={images[2]} alt="products_2" className="img-fluid" />
                                     </div>
                                 </Col>
                                 <Col lg={7} md={7} sm={7} xs={7} className="desc_Prod_2">
                                     <div className="desc-img-3">
-                                        <img src={images[4]} alt="products_3" className="img-fluid" />
+                                        <img src={images[0]} alt="products_3" className="img-fluid" />
                                     </div>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col lg={6} md={6} sm={6} xs={6} className="desc_Prod_3">
                                     <div className="desc-img-4">
-                                        <img src="../img/products_4.jpg" alt="products_4" className="img-fluid" />
+                                        <img src={images[3]} alt="products_4" className="img-fluid" />
                                     </div>
                                 </Col>
                                 <Col lg={6} md={6} sm={6} xs={6} className="desc_Prod_4">
                                     <div className="desc-img-5">
-                                        <img src="../img/products_5.jpg" alt="products_5" className="img-fluid" />
+                                        <img src={images[4]} alt="products_5" className="img-fluid" />
                                     </div>
                                 </Col>
                             </Row>

@@ -11,18 +11,11 @@ const { TextArea } = Input;
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Link from 'next/link';
-import {BASE_URL} from './../../../api/config';
+import { BASE_URL } from './../../../api/config';
 import './style.scss';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 function AddProduct(props) {
-    const [fileList, setFileList] = useState([
-        {
-            uid: '-1',
-            name: 'xxx.png',
-            status: 'done',
-            url: 'http://res.cloudinary.com/no-company-name/image/upload/v1589129938/zekang/1589129935283-img-reason.jpg',
-        }
-    ]);
+    const [fileList, setFileList] = useState([]);
     const nameRef = useRef(props.name);
     const priceRef = useRef(props.price);
     const rateRef = useRef(props.start);
@@ -33,6 +26,7 @@ function AddProduct(props) {
     const expirydateRef = useRef(props.expirydate);
     const evaluationRef = useRef(props.evaluation);
     const [state, setState] = useState(false)
+
     useEffect(() => {
         let files = fileList;
         props.images.map(file => {
@@ -49,11 +43,10 @@ function AddProduct(props) {
     const props2 = {
         listType: 'picture',
         defaultFileList: fileList,
-        action:BASE_URL+'/api/upload',
+        action: BASE_URL + '/api/upload',
     };
     const onChangeUpload = (info) => {
         let filesList = [...info.fileList];
-        filesList = filesList.slice(-1);
         filesList = filesList.map((file) => {
             if (file.response) {
                 file.url = file.response.data.url;
@@ -101,6 +94,7 @@ function AddProduct(props) {
                         expirydate: values.expirydate,
                         evaluation: values.evaluation
                     }
+                    console.log(data)
                     let resultUpdate = await fetchUpdateProduct(data);
                     if (resultUpdate.status == 200 && resultUpdate.data?.status == "success") {
                         toast.success("Cập Nhật Thành Công Sản Phẩm");
