@@ -117,6 +117,10 @@ function Experopinion(props) {
                                         const result = await fetchSendQuestion(data)
                                         if (result.status == 200 && result.data?.status == "success") {
                                             toast.success("Gửi thành công");
+                                            values.usename = '';
+                                            values.phone = '';
+                                            values.Email = '';
+                                            values.contentQuestion = '';
                                         } else {
                                             toast.error("Có Lỗi Xảy Ra Khi Gửi");
                                         }
