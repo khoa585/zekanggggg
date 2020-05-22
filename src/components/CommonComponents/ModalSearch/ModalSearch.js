@@ -19,12 +19,9 @@ const ModalSearch = (props) => {
         if (search.length != 0) {
             const result = search.map((item, index) => {
                 return <div className="items" key={index}>
-                    <div>{item.name}</div >
-                    <div>
-                        <Link route={`/san-pham/${to_slug(item.name)}.${item.id}`}>
-                            <span>Xem chi tiết</span>
-                        </Link>
-                    </div>
+                    <Link route={`/san-pham/${to_slug(item.name)}.${item.id}`}>
+                        <a><div>{item.name}</div ></a>
+                    </Link>
                 </div>
             })
             return result;
@@ -45,7 +42,6 @@ const ModalSearch = (props) => {
                     }
                 </Container>
             </div>
-
         }
     }
     const myFunctiononBlur = () => {

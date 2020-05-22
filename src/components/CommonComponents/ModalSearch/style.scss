@@ -39,10 +39,11 @@
                         justify-content: space-between;
                         width: 90%;
                         margin: auto;
-                        padding: 5% 0;
+                        padding: 5% 2%;
                         border-bottom: 1px solid #ded5d5;
                         position: relative;
                         z-index: 99999;
+                        cursor: pointer;
                         div:first-child{
                             font-size: 0.9em;
                         }
@@ -51,13 +52,8 @@
                         background-color: #f3f3f3 !important;
                         transition: .5s;
                     }
-                    span{
-                        font-size: 0.8em;
-                        text-transform: initial;
-                        background: #cecbcb;
-                        padding: 5px;
-                        color: #fff;
-                        cursor: pointer;
+                    a{
+                        color: #6c6f6c;
                     }
                 }
             }

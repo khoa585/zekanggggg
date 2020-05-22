@@ -1,15 +1,29 @@
-import React, { useReducer } from 'react';
+import React, { useEffect } from 'react';
 import './style.scss';
 import '../Home/ProductItem/style.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { to_slug, formatStar } from '../../commons/index'
 import { Link } from './../../../routers';
-import reducer from '../../commons/reducer';
 import CurrencyFormat from 'react-currency-format';
-const initialState = { evenKey0: false, evenKey1: false, evenKey2: false, evenKey3: false, evenKey4: false, evenKey5: false };
 function DescProduct(props) {
-    const [state, dispatch] = useReducer(reducer, initialState);
     const { name, price, evaluation, heed, descriptions, usage, ingredients, expirydate, images } = props[0]
+    useEffect(() => {
+        const getAccordion = () => {
+            var Accordion = document.getElementsByClassName("accordion");
+            for (var i = 0; i < Accordion.length; i++) {
+                Accordion[i].addEventListener("click", function () {
+                    this.classList.toggle("actives");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        }
+        getAccordion()
+    }, [])
     const showProduct = () => {
         let result = props[1].map((task, index) => {
             return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
@@ -92,38 +106,38 @@ function DescProduct(props) {
                                 </div>
                                 <div className="accordion-prod">
                                     <div>
-                                        <button onClick={() => dispatch({ type: '1' })} className={`accordion ${state.evenKey0 ? 'actives' : ''}`}>Thành phần</button>
-                                        <div className={`panel ${state.evenKey0 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>Thành phần</button>
+                                        <div className="panel">
                                             <p>{ingredients}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => dispatch({ type: '2' })} className={`accordion ${state.evenKey1 ? 'actives' : ''}`}>cách sử dụng</button>
-                                        <div className={`panel ${state.evenKey1 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>cách sử dụng</button>
+                                        <div className="panel">
                                             <p>{usage}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => dispatch({ type: '3' })} className={`accordion ${state.evenKey2 ? 'actives' : ''}`}>lưu ý</button>
-                                        <div className={`panel ${state.evenKey2 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>lưu ý</button>
+                                        <div className="panel">
                                             <p>{heed}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => dispatch({ type: '4' })} className={`accordion ${state.evenKey3 ? 'actives' : ''}`}>hàm lượng & hạn sử dụng</button>
-                                        <div className={`panel ${state.evenKey3 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>hàm lượng & hạn sử dụng</button>
+                                        <div className="panel">
                                             <p>{expirydate}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => dispatch({ type: '5' })} className={`accordion ${state.evenKey4 ? 'actives' : ''}`}>đánh giá của khách hàng</button>
-                                        <div className={`panel ${state.evenKey4 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>đánh giá của khách hàng</button>
+                                        <div className="panel">
                                             <p>{evaluation}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => dispatch({ type: '6' })} className={`accordion ${state.evenKey5 ? 'actives' : ''}`}>HƯỚNG DẪN MUA HÀNG</button>
-                                        <div className={`panel ${state.evenKey5 ? 'panel_0' : ''}`}>
+                                        <button className='accordion'>HƯỚNG DẪN MUA HÀNG</button>
+                                        <div className="panel">
                                             <p>Quý khách có thể mua sản phẩm ZeKang theo 3 phương thức sau:</p>
                                             <p>1. Truy cập vào website <a href="/">http://zekang.com.vn</a> để tham khảo, lựa chọn sản phẩm cần mua và đặt hàng</p>
                                             <p>2. Gọi điện trực tiếp đến chúng tôi thông qua số Hotline: 0914 479 866 hay số cố định 024 2284 9090 để được tư vấn mua hàng</p>

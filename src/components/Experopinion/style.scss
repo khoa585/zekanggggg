@@ -66,6 +66,7 @@
     border: none;
     outline: none;
     font-size: 1em;
+    text-align: inherit;
     display: flex;
     transition: 0.4s;
     justify-content: space-between;
@@ -88,8 +89,9 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-.panel-experopinion p{
+.panel-experopinion div{
     padding: 2%;
+    color: #757575;
 }
 .active-experopinion{
 background:#e0e0e0;
