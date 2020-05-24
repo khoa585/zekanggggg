@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss'
 import '../Home/ProductItem/style.scss';
@@ -11,9 +11,16 @@ function Newsz(props) {
     const ListN = props[1];
     const ListP = props[0][0];
     const { image, title, description, id, createdAt } = ListP
+    const counts = 3;
+    const [state, setState] = useState({ count: 0, setCount: counts })
+    const Setcounts = () => {
+        setState({
+            setCount: state.setCount + counts
+        })
+    }
     const showNews = () => {
         if (List) {
-            let result = List.slice(1).map((task, index) => {
+            let result = List.slice(state.count, state.setCount).map((task, index) => {
                 return <div key={index}>
                     <Row className="padding-news-note">
                         <Col lg={5} md={5} sm={5} xs={5}>
@@ -98,6 +105,11 @@ function Newsz(props) {
                     <Row className="padding-news-note">
                         {showNews()}
                     </Row>
+                    <div className="showdes">
+                        {
+                            List.length === state.setCount ? '' : <button className="btn_new_1 btn_new_2" onClick={() => Setcounts()}>xem Thêm</button>
+                        }
+                    </div>
                 </div>
                 <div className="distant_news-2"></div>
                 <div>
