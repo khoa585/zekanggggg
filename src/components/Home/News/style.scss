@@ -95,6 +95,10 @@ button.btn_new_1 {
     text-transform: uppercase;
     font-weight: 700;
     padding: 8px;
+    a{
+        color: white;
+        text-decoration: none;
+    }
 }
 button.btn_new_1:hover {
     color: white;

@@ -130,7 +130,7 @@ header#site-header {
         @include fontSize(.8em)
     }
     .menu li{
-        @include fontSize(.7em)
+        @include fontSize(.9em)
     }
     .text-wrap-box h4.titleWow {
         @include fontSize(.8em)
@@ -263,6 +263,10 @@ header#site-header {
             border-bottom: 1px solid #e5e5e5;
             width: 100%;
             cursor: pointer;
+            a{
+                color: #777575;
+                text-decoration: none;
+            }
         }
         .navR li.navItem:hover {
             background: #efecec;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss'
 import Moment from 'react-moment';
+import { Link } from '../../../../routers';
 function News(props) {
     const List = props[0]
     return (
@@ -76,7 +77,7 @@ function News(props) {
 
                 </Row>
                 <div className="showdes">
-                    <button className="btn_new_1 btn_new_2">xem Thêm</button>
+                    <button className="btn_new_1 btn_new_2"><Link route="/tin-tuc"><a>xem Thêm</a></Link></button>
                 </div>
             </Container>
             <div className="distant"></div>
