@@ -1,7 +1,5 @@
 import axios from './axios';
-const NUMBER_ITEM = 6;
-const PAGE_DEFAULT = 1;
-export const fetchListProduct = (page = PAGE_DEFAULT, numberitem = NUMBER_ITEM) => {
+export const fetchListProduct = (page, numberitem) => {
     return axios.post("/api/product/getlist", {
         page: page,
         numberitem: numberitem
@@ -18,7 +16,7 @@ export const fetchDeleteProduct = (id) => {
 }
 export const fetchSearchProduct = (data) => {
     return axios.post("/api/product/search", { name: data })
-} 
-export const fetchUpdateProduct = (data) =>{
+}
+export const fetchUpdateProduct = (data) => {
     return axios.post("/api/product/update", { ...data })
 }

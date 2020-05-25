@@ -12,7 +12,7 @@
     padding-top: 3%;
 }
 .dest_0{
-    height: 50em;
+    height: 40em;
 }
 .dest_1{
     overflow: hidden;
@@ -66,7 +66,7 @@
     margin: auto;
 }
 .text{
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #fff;
 }
 .date {
@@ -125,9 +125,6 @@ button.btn_new_1:focus{
     box-shadow: inherit;
 }
 @media (max-width: 991px) { 
-    .dest_0 {
-        height: 40em;
-    }
     button.btn_new_1  {
         font-size: .6em;
         width: 20%;

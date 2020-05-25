@@ -6,21 +6,31 @@ import { Link } from '../../../routers';
 import { to_slug, formatStar } from '../../commons/index';
 import CurrencyFormat from 'react-currency-format';
 import Moment from 'react-moment';
+import { fetchListNews } from '../../api/news';
 function Newsz(props) {
     const List = props[0];
     const ListN = props[1];
     const ListP = props[0][0];
     const { image, title, description, id, createdAt } = ListP
-    const counts = 3;
-    const [state, setState] = useState({ count: 0, setCount: counts })
-    const Setcounts = () => {
-        setState({
-            setCount: state.setCount + counts
+    const [stateList, setStateList] = useState(List.slice(1))
+    const counted = 4;
+    const [count, setCount] = useState({ counts: 2 })
+    const [showButton, setShowButton] = useState(true)
+    const Setcounts = async () => {
+        const resultdata = await fetchListNews(count.counts, counted)
+        setCount({
+            counts: count.counts + 1
         })
+        const data = resultdata?.data?.data
+        if (data.length === 0) {
+            setShowButton(false)
+        }
+        setStateList(stateList.concat(data))
     }
+
     const showNews = () => {
         if (List) {
-            let result = List.slice(state.count, state.setCount).map((task, index) => {
+            let result = stateList.map((task, index) => {
                 return <div key={index}>
                     <Row className="padding-news-note">
                         <Col lg={5} md={5} sm={5} xs={5}>
@@ -107,7 +117,7 @@ function Newsz(props) {
                     </Row>
                     <div className="showdes">
                         {
-                            List.length === state.setCount ? '' : <button className="btn_new_1 btn_new_2" onClick={() => Setcounts()}>xem Thêm</button>
+                            showButton ? <button className="btn_new_1 btn_new_2" onClick={() => Setcounts()}>xem Thêm</button> : ''
                         }
                     </div>
                 </div>

@@ -43,6 +43,10 @@
 
 .meta-inner {
     padding: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .image-box.is-trending.has-discount{
     cursor: pointer;
