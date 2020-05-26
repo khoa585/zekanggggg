@@ -10,7 +10,7 @@ function Footer(props) {
                 <div className="footerBottom_imgLeft"></div>
                 <Container>
                     <div className="footerContent">
-                        <h4>Công ty Cổ phần Đầu tư Thương mại và Giải pháp Quốc tế ANT GROUP</h4>
+                        <h4> ANT GROUP</h4>
                         <span>Hotline: (+84) 0977552086</span>
                     </div>
                     <div className="footerItem">
