@@ -16,7 +16,7 @@ function products(props) {
 }
 products.getInitialProps = async () => {
   try {
-    let resultFetch = await fetchListProduct();
+    let resultFetch = await fetchListProduct(1,);
     if (resultFetch?.data?.data) {
       let data = resultFetch.data.data;
       return [data];

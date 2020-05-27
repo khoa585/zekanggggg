@@ -7,6 +7,8 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Form, Input } from 'formik-antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { fetchSendQuestionContact } from '../../api/question';
+import { toast } from 'react-toastify';
 const { TextArea } = Input;
 function Contact(props) {
     const [state, setState] = useState({
@@ -49,7 +51,25 @@ function Contact(props) {
                                                     Message: ''
                                                 }}
                                                 onSubmit={async (values, { setSubmitting }) => {
-                                                    // console.log(values)
+                                                    const data = {
+                                                        title: values.Title,
+                                                        name: values.usename,
+                                                        phone: values.Email,
+                                                        email: values.address,
+                                                        message: values.Message
+                                                    }
+                                                    console.log(data)
+                                                    let resultFetch = await fetchSendQuestionContact(data);
+                                                    if (resultFetch.status == 200 && resultFetch.data?.status == "success") {
+                                                        toast.success("Gửi thành công");
+                                                        values.Title = '',
+                                                        values.usename = '';
+                                                        values.address = '';
+                                                        values.Email = '';
+                                                        values.Message = '';
+                                                    } else {
+                                                        toast.error("Có Lỗi Xảy Ra Khi Gửi");
+                                                    }
                                                 }}
                                                 validationSchema={
                                                     yup.object().shape({
@@ -164,11 +184,11 @@ function Contact(props) {
                                             </div>
                                             <div>
                                                 <span>Tel</span>
-                                                <p>024 3640 1123</p>
+                                                <p>(+84) 0977552086</p>
                                             </div>
                                             <div>
                                                 <span>Email</span>
-                                                <p>info@antgroup.com</p>
+                                                <p>info@antgroup.com.vn</p>
                                             </div>
                                         </div>
                                     </div>
