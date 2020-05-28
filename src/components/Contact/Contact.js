@@ -54,8 +54,8 @@ function Contact(props) {
                                                     const data = {
                                                         title: values.Title,
                                                         name: values.usename,
-                                                        phone: values.Email,
-                                                        email: values.address,
+                                                        email: values.Email,
+                                                        address: values.address,
                                                         message: values.Message
                                                     }
                                                     console.log(data)
