@@ -52,8 +52,8 @@ function Contact(props) {
                                                 }}
                                                 onSubmit={async (values, { setSubmitting }) => {
                                                     const data = {
-                                                        title: values.Title,
-                                                        name: values.usename,
+                                                        title : values.Title,
+                                                        name : values.usename,
                                                         email: values.Email,
                                                         address: values.address,
                                                         message: values.Message
