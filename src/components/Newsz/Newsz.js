@@ -112,7 +112,7 @@ function Newsz(props) {
                 </div>
                 <div>
                     <div className="distant_news-1"></div>
-                    <Row className="padding-news-note">
+                    <Row className="padding-news-note soss">
                         {showNews()}
                     </Row>
                     <div className="showdes">
