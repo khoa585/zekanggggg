@@ -25,6 +25,11 @@
         text-decoration: none;
     }
 }
+.product-show {
+    a:hover{
+        text-decoration: none;
+    }
+}
 .reason-main{
         width: 80%;
         margin: auto;
@@ -46,6 +51,10 @@
     .content-reason-o ul,.content-reason-t ul{
         padding: 0 0 0 5%;
         list-style: none;
+    }
+    .content-reason-o p{
+        font-size: 1.1em;
+        font-weight: 600;
     }
     .content-reason-t ul li,.content-reason-o ul li{
         padding: 1% 0;

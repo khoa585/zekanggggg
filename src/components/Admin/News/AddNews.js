@@ -9,6 +9,7 @@ import Router from 'next/router';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Form, Input } from 'formik-antd';
+import {BASE_URL} from './../../../api/config';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 const Ckeditor = dynamic(() => import("./../../CommonComponents/Ckeditor/Ckeditor"), {
     ssr: false
@@ -25,14 +26,13 @@ export default function AddNews() {
         listType: 'picture',
         FileList: [...fileList],
         className: 'upload-list-inline',
-        action: 'http://52.255.164.213:8000/upload',
+        action:BASE_URL+'/api/upload',   
     };
     const onEditorChange = (evt) => {
         setContent(evt.editor.getData());
     }
     const onChangeUpload = (info) => {
         let filesList = [...info.fileList];
-        filesList = filesList.slice(-1);
         filesList = filesList.map((file) => {
             if (file.response) {
                 // Component will show file.url as link
