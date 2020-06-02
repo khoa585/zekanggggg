@@ -24,6 +24,7 @@ function AddProduct(props) {
     };
     const onChangeUpload = (info) => {
         let filesList = [...info.fileList];
+        filesList = filesList.slice(-1);
         filesList = filesList.map((file) => {
             if (file.response) {
                 file.url = file.response.data.url;

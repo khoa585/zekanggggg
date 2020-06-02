@@ -22,7 +22,7 @@ export default function Index() {
             let resultDelete = await fetchDeleteNews(id);
             if (resultDelete.status == 200 && resultDelete.data?.status == "success") {
                 dispatch(ACTION_FETCH_LIST_NEWS())
-                toast.success("Xóa Thành Công Sản Phẩm");
+                toast.success("Xóa Thành Công Tin Tức");
             }
         }
     }

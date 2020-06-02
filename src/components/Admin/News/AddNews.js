@@ -33,6 +33,7 @@ export default function AddNews() {
     }
     const onChangeUpload = (info) => {
         let filesList = [...info.fileList];
+        filesList = filesList.slice(-1);
         filesList = filesList.map((file) => {
             if (file.response) {
                 // Component will show file.url as link
@@ -68,7 +69,7 @@ export default function AddNews() {
                     }
                     let resultAdd = await fetchAddNews(data);
                     if (resultAdd.status == 200 && resultAdd.data?.status == "success") {
-                        toast.success("Tạo Thành Công Sản Phẩm");
+                        toast.success("Tạo Thành Công Tin Tức");
                         Router.push("/admin/news");
                     } else {
                         toast.error("Có Lỗi Xảy Ra Khi Tạo");

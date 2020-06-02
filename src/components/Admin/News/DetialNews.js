@@ -10,6 +10,7 @@ import Router from 'next/router';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Form, Input } from 'formik-antd';
+import {BASE_URL} from './../../../api/config';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 const Ckeditor = dynamic(()=>import("../../CommonComponents/Ckeditor/Ckeditor"),{
@@ -26,7 +27,7 @@ export default function Detial(props){
         listType: 'picture',
         fileList: [...fileList],
         className: 'upload-list-inline',
-        action:'http://52.255.164.213:8000/upload',   
+        action:BASE_URL+'/api/upload',   
     };
     useEffect(()=>{
         let files = fileList ;
@@ -79,7 +80,7 @@ export default function Detial(props){
                     }
                     let resultUpdate= await fetchUpdateNews(data);
                     if(resultUpdate.status==200 && resultUpdate.data?.status=="success"){
-                        toast.success("Cập Nhật Thành Công Sản Phẩm");
+                        toast.success("Cập Nhật Thành Công Tin Tức");
                         Router.push("/admin/news");
                     }else {
                         toast.error("Có Lỗi Xảy Ra Khi Update");
