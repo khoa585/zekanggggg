@@ -1,7 +1,11 @@
 import { takeEvery, select, call, fork, put, all } from 'redux-saga/effects';
 import * as type from '../constants/ActionTypes';
 import { fetchListProduct, fetchDeleteProduct } from './../api/products';
-import { ACTION_SET_LIST_PRODUCT, ACTION_DELETE_PRODUCT_SUCCESS, ACTION_DELETE_PRODUCT_FAIL } from './../actions/productsAction';
+import {
+    ACTION_SET_LIST_PRODUCT,
+    ACTION_DELETE_PRODUCT_SUCCESS,
+    ACTION_DELETE_PRODUCT_FAIL
+} from './../actions/productsAction';
 function* watchFetchListProduct() {
     yield takeEvery(type.FETCH_LIST_PRODUCT, FetchListProduct);
 }

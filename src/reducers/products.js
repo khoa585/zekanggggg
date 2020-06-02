@@ -34,7 +34,6 @@ const reducersProducts = (state = initialSate, action) => {
         }
         default:
             return state;
-            break
     }
 }
 export default reducersProducts;

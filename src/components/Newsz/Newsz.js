@@ -94,10 +94,11 @@ function Newsz(props) {
                 </div>
                 <div className="distant_news_0"></div>
                 <div className="gallery-item-news">
-                    <div className="img-content-news" style={{ backgroundImage: `url(${image})` }}>
+                    <div className="img-content-news">
+                        <img src={image} className="" className="img-fluid d-block mx-auto" />
                     </div>
+
                     <div className="text-wrapper-news">
-                        <div className="text-box-news"></div>
                         <div className="text-wrap-box-news">
                             <div className="text-wrap-context-news">
                                 <div className="news-opg">

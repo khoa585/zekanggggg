@@ -155,9 +155,6 @@ header#site-header {
     .thumb-img-wrap img {
         max-height: 4rem!important;
     }
-    span.desc_Name, .meta-inner-wrap {
-        @include fontSize(0.55em)
-    }
 }
  @media (max-width: 730px) { 
     .text-wrap-box h4.titleWow {
@@ -312,9 +309,6 @@ header#site-header {
             justify-content: center!important;
             align-items: center;        
         }
-        .footerDres {
-            height: 8em!important;
-        }
         li.footer-menu-item {
             padding: 0 5px 0 5px!important;
             display: flex;
@@ -358,7 +352,7 @@ header#site-header {
 }
 @media (max-width: 991px) { 
     .menu {
-        @include fontSize(.7em)
+        @include fontSize(.6em)
     }
     .btn {
         @include fontSize(.5em);

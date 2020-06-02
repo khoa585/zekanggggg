@@ -77,7 +77,7 @@ function ProductItem(props) {
                         <span>So với những sản phẩm khác trên thị trường</span>
                     </div>
                 </div>
-                <Row>
+                <Row className="DbTitle">
                     <Col lg={3} xl={3} md={3} sm={3} className="resp">
                         <div className="image-box-wrap">
                             <div className="thumb-wrap">
@@ -150,7 +150,7 @@ function ProductItem(props) {
                         <span>Khi sử dụng sản phẩm của ZeKang</span>
                     </div>
                 </div>
-                <Row className="">
+                <Row className="Qr_Yt">
                     <Col lg={3} xl={3} md={3} sm={3} className="resp">
                         <div className="image-box-wrap_">
                             <div className="thumb-img-wrap_">
