@@ -43,3 +43,21 @@ span.ant-avatar.ant-dropdown-trigger.triggers.ant-avatar-circle.ant-avatar-icon 
     }
   }
 }
+.ant-dropdown.ant-dropdown-placement-bottomRight.ant-dropdown-hidden{
+    li.ant-dropdown-menu-item {
+      display: flex;
+      align-items: center;
+  }
+}
+section.ant-layout.ant-layout-has-sider{
+  .ant-layout-sider-children{
+    ul.ant-menu.ant-menu-dark.ant-menu-root.ant-menu-inline{
+      li.ant-menu-submenu.ant-menu-submenu-inline{
+        .ant-menu-submenu-title{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

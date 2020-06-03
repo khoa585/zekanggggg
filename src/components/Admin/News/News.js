@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Breadcrumb, Table, Space, Button } from 'antd';
 import { v4 as uuid4 } from 'uuid';
 import Router from 'next/router';
-import { ACTION_FETCH_LIST_NEWS ,ACTION_DELETE_NEWS} from './../../../actions/newsActions';
+import { ACTION_FETCH_LIST_NEWS ,ACTION_DELETE_NEWS,ACTION_ADD_DETAIL_NEWS} from './../../../actions/newsActions';
 export default function Index() {
     const news = useSelector(state => state.news.listnews);
     const showButton = useSelector(state => state.news.showButton);
@@ -17,7 +17,7 @@ export default function Index() {
         }
     }
     const Setcounts = async () => {
-        dispatch(ACTION_FETCH_LIST_NEWS())
+        dispatch(ACTION_ADD_DETAIL_NEWS())
     }
     const columns = [
         {

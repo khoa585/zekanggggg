@@ -77,7 +77,7 @@ function News(props) {
 
                 </Row>
                 <div className="showdes">
-                    <button className="btn_new_1 btn_new_2"><Link route="/tin-tuc"><a>xem Thêm</a></Link></button>
+                    <Link route="/tin-tuc"><a> <button className="btn_new_1 btn_new_2">xem Thêm</button></a></Link>
                 </div>
             </Container>
             <div className="distant"></div>

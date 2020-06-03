@@ -47,7 +47,7 @@ const ModalSearch = (props) => {
     const myFunctiononBlur = () => {
         setTimeout(() => {
             setVal('')
-        }, 150)
+        }, 200)
     }
     return (
         <>
