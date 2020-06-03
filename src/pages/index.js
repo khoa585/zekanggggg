@@ -6,6 +6,7 @@ import HeaderTag from './../components/CommonComponents/HeaderTag/HeaderTag';
 import { fetchListNews } from './../api/news';
 import { fetchListProduct } from './../api/products';
 function Index(props) {
+
   return (
     <React.Fragment>
       <Head>

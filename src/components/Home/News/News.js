@@ -16,70 +16,75 @@ function News(props) {
                     <span>Khi sử dụng sản phẩm của ZeKang</span>
                 </div>
             </div>
-            <Container className="distant_">
-                <Row>
-                    <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
-                        <div className="dest_1">
-                            <img src={List[0].image} alt="" className="img-fluid" />
-                            <div className="overlay">
-                                <div className="overlayBottom">
-                                    <div className="date">
-                                        <span><Moment format="DD/MM/YYYY" date={List[0].createdAt} /></span>
-                                    </div>
-                                    <div className="text">
-                                        <span>{List[0].title}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="dest_2">
-                            <img src={List[1].image} alt="" className="img-fluid" />
-                            <div className="overlay">
-                                <div className="overlayBottom">
-                                    <div className="date">
-                                        <span><Moment format="DD/MM/YYYY" date={List[1].createdAt} /></span>
-                                    </div>
-                                    <div className="text">
-                                        <span>{List[1].title}</span>
+            {
+                List ?
+                    <Container className="distant_">
+                        <Row>
+                            <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
+                                <div className="dest_1">
+                                    <img src={List[0].image} alt="" className="img-fluid" />
+                                    <div className="overlay">
+                                        <div className="overlayBottom">
+                                            <div className="date">
+                                                <span><Moment format="DD/MM/YYYY" date={List[0].createdAt} /></span>
+                                            </div>
+                                            <div className="text">
+                                                <span>{List[0].title}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
-                        <div className="dest_3">
-                            <img src={List[2].image} alt="" className="img-fluid" />
-                            <div className="overlay">
-                                <div className="overlayBottom">
-                                    <div className="date">
-                                        <span><Moment format="DD/MM/YYYY" date={List[2].createdAt} /></span>
-                                    </div>
-                                    <div className="text">
-                                        <span>{List[2].title}</span>
+                                <div className="dest_2">
+                                    <img src={List[1].image} alt="" className="img-fluid" />
+                                    <div className="overlay">
+                                        <div className="overlayBottom">
+                                            <div className="date">
+                                                <span><Moment format="DD/MM/YYYY" date={List[1].createdAt} /></span>
+                                            </div>
+                                            <div className="text">
+                                                <span>{List[1].title}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="dest_4">
-                            <img src={List[3].image} alt="" className="img-fluid" />
-                            <div className="overlay">
-                                <div className="overlayBottom">
-                                    <div className="date">
-                                        <span><Moment format="DD/MM/YYYY" date={List[3].createdAt} /></span>
-                                    </div>
-                                    <div className="text">
-                                        <span>{List[3].title}</span>
+                            </Col>
+                            <Col lg={6} md={6} sm={6} xs={6} className="dest_0">
+                                <div className="dest_3">
+                                    <img src={List[2].image} alt="" className="img-fluid" />
+                                    <div className="overlay">
+                                        <div className="overlayBottom">
+                                            <div className="date">
+                                                <span><Moment format="DD/MM/YYYY" date={List[2].createdAt} /></span>
+                                            </div>
+                                            <div className="text">
+                                                <span>{List[2].title}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
+                                <div className="dest_4">
+                                    <img src={List[3].image} alt="" className="img-fluid" />
+                                    <div className="overlay">
+                                        <div className="overlayBottom">
+                                            <div className="date">
+                                                <span><Moment format="DD/MM/YYYY" date={List[3].createdAt} /></span>
+                                            </div>
+                                            <div className="text">
+                                                <span>{List[3].title}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Col>
 
-                </Row>
-                <div className="showdes">
-                    <Link route="/tin-tuc"><a> <button className="btn_new_1 btn_new_2">xem Thêm</button></a></Link>
-                </div>
-            </Container>
+                        </Row>
+                        <div className="showdes">
+                            <Link route="/tin-tuc"><a> <button className="btn_new_1 btn_new_2">xem Thêm</button></a></Link>
+                        </div>
+                    </Container>
+
+                    : <div></div>
+            }
             <div className="distant"></div>
         </React.Fragment>
     );
