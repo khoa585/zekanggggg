@@ -10,9 +10,11 @@ import { fetchListNews } from '../../api/news';
 function Newsz(props) {
     const List = props[0];
     const ListN = props[1];
-    const ListP = props[0][0];
-    const { image, title, description, id, createdAt } = ListP
-    const [stateList, setStateList] = useState(List.slice(1))
+    if (props[0]) {
+        const ListP = props[0][0];
+        var { image, title, description, id, createdAt } = ListP
+        var [stateList, setStateList] = useState(List.slice(1))
+    }
     const counted = 4;
     const [count, setCount] = useState({ counts: 2 })
     const [showButton, setShowButton] = useState(true)
@@ -87,51 +89,57 @@ function Newsz(props) {
     return (
         <React.Fragment>
             <div className="distant_news"></div>
-            <Container>
-                <div className="title-wrap-news">
-                    <Link route="/"><a><span className="title-wrap-home-news">Home</span></a></Link>
-                    <span className="title-wrap-news">Tin tức </span>
-                </div>
-                <div className="distant_news_0"></div>
-                <div className="gallery-item-news">
-                    <div className="img-content-news">
-                        <img src={image} className="" className="img-fluid d-block mx-auto" />
-                    </div>
+            {
+                image ?
+                    <Container>
+                        <div className="title-wrap-news">
+                            <Link route="/"><a><span className="title-wrap-home-news">Home</span></a></Link>
+                            <span className="title-wrap-news">Tin tức </span>
+                        </div>
+                        <div className="distant_news_0"></div>
+                        <div className="gallery-item-news">
+                            <div className="img-content-news">
+                                <img src={image} className="" className="img-fluid d-block mx-auto" />
+                            </div>
 
-                    <div className="text-wrapper-news">
-                        <div className="text-wrap-box-news">
-                            <div className="text-wrap-context-news">
-                                <div className="news-opg">
-                                    <h4 className="titleWow-news">{title}</h4>
-                                    <span><Moment format="DD/MM/YYYY" date={createdAt} /></span>
+                            <div className="text-wrapper-news">
+                                <div className="text-wrap-box-news">
+                                    <div className="text-wrap-context-news">
+                                        <div className="news-opg">
+                                            <h4 className="titleWow-news">{title}</h4>
+                                            <span><Moment format="DD/MM/YYYY" date={createdAt} /></span>
+                                        </div>
+                                        <p>{description}</p>
+                                        <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><a><span> <button className="btn-news btn-news_">xem chi tiết</button></span></a></Link>
+                                    </div>
                                 </div>
-                                <p>{description}</p>
-                                <Link route={`/tin-tuc/${to_slug(title)}.${id}`}><a><span> <button className="btn-news btn-news_">xem chi tiết</button></span></a></Link>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <div className="distant_news-1"></div>
-                    <Row className="padding-news-note soss">
-                        {showNews()}
-                    </Row>
-                    <div className="showdes">
-                        {
-                            showButton ? <button className="btn_new_1 btn_new_2" onClick={() => Setcounts()}>xem Thêm</button> : ''
-                        }
-                    </div>
-                </div>
-                <div className="distant_news-2"></div>
-                <div>
-                    <span className="title-opg">các sản phẩm bạn có thể quan tâm</span>
-                    <Row className="product-show">
-                        {
-                            showProduct()
-                        }
-                    </Row>
-                </div>
-            </Container>
+                        <div>
+                            <div className="distant_news-1"></div>
+                            <Row className="padding-news-note soss">
+                                {showNews()}
+                            </Row>
+                            <div className="showdes">
+                                {
+                                    showButton ? <button className="btn_new_1 btn_new_2" onClick={() => Setcounts()}>xem Thêm</button> : ''
+                                }
+                            </div>
+                        </div>
+                        <div className="distant_news-2"></div>
+                        <div>
+                            <span className="title-opg">các sản phẩm bạn có thể quan tâm</span>
+                            <Row className="product-show">
+                                {
+                                    showProduct()
+                                }
+                            </Row>
+                        </div>
+                    </Container>
+                    :
+                    <div></div>
+            }
+
             <div className="distant_news"></div>
         </React.Fragment>
     );

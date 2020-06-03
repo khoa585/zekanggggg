@@ -17,7 +17,7 @@ function Footer(props) {
                         <Row>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Trụ sở: Các tỉnh phía Bắc: Bắc Giang,Bắc Ninh, Thái Nguyên, Bắc Kạn, Hà Giang, Tuyen Quang, Cao Bằng.</span>
+                                    <span>Trụ sở: Chi nhánh khu phụ trách khu vực các tỉnh phía Bắc: Bắc Giang,Bắc Ninh, Thái Nguyên, Bắc Kạn, Hà Giang, Tuyen Quang, Cao Bằng.</span>
                                 </div>
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
