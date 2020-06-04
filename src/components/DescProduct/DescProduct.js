@@ -140,7 +140,7 @@ function DescProduct(props) {
                                         <div className="panel">
                                             <p>Quý khách có thể mua sản phẩm ZeKang theo 3 phương thức sau:</p>
                                             <p>1. Truy cập vào website <a href="/">http://zekang.com.vn</a> để tham khảo, lựa chọn sản phẩm cần mua và đặt hàng</p>
-                                            <p>2. Gọi điện trực tiếp đến chúng tôi thông qua số Hotline: 0914 479 866 hay số cố định 024 2284 9090 để được tư vấn mua hàng</p>
+                                            <p>2. Gọi điện trực tiếp đến chúng tôi thông qua số Hotline: 0977 552 086 hay số cố định 02436 401 123 để được tư vấn mua hàng</p>
                                             <p>3. Liên hệ các đại lý phân phối gần nhất của chúng tôi để được tư vấn và đặt hàng. Tìm địa chỉ mua hàng gần nhất tại đây</p>
                                         </div>
                                     </div>
