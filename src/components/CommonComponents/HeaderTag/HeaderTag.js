@@ -22,4 +22,4 @@ const HeaderTag = props =>(
   </Head>
 )
 
-export default HeaderTag ;
+export default React.memo(HeaderTag) ;

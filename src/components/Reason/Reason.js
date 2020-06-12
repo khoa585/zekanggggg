@@ -76,4 +76,4 @@ function Reason(props) {
     );
 }
 
-export default Reason;
+export default React.memo(Reason);

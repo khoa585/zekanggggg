@@ -56,4 +56,4 @@ function Products(props) {
     );
 }
 
-export default Products;
+export default React.memo(Products);

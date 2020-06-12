@@ -137,4 +137,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default React.memo(Header);

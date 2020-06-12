@@ -222,4 +222,4 @@ function Experopinion(props) {
     );
 }
 
-export default Experopinion;
+export default React.memo(Experopinion);

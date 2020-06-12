@@ -165,4 +165,4 @@ function DescProduct(props) {
     );
 }
 
-export default DescProduct;
+export default React.memo(DescProduct);

@@ -145,4 +145,4 @@ function Newsz(props) {
     );
 }
 
-export default Newsz;
+export default React.memo(Newsz);

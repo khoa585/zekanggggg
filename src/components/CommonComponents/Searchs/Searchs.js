@@ -74,4 +74,4 @@ const Searchs = (props) => {
         </>
     )
 }
-export default Searchs;
+export default React.memo(Searchs);

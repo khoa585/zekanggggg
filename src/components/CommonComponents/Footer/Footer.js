@@ -27,7 +27,7 @@ function Footer(props) {
                             </Col>
                             <Col lg={4} md={4} sm={4} xs={4} >
                                 <div className="footerDres">
-                                    <span>Điện Thoại: (+84) 0977552086<br></br>- Fax: (+84) 0977552086 <br />E-mail: zekang@antgroup.com.vn</span>
+                                    <span>Điện Thoại: (+84) 0977552086<br></br>- Fax: (+84) 02436403971 <br />E-mail: zekang@antgroup.com.vn</span>
                                 </div>
                             </Col>
                         </Row>
@@ -83,4 +83,4 @@ function Footer(props) {
     );
 }
 
-export default Footer;
+export default React.memo(Footer);

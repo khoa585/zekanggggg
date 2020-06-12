@@ -176,7 +176,7 @@ function Contact(props) {
                                     <div className="contact-name">
                                         <div className="contact-name-0">
                                             <div>
-                                                <h6>CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI VÀ GIẢI PHÁP QUỐC TẾ ANT GROUP</h6>
+                                                <h6>Zekang Việt Nam</h6>
                                             </div>
                                             <div>
                                                 <span>Trụ sở chính</span>
@@ -226,7 +226,7 @@ function Contact(props) {
 }
 export default GoogleApiWrapper({
     apiKey: ('AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes')
-})(Contact);
+})(React.memo(Contact));
 
 
 

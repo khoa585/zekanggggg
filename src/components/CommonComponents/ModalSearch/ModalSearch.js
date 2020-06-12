@@ -73,4 +73,4 @@ const ModalSearch = (props) => {
         </>
     )
 }
-export default ModalSearch;
+export default React.memo(ModalSearch);

@@ -15,4 +15,4 @@ function ContactFast() {
     );
 }
 
-export default ContactFast;
+export default React.memo(ContactFast);

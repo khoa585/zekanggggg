@@ -71,4 +71,4 @@ function Introduce(props) {
     );
 }
 
-export default Introduce;
+export default React.memo(Introduce);
