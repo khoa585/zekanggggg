@@ -7,13 +7,23 @@ import { Link } from './../../../routers';
 import CurrencyFormat from 'react-currency-format';
 function DescProduct(props) {
     const { name, price, evaluation, heed, descriptions, usage, ingredients, expirydate, images } = props[0]
+    const ActiveChangeP = React.useCallback(() => {
+        let Accordion = document.getElementsByClassName("accordion");
+        let panel = document.getElementsByClassName("panel");
+        for (let i = 0; i < Accordion.length; i++) {
+            if (panel[i].style.maxHeight) {
+                Accordion[i].classList.toggle("actives");
+                panel[i].style.maxHeight = null;
+            }
+        }
+    }, [])
     useEffect(() => {
-        const getAccordion = () => {
-            var Accordion = document.getElementsByClassName("accordion");
-            for (var i = 0; i < Accordion.length; i++) {
+        (() => {
+            let Accordion = document.getElementsByClassName("accordion");
+            for (let i = 0; i < Accordion.length; i++) {
                 Accordion[i].addEventListener("click", function () {
                     this.classList.toggle("actives");
-                    var panel = this.nextElementSibling;
+                    let panel = this.nextElementSibling;
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
                     } else {
@@ -21,13 +31,14 @@ function DescProduct(props) {
                     }
                 });
             }
-        }
-        getAccordion()
+        })()
     }, [])
-    const showProduct = () => {
+
+
+    const showProduct = React.useCallback(() => {
         let result = props[1].map((task, index) => {
             return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
-                <Col lg={3} md={3} sm={3} className="resp" key={index}>
+                <Col lg={3} md={3} sm={3} className="resp" key={index} onClick={() => ActiveChangeP()}>
                     <div className="image-box is-trending has-discount">
                         <div className="thumb">
                             <div className="background-image">
@@ -53,7 +64,7 @@ function DescProduct(props) {
             </Link>
         })
         return result;
-    }
+    }, [props[1]])
     return (
         <React.Fragment>
             <div className="distant___"></div>
@@ -106,7 +117,7 @@ function DescProduct(props) {
                                 </div>
                                 <div className="accordion-prod">
                                     <div>
-                                        <button className='accordion'>Thành phần</button>
+                                        <button className='accordion' >Thành phần</button>
                                         <div className="panel">
                                             <p>{ingredients}</p>
                                         </div>
