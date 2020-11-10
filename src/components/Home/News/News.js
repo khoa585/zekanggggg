@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss'
 import Moment from 'react-moment';
 import { Link } from '../../../../routers';
+import { to_slug } from '../../../commons/index';
 function News(props) {
     const List = props[0]
     return (
@@ -24,38 +25,46 @@ function News(props) {
                                 {
                                     List[0]
                                         ?
-                                        <div className="dest_1">
-                                            <img src={List[0].image} alt="" className="img-fluid" />
-                                            <div className="overlay">
-                                                <div className="overlayBottom">
-                                                    <div className="date">
-                                                        <span><Moment format="DD/MM/YYYY" date={List[0].createdAt} /></span>
-                                                    </div>
-                                                    <div className="text">
-                                                        <span>{List[0].title}</span>
+                                        <Link route={`/tin-tuc/${to_slug(List[0].title)}.${List[0].id}`}>
+                                            <a>
+                                                <div className="dest_1">
+                                                    <img src={List[0].image} alt="" className="img-fluid" />
+                                                    <div className="overlay">
+                                                        <div className="overlayBottom">
+                                                            <div className="date">
+                                                                <span><Moment format="DD/MM/YYYY" date={List[0].createdAt} /></span>
+                                                            </div>
+                                                            <div className="text">
+                                                                <span>{List[0].title}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </a>
+                                        </Link>
                                         :
                                         <div> </div>
                                 }
                                 {
                                     List[1]
                                         ?
-                                        <div className="dest_2">
-                                            <img src={List[1].image} alt="" className="img-fluid" />
-                                            <div className="overlay">
-                                                <div className="overlayBottom">
-                                                    <div className="date">
-                                                        <span><Moment format="DD/MM/YYYY" date={List[1].createdAt} /></span>
-                                                    </div>
-                                                    <div className="text">
-                                                        <span>{List[1].title}</span>
+                                        <Link route={`/tin-tuc/${to_slug(List[1].title)}.${List[1].id}`}>
+                                            <a>
+                                                <div className="dest_2">
+                                                    <img src={List[1].image} alt="" className="img-fluid" />
+                                                    <div className="overlay">
+                                                        <div className="overlayBottom">
+                                                            <div className="date">
+                                                                <span><Moment format="DD/MM/YYYY" date={List[1].createdAt} /></span>
+                                                            </div>
+                                                            <div className="text">
+                                                                <span>{List[1].title}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </a>
+                                        </Link>
                                         :
                                         <div> </div>
                                 }
@@ -64,38 +73,46 @@ function News(props) {
                                 {
                                     List[2]
                                         ?
-                                        <div className="dest_3">
-                                            <img src={List[2].image} alt="" className="img-fluid" />
-                                            <div className="overlay">
-                                                <div className="overlayBottom">
-                                                    <div className="date">
-                                                        <span><Moment format="DD/MM/YYYY" date={List[2].createdAt} /></span>
-                                                    </div>
-                                                    <div className="text">
-                                                        <span>{List[2].title}</span>
+                                        <Link route={`/tin-tuc/${to_slug(List[2].title)}.${List[2].id}`}>
+                                            <a>
+                                                <div className="dest_3">
+                                                    <img src={List[2].image} alt="" className="img-fluid" />
+                                                    <div className="overlay">
+                                                        <div className="overlayBottom">
+                                                            <div className="date">
+                                                                <span><Moment format="DD/MM/YYYY" date={List[2].createdAt} /></span>
+                                                            </div>
+                                                            <div className="text">
+                                                                <span>{List[2].title}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </a>
+                                        </Link>
                                         :
                                         <div> </div>
                                 }
                                 {
                                     List[3]
                                         ?
-                                        <div className="dest_4">
-                                            <img src={List[3].image} alt="" className="img-fluid" />
-                                            <div className="overlay">
-                                                <div className="overlayBottom">
-                                                    <div className="date">
-                                                        <span><Moment format="DD/MM/YYYY" date={List[3].createdAt} /></span>
-                                                    </div>
-                                                    <div className="text">
-                                                        <span>{List[3].title}</span>
+                                        <Link route={`/tin-tuc/${to_slug(List[3].title)}.${List[3].id}`}>
+                                            <a>
+                                                <div className="dest_4">
+                                                    <img src={List[3].image} alt="" className="img-fluid" />
+                                                    <div className="overlay">
+                                                        <div className="overlayBottom">
+                                                            <div className="date">
+                                                                <span><Moment format="DD/MM/YYYY" date={List[3].createdAt} /></span>
+                                                            </div>
+                                                            <div className="text">
+                                                                <span>{List[3].title}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </a>
+                                        </Link>
                                         :
                                         <div> </div>
                                 }
