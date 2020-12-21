@@ -11,6 +11,7 @@ const cors = require('cors');
 const handle = routers.getRequestHandler(app);
 app.prepare().then(()=>{
     const server  = express();
+    app.use(express.static('public'))
     server.use(cookieParser())
     server.use("/static", express.static(__dirname + "/static"));
     server.use("/api",createProxyMiddleware({
