@@ -25,16 +25,15 @@ function Introduce(props) {
                                 </span>
                             </div><br/>
                             <div className="profzDes">
-                                <p>Kernel medical international Pte. Ltd được thành lập 1997, là một doanh nghiệp công nghệ cao có trên 23 năm kinh nghiệm trong lĩnh vực chăm sóc sức khỏe và phát triển thiết bị y tế.</p>
-                                <p>Chúng tôi có đội ngũ nghiên cứu phát triển sản phẩm là các Tiến sĩ và Bác sĩ đầu ngành về da liễu, đã nghiên cứu và sáng tạo nghiêm túc về các sản phẩm da liễu. Bên cạnh đó, các sản phẩm được giám sát, theo dõi chất lượng nghiêm ngặt, khắt khe tại các tổ chức khoa học trong và ngoài nước.</p>
-                                <p>Đây là sứ mệnh của Công ty để mang đến dịch vụ tốt nhất cho khách hàng và phân phối sản phẩm rộng khắp thế giới.</p>
+                                <p> Công ty TNHH Phân Phối Dược Phẩm ANT là một công ty có bề dày kinh nghiệm trong lĩnh vực chăm sóc sức khỏe và phân phối dược mỹ phẩm. Chúng tôi hiện đang hợp tác phân phối với nhiều hãng dược mỹ phẩm nổi tiếng trên thế giới. Với mạng lưới phân phối rộng khắp và uy tín,đội ngũ kỹ thuật là những chuyên gia đầu ngành trong lĩnh vực chăm sóc sức khỏe và y tế , chúng tôi cam kết mang đến cho khách hàng những sản phẩm với giá cả và chất lượng tốt nhất . </p>
+      
                             </div>
                         </div>
                     </Col>
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img__0">
                         <div className="infAboutImg_">
                             <div className="infAboutImg">
-                                <img src="../img/inf.png" alt="inf" className="img-fluid dir" />
+                                <img src="../img/img2.jpg" alt="inf" className="img-fluid dir" />
                             </div>
                         </div>
                     </Col>
@@ -46,7 +45,7 @@ function Introduce(props) {
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img-0 inf-img_1">
                         <div className="infAboutImg_">
                             <div className="infAboutImg">
-                                <img src="../img/inf_1.png" alt="inf" className="img-fluid " />
+                                <img src="../img/img3.png" alt="inf" className="img-fluid " />
                             </div>
                         </div>
                     </Col>
@@ -58,9 +57,7 @@ function Introduce(props) {
                             </span>
                             </div><br/>
                             <div className="profzDes">
-                                <p>Zekang ra đời là bước ngoặt lớn đối với sản phẩm hỗ trợ điều trị vẩy nến</p>
-                                <p>Sản phẩm được điều chế từ nguồn nguyên liệu sạch, hoàn toàn có nguồn gốc thảo mộc tự nhiên. Zekang đã đạt doanh số hàng năm hơn 2 triệu sản phẩm và được yêu thích nhất tại Singapore, Trung Quốc…</p>
-                                <p>Việc Hợp Tác với giáo sư Zhang Xuejun, là một người thầy thuốc nổi tiếng về bệnh vẩy nến đã mang lại uy tín rộng rãi và tạo tiếng vang lớn cho chúng tôi trong ngành da liễu</p>
+                                <p>Bộ sản phẩm Zekang của hãng Sky Loyal Technology, gồm các sản phẩm bôi dạng kem và sữa tắm, dầu gội dạng lỏng, có công dụng hỗ trợ điều trị bệnh vảy nến, viêm da cơ địa. Sản phẩm được chiết suất từ những chất thảo dược có tính kháng khuẩn tự nhiên cao như dầu đậu đen, long não đại bị, cây hoa chuông , hoa mẫu đơn …vv. Với thành phần  hoàn toàn không chứa corticoid và chất bảo quản, sản phẩm có thể sử dụng lâu dài mà không gây có tác dụng phụ . Sản phẩm được chấp nhận và tiêu thụ rộng rãi tại nhiều quốc gia trên thế giới từ châu Á đến thị trường kiểm soát nghiêm ngặt như Mỹ và châu Âu. </p>
                             </div>
                         </div>
                     </Col>

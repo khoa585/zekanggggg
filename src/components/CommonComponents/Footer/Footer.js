@@ -10,24 +10,19 @@ function Footer(props) {
                 <div className="footerBottom_imgLeft"></div>
                 <Container>
                     <div className="footerContent">
-                        <h4>ZEKANG</h4>
+                        <h4>CÔNG TY TNHH PHÂN PHỐI DƯỢC PHẨM ANT</h4>
                         <span>Hotline: (+84) 0977552086</span>
                     </div>
                     <div className="footerItem">
                         <Row>
-                            <Col lg={4} md={4} sm={4} xs={4} >
+                            <Col lg={6} md={6} sm={6} xs={6} >
                                 <div className="footerDres">
-                                    <span>Trụ sở: Chi nhánh khu phụ trách khu vực các tỉnh phía Bắc: Bắc Giang,Bắc Ninh, Thái Nguyên, Bắc Kạn, Hà Giang, Tuyen Quang, Cao Bằng.</span>
+                                    <span>Trụ sở công ty: Tầng 3, tòa Lotus Building, số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy Hà Nội.</span>
                                 </div>
                             </Col>
-                            <Col lg={4} md={4} sm={4} xs={4} >
+                            <Col lg={6} md={6} sm={6} xs={6} >
                                 <div className="footerDres">
-                                    <span>Văn phòng làm việc: Tầng 3, tòa Lotus Building, số 2 phố Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy Hà Nội.</span>
-                                </div>
-                            </Col>
-                            <Col lg={4} md={4} sm={4} xs={4} >
-                                <div className="footerDres">
-                                    <span>Điện Thoại: (+84) 0977552086<br></br>- Fax: (+84) 02436403971 <br />E-mail: zekang@antgroup.com.vn</span>
+                                    <span>Điện Thoại: (+84) 0977552086 - Fax: (+84) 02436403971 <br />E-mail: zekang@antgroup.com.vn</span>
                                 </div>
                             </Col>
                         </Row>

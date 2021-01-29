@@ -23,6 +23,7 @@
     "formik": "^2.1.4",
     "formik-antd": "^2.0.1",
     "google-maps-react": "^2.0.6",
+    "gulp-sass": "^4.1.0",
     "http-proxy-middleware": "^1.0.3",
     "lodash": "^4.17.15",
     "next": "9.3.6",

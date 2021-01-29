@@ -23,6 +23,7 @@ function MainHome() {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
+                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
                                         <h4 className="titleWow ">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
                                         <button className="btn btn_">xem chi tiết</button>
@@ -39,6 +40,7 @@ function MainHome() {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
+                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
                                         <h4 className="titleWow ">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
                                         <button className="btn btn_">xem chi tiết</button>
@@ -51,7 +53,7 @@ function MainHome() {
             </main>
             <style jsx>{`
            .img-content{
-            background-image: url('../img/Bin.jpg');
+            background-image: url('../img/img1.jpg');
             height: 100%;
             width: 80%;
             background-position: center;
