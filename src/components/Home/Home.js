@@ -5,7 +5,7 @@ import News from './News/News';
 function Home(props) {
     return (
         <React.Fragment>
-            <MainHome></MainHome>
+            <MainHome image={'Bin.jpg'}></MainHome>
             <ProductItem {...props}></ProductItem>
             <News {...props}></News>
         </React.Fragment>

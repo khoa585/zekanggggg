@@ -2,7 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import './style.scss'
-function MainHome() {
+function MainHome({ image, txt }) {
     const params = {
         navigation: {
             nextEl: '.swiper-button-next',
@@ -23,7 +23,7 @@ function MainHome() {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
-                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
+                                        <h4 className="titleWow ">{txt}</h4>
                                         <h4 className="titleWow ">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
                                         <button className="btn btn_">xem chi tiết</button>
@@ -40,7 +40,7 @@ function MainHome() {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
-                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
+                                        <h4 className="titleWow ">{txt}</h4>
                                         <h4 className="titleWow ">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
                                         <button className="btn btn_">xem chi tiết</button>
@@ -53,7 +53,7 @@ function MainHome() {
             </main>
             <style jsx>{`
            .img-content{
-            background-image: url('../img/img1.jpg');
+            background-image: url(${`../img/${image}`});
             height: 100%;
             width: 80%;
             background-position: center;

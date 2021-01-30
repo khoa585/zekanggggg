@@ -13,7 +13,7 @@ function introduces(props) {
                 </Head>
                 <HeaderTag />
                 <Header></Header>
-                <MainHome></MainHome>
+                <MainHome image={'img1.jpg'} txt={'Chương trình ưu đãi tri ân khách hàng'}></MainHome>
                 <Introduce></Introduce>
                 <Footer></Footer>
         </React.Fragment>
