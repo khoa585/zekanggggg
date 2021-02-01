@@ -176,7 +176,7 @@ function Contact(props) {
                                     <div className="contact-name">
                                         <div className="contact-name-0">
                                             <div>
-                                                <h6>Zekang Việt Nam</h6>
+                                                <h6>Công Ty TNHH Phân Phối Dược Phẩm ANT</h6>
                                             </div>
                                             <div>
                                                 <span>Trụ sở chính</span>

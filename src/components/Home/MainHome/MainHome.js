@@ -2,7 +2,8 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import './style.scss'
-function MainHome({ image, txt }) {
+import { Link } from './../../../../routers';
+function MainHome({ image }) {
     const params = {
         navigation: {
             nextEl: '.swiper-button-next',
@@ -23,10 +24,12 @@ function MainHome({ image, txt }) {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
-                                        <h4 className="titleWow ">{txt}</h4>
-                                        <h4 className="titleWow ">New, Bigger Sizes!</h4>
+                                        <h4 className="titleWow">Chương trình ưu đãi tri ân khách hàng</h4>
+                                        <h4 className="titleWow">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
-                                        <button className="btn btn_">xem chi tiết</button>
+                                        <Link href="/news" as="/tin-tuc">
+                                            <button className="btn btn_">xem chi tiết</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -40,10 +43,12 @@ function MainHome({ image, txt }) {
                                 <div className="text-box"></div>
                                 <div className="text-wrap-box">
                                     <div className="text-wrap-context">
-                                        <h4 className="titleWow ">{txt}</h4>
+                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
                                         <h4 className="titleWow ">New, Bigger Sizes!</h4>
                                         <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
-                                        <button className="btn btn_">xem chi tiết</button>
+                                        <Link href="/news" as="/tin-tuc">
+                                            <button className="btn btn_">xem chi tiết</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
