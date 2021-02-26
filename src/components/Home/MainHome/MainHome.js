@@ -3,62 +3,61 @@ import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import './style.scss'
 import { Link } from './../../../../routers';
-function MainHome({ image }) {
+function MainHome() {
     const params = {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
         },
-        loop: true
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false
+        },
     }
-
+    const data = [
+        'https://res.cloudinary.com/truyenfull/image/upload/v1614331743/zekang/z2350439553213_4b01941e2ecbbade9c841e21e46e9cac_itzcrc.jpg',
+        'https://res.cloudinary.com/truyenfull/image/upload/v1614331743/zekang/z2350439995992_544faa322b23814f3e565678c8bdc98e_lxuzjc.jpg',
+        'https://res.cloudinary.com/truyenfull/image/upload/v1614331743/zekang/z2350439810490_5b0cbda6117ec0e58c68225bcfd2f0f5_jqpzke.jpg',
+        'https://res.cloudinary.com/truyenfull/image/upload/v1614331932/zekang/KHAH9264_2_pzhjgl.jpg'
+    ]
     return (
         <div>
             <main className="back-front-page">
                 <Swiper {...params}>
-                    <div className="swiper-slide">
-                        <div className="gallery-item">
-                            <div className="img-content">
-                            </div>
-                            <div className="text-wrapper">
-                                <div className="text-box"></div>
-                                <div className="text-wrap-box">
-                                    <div className="text-wrap-context">
-                                        <h4 className="titleWow">Chương trình ưu đãi tri ân khách hàng</h4>
-                                        <h4 className="titleWow">New, Bigger Sizes!</h4>
-                                        <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
-                                        <Link href="/news" as="/tin-tuc">
-                                            <button className="btn btn_">xem chi tiết</button>
-                                        </Link>
+                    {
+                        data.map((item, index) => {
+                            return (
+                                <div className="swiper-slide" key={index}>
+                                    <div className="gallery-item">
+                                        <div className="img-content" style={{
+                                            backgroundImage: `url(${item})`
+                                        }}>
+                                        </div>
+                                        <div className="text-wrapper">
+                                            <div className="text-box"></div>
+                                            <div className="text-wrap-box">
+                                                <div className="text-wrap-context">
+                                                    <h4 className="titleWow">Chương trình ưu đãi tri ân khách hàng</h4>
+                                                    <h4 className="titleWow">New, Bigger Sizes!</h4>
+                                                    <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
+                                                    <Link href="/news" as="/tin-tuc">
+                                                        <button className="btn btn_">xem chi tiết</button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide">
-                        <div className="gallery-item">
-                            <div className="img-content">
-                            </div>
-                            <div className="text-wrapper">
-                                <div className="text-box"></div>
-                                <div className="text-wrap-box">
-                                    <div className="text-wrap-context">
-                                        <h4 className="titleWow ">Chương trình ưu đãi tri ân khách hàng</h4>
-                                        <h4 className="titleWow ">New, Bigger Sizes!</h4>
-                                        <p>Enjoy our bestselling body and hair staples, now available in a a family friendly 32 or size</p>
-                                        <Link href="/news" as="/tin-tuc">
-                                            <button className="btn btn_">xem chi tiết</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            )
+                        })
+                    }
+
                 </Swiper>
             </main>
             <style jsx>{`
            .img-content{
-            background-image: url(${`../img/${image}`});
+            background-image: url(${`../img/Bin.jpg`});
             height: 100%;
             width: 80%;
             background-position: center;
