@@ -45,20 +45,24 @@ function AddProduct(props) {
         defaultFileList: fileList,
         action: BASE_URL + '/api/upload',
     };
-    const onChangeUpload = (info) => {
-        let filesList = [...info.fileList];
-        filesList = filesList.slice(-1);
-        filesList = filesList.map((file) => {
-            if (file.response) {
-                file.url = file.response.data.url;
+    const onChangeUpload = ({ file, fileList }) => {
+        if (file.status !== 'uploading') {
+            let filesList = [...fileList]
+            if (fileList) {
+                filesList = filesList.map((file) => {
+                    if (file.response) {
+                        file.url = file.response.data.url;
+                    }
+                    return file.url;
+                })
+                setFileList(filesList);
             }
-            return file;
-        })
-        setFileList(filesList);
+   
+        }
     }
     const Rate_Ref = useRef(rateRef.current);
     const images = fileList.map(file => {
-        return file.url;
+        return file;
     })
     const onUpdateProduct = () => {
         if (!fileList.length) {
@@ -95,7 +99,7 @@ function AddProduct(props) {
                         expirydate: values.expirydate,
                         evaluation: values.evaluation
                     }
-                    console.log(data)
+
                     let resultUpdate = await fetchUpdateProduct(data);
                     if (resultUpdate.status == 200 && resultUpdate.data?.status == "success") {
                         toast.success("Cập Nhật Thành Công Sản Phẩm");
@@ -121,117 +125,117 @@ function AddProduct(props) {
                     errors,
                     touched
                 }) => (
-                        <div>
-                            <Form onSubmit={handleSubmit}>
-                                <div>
-                                    <span htmlFor='nameProduct'>Tên sản phẩm</span>
-                                    <Input
-                                        name='nameProduct'
-                                        value={values.nameProduct}
-                                        onChange={handleChange}
-                                        className={`form-product ${errors.nameProduct && touched.nameProduct && 'errors'}`}
-                                    />
-                                    {
-                                        errors.nameProduct && touched.nameProduct && (
-                                            <span className="errors"><ExclamationCircleOutlined /> {errors.nameProduct}</span>
-                                        )
-                                    }
-                                </div>
-                                <div>
-                                    <span htmlFor='priceProduct'>Giá sản phẩm</span>
-                                    <InputNumber
-                                        defaultValue={0}
-                                        style={{ padding: 0, width: 200 }}
-                                        name='priceProduct'
-                                        value={values.priceProduct}
-                                        className={`form-product ${errors.priceProduct && touched.priceProduct && 'errors'}`}
-                                    />
-                                    {
-                                        errors.priceProduct && touched.priceProduct && (
-                                            <span className="errors"><ExclamationCircleOutlined /> {errors.priceProduct}</span>
-                                        )
-                                    }
-                                </div>
-                                <div>
-                                    <span htmlFor='starProduct'>Sao</span><br />
-                                    <Rate ref={Rate_Ref}
-                                        defaultValue={Rate_Ref.current}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div>
-                                    <span htmlFor='descriptionsProduct'>Chi tiết sản phẩm</span>
-                                    <TextArea rows={4}
-                                        name='descriptionsProduct'
-                                        value={values.descriptionsProduct}
-                                        onChange={handleChange}
-                                        className={`form-product ${errors.descriptionsProduct && touched.descriptionsProduct && 'errors'}`}
-                                    />
-                                    {
-                                        errors.descriptionsProduct && touched.descriptionsProduct && (
-                                            <span className="errors"><ExclamationCircleOutlined /> {errors.descriptionsProduct}</span>
-                                        )
-                                    }
-                                </div>
-                                <div>
-                                    <span>Ảnh</span><br />
-                                    <Upload {...props2} onChange={onChangeUpload}>
-                                        <Button>
-                                            <UploadOutlined /> Upload
+                    <div>
+                        <Form onSubmit={handleSubmit}>
+                            <div>
+                                <span htmlFor='nameProduct'>Tên sản phẩm</span>
+                                <Input
+                                    name='nameProduct'
+                                    value={values.nameProduct}
+                                    onChange={handleChange}
+                                    className={`form-product ${errors.nameProduct && touched.nameProduct && 'errors'}`}
+                                />
+                                {
+                                    errors.nameProduct && touched.nameProduct && (
+                                        <span className="errors"><ExclamationCircleOutlined /> {errors.nameProduct}</span>
+                                    )
+                                }
+                            </div>
+                            <div>
+                                <span htmlFor='priceProduct'>Giá sản phẩm</span>
+                                <InputNumber
+                                    defaultValue={0}
+                                    style={{ padding: 0, width: 200 }}
+                                    name='priceProduct'
+                                    value={values.priceProduct}
+                                    className={`form-product ${errors.priceProduct && touched.priceProduct && 'errors'}`}
+                                />
+                                {
+                                    errors.priceProduct && touched.priceProduct && (
+                                        <span className="errors"><ExclamationCircleOutlined /> {errors.priceProduct}</span>
+                                    )
+                                }
+                            </div>
+                            <div>
+                                <span htmlFor='starProduct'>Sao</span><br />
+                                <Rate ref={Rate_Ref}
+                                    defaultValue={Rate_Ref.current}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div>
+                                <span htmlFor='descriptionsProduct'>Chi tiết sản phẩm</span>
+                                <TextArea rows={4}
+                                    name='descriptionsProduct'
+                                    value={values.descriptionsProduct}
+                                    onChange={handleChange}
+                                    className={`form-product ${errors.descriptionsProduct && touched.descriptionsProduct && 'errors'}`}
+                                />
+                                {
+                                    errors.descriptionsProduct && touched.descriptionsProduct && (
+                                        <span className="errors"><ExclamationCircleOutlined /> {errors.descriptionsProduct}</span>
+                                    )
+                                }
+                            </div>
+                            <div>
+                                <span>Ảnh</span><br />
+                                <Upload {...props2} onChange={onChangeUpload}>
+                                    <Button>
+                                        <UploadOutlined /> Upload
                                     </Button>
-                                    </Upload>
-                                    {
-                                        state && !fileList.length ? <span className="errors"><ExclamationCircleOutlined /> Hãy tải ảnh </span> : ''
-                                    }
-                                </div>
-                                <div>
-                                    <span htmlFor="ingredients">Thành phần</span>
-                                    <TextArea rows={2}
-                                        name="ingredients"
-                                        value={values.ingredients}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div>
-                                    <span htmlFor="usage">Cách sử dụng</span>
-                                    <TextArea rows={2}
-                                        name="usage"
-                                        value={values.usage}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div>
-                                    <span htmlFor="heed">Chú ý</span>
-                                    <TextArea rows={2}
-                                        name="heed"
-                                        value={values.heed}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div>
-                                    <span htmlFor="expirydate">Hàm Lượng Và Hạn sử dụng</span>
-                                    <TextArea rows={2}
-                                        name="expirydate"
-                                        value={values.expirydate}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div>
-                                    <span htmlFor="evaluation">Đánh giá</span>
-                                    <TextArea rows={2}
-                                        name="evaluation"
-                                        value={values.evaluation}
-                                        className="form-product"
-                                    />
-                                </div>
-                                <div className="submitForm">
-                                    <button type="submit" onClick={onUpdateProduct}>
-                                        Cập Nhật sản Phẩm
+                                </Upload>
+                                {
+                                    state && !fileList.length ? <span className="errors"><ExclamationCircleOutlined /> Hãy tải ảnh </span> : ''
+                                }
+                            </div>
+                            <div>
+                                <span htmlFor="ingredients">Thành phần</span>
+                                <TextArea rows={2}
+                                    name="ingredients"
+                                    value={values.ingredients}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div>
+                                <span htmlFor="usage">Cách sử dụng</span>
+                                <TextArea rows={2}
+                                    name="usage"
+                                    value={values.usage}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div>
+                                <span htmlFor="heed">Chú ý</span>
+                                <TextArea rows={2}
+                                    name="heed"
+                                    value={values.heed}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div>
+                                <span htmlFor="expirydate">Hàm Lượng Và Hạn sử dụng</span>
+                                <TextArea rows={2}
+                                    name="expirydate"
+                                    value={values.expirydate}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div>
+                                <span htmlFor="evaluation">Đánh giá</span>
+                                <TextArea rows={2}
+                                    name="evaluation"
+                                    value={values.evaluation}
+                                    className="form-product"
+                                />
+                            </div>
+                            <div className="submitForm">
+                                <button type="submit" onClick={onUpdateProduct}>
+                                    Cập Nhật sản Phẩm
                                     </button>
-                                </div>
-                            </Form>
-                        </div>
-                    )}
+                            </div>
+                        </Form>
+                    </div>
+                )}
             </Formik>
         </Container >
     );
