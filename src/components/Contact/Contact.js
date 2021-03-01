@@ -58,7 +58,6 @@ function Contact(props) {
                                                         address: values.address,
                                                         message: values.Message
                                                     }
-                                                    console.log(data)
                                                     let resultFetch = await fetchSendQuestionContact(data);
                                                     if (resultFetch.status == 200 && resultFetch.data?.status == "success") {
                                                         toast.success("Gửi thành công");

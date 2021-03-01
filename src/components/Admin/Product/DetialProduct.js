@@ -90,7 +90,7 @@ function AddProduct(props) {
                         id: props.id.toString(),
                         name: values.nameProduct,
                         price: values.priceProduct,
-                        images: fileList.map(file => {return file.url;}),
+                        images: images,
                         start: Rate_Ref.current.state.value,
                         descriptions: values.descriptionsProduct,
                         ingredients: values.ingredients,
