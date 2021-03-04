@@ -45,7 +45,7 @@ function Introduce(props) {
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img-0 inf-img_1">
                         <div className="infAboutImg_">
                             <div className="infAboutImg">
-                                <img src="../img/img3.png" alt="inf" className="img-fluid " />
+                                <img src="https://res.cloudinary.com/truyenfull/image/upload/v1614841307/zekang/z2357272118453_fe9855a272ecea1f34633f306bb9e312_gyifjq.jpg" alt="inf" className="img-fluid " />
                             </div>
                         </div>
                     </Col>
